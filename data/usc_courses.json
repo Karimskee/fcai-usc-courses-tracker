@@ -1086,7 +1086,9 @@
             "prereq": [
               "CS203"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1098,7 +1100,9 @@
             "prereq": [
               "IS202"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1110,7 +1114,9 @@
             "prereq": [
               "CS204"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1122,7 +1128,9 @@
             "prereq": [
               "IS205"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Heba"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1134,7 +1142,9 @@
             "prereq": [
               "IS202"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1147,7 +1157,10 @@
               "MA103"
             ],
             "type": "mandatory",
-            "category": "department"
+            "category": "department",
+            "expected_doctors": [
+              "Dr. Ahmed Salem"
+            ]
           }
         ],
         "level_3_sem_2": [
@@ -1159,7 +1172,9 @@
             "prereq": [
               "IS301"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1171,7 +1186,9 @@
             "prereq": [
               "IS301"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Salem"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1183,7 +1200,9 @@
             "prereq": [
               "IS101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Lamey"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1195,7 +1214,9 @@
             "prereq": [
               "CS203"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1205,7 +1226,9 @@
             "name_ar": "إدارة مشروعات نظم المعلومات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Lamey"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1217,7 +1240,9 @@
             "prereq": [
               "IS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Lamey"
+            ],
             "category": "department",
             "type": "elective"
           }
