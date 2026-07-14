@@ -82,7 +82,7 @@ function CourseNode({ data }) {
       >
         <Handle type="target" position={Position.Bottom} className="hidden-handle" />
         
-        <span className="course-name">{data.code}</span>
+        <span className="course-name">{data.name}</span>
         
         <Handle type="source" position={Position.Top} className="hidden-handle" />
       </div>
@@ -99,8 +99,12 @@ function CourseNode({ data }) {
           background: var(--bg-secondary);
           border: 1px solid var(--border-color);
           border-radius: 999px; /* Oval/Bubble */
-          padding: 12px 24px;
-          min-width: 120px;
+          padding: 12px 20px;
+          min-width: 140px;
+          max-width: 220px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           text-align: center;
           cursor: pointer;
           transition: all 0.2s ease;
@@ -109,8 +113,9 @@ function CourseNode({ data }) {
         }
 
         .course-name {
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 600;
+          line-height: 1.3;
           color: var(--text-primary);
         }
 

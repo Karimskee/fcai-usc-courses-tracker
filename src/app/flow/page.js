@@ -32,7 +32,7 @@ export default function FlowPage() {
     ];
 
     const Y_SPACING = 250;
-    const X_SPACING = 200;
+    const X_SPACING = 250; // Increased to prevent longer course names from overlapping
     
     // Bottom-to-top: Level 1 Sem 1 is at Y = semesters.length * Y_SPACING
     
@@ -48,6 +48,7 @@ export default function FlowPage() {
           id: code,
           type: 'courseNode',
           position: { x, y },
+          origin: [0.5, 0.5], // Keeps nodes centered vertically regardless of text height
           data: { code, label: code }
         });
       });
@@ -174,7 +175,12 @@ function FlowCanvas({ initialNodes, initialEdges }) {
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
         fitView
-        minZoom={0.2}
+        fitViewOptions={{ 
+          nodes: (data?.departments?.CS?.study_plan?.level_1_sem_1 || []).map(id => ({ id })), 
+          maxZoom: 1, 
+          padding: 0.2 
+        }}
+        minZoom={0.1}
         maxZoom={2}
         proOptions={{ hideAttribution: true }}
       >
