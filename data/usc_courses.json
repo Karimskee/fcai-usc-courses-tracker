@@ -1036,7 +1036,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1048,7 +1050,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1060,7 +1064,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1072,7 +1078,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1084,7 +1092,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1096,7 +1106,9 @@
             "prereq": [
               "MA103"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           }
