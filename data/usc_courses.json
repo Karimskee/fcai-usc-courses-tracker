@@ -872,7 +872,9 @@
             "prereq": [
               "CS103"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -884,7 +886,9 @@
             "prereq": [
               "MA101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -894,7 +898,9 @@
             "name_ar": "مقدمة نظم المعلومات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -906,7 +912,9 @@
             "prereq": [
               "CS102"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr.  Heba"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -916,7 +924,9 @@
             "name_ar": "مبادئ الاقتصاد",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Emad"
+            ],
             "category": "general",
             "type": "elective"
           },
@@ -926,7 +936,9 @@
             "name_ar": "أخلاقيات المهنة",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "general",
             "type": "elective"
           }
