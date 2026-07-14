@@ -62,7 +62,8 @@ export default function AdminPage() {
     setLoading(true);
     try {
       const res = await fetch(`https://api.github.com/repos/${o}/${r}/contents/data`, {
-        headers: { Authorization: `Bearer ${t}`, Accept: 'application/vnd.github.v3+json' }
+        headers: { Authorization: `Bearer ${t}`, Accept: 'application/vnd.github.v3+json' },
+        cache: 'no-store'
       });
       if (!res.ok) throw new Error('Failed to load data folder');
       const files = await res.json();
@@ -80,7 +81,8 @@ export default function AdminPage() {
     setLoading(true);
     try {
       const res = await fetch(file.url, {
-        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github.v3+json' }
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github.v3+json' },
+        cache: 'no-store'
       });
       const resData = await res.json();
       const b64 = resData.content.replace(/\s/g, '');
@@ -101,7 +103,18 @@ export default function AdminPage() {
     if (!isDirty || !selectedFacultyFile) return;
     setLoading(true);
     try {
-      const jsonStr = JSON.stringify(selectedFaculty, null, 2);
+      const dataToSave = JSON.parse(JSON.stringify(selectedFaculty));
+      // Sanitize arrays before saving
+      Object.values(dataToSave.departments).forEach(dept => {
+        Object.values(dept.semesters || {}).forEach(sem => {
+          sem.forEach(c => {
+            if (c.prereq) c.prereq = c.prereq.map(s => s.trim()).filter(s => s);
+            if (c.expected_doctors) c.expected_doctors = c.expected_doctors.map(s => s.trim()).filter(s => s);
+          });
+        });
+      });
+      
+      const jsonStr = JSON.stringify(dataToSave, null, 2);
       const b64 = btoa(unescape(encodeURIComponent(jsonStr)));
       
       const payload = {
@@ -317,7 +330,11 @@ export default function AdminPage() {
             <div className="card-grid">
               {Object.keys(selectedFaculty.departments).map(d => (
                 <div key={d} className="card glass-panel">
-                  <div className="card-content" onClick={() => setSelectedDeptKey(d)}>
+                  <div className="card-content" onClick={() => {
+                    setSelectedDeptKey(d);
+                    const sems = Object.keys(selectedFaculty.departments[d].semesters || {});
+                    if (sems.length > 0) setSelectedSemester(sems[0]);
+                  }}>
                     <BookOpen size={24} className="icon" />
                     <h3>{d}</h3>
                     <p>{selectedFaculty.departments[d].name_en}</p>
@@ -415,17 +432,31 @@ function CoursesTable({ courses, onUpdate }) {
   const updateCourse = (index, field, value) => {
     const updated = [...courses];
     if (field === 'hours') value = parseInt(value) || 0;
-    if (field === 'prereq') value = value.split(',').map(s => s.trim()).filter(s => s);
+    if (field === 'prereq') value = value === '' ? [] : value.split(',');
+    if (field === 'expected_doctors') value = value === '' ? [] : value.split(',');
     updated[index] = { ...updated[index], [field]: value };
     onUpdate(updated);
   };
 
   const addRow = () => {
-    onUpdate([...courses, { code: 'NEW_CODE', name_en: 'New Course', name_ar: 'مقرر جديد', hours: 3, prereq: [], type: 'mandatory', category: 'department' }]);
+    onUpdate([...courses, { code: 'NEW_CODE', name_en: 'New Course', name_ar: 'مقرر جديد', hours: 3, prereq: [], expected_doctors: [], type: 'mandatory', category: 'department' }]);
   };
 
   const deleteRow = (index) => {
     onUpdate(courses.filter((_, i) => i !== index));
+  };
+
+  const handleKeyDown = (e, rowIndex, field) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const direction = e.shiftKey ? -1 : 1;
+      const nextRow = rowIndex + direction;
+      const nextElement = document.getElementById(`input-${nextRow}-${field}`);
+      if (nextElement) {
+        nextElement.focus();
+        if (nextElement.select) nextElement.select(); // Select text if it's an input
+      }
+    }
   };
 
   return (
@@ -434,36 +465,38 @@ function CoursesTable({ courses, onUpdate }) {
         <thead>
           <tr>
             <th style={{ width: '100px' }}>Code</th>
-            <th style={{ width: '220px' }}>Name (EN)</th>
-            <th style={{ width: '220px' }}>Name (AR)</th>
+            <th style={{ width: '200px' }}>Name (EN)</th>
+            <th style={{ width: '200px' }}>Name (AR)</th>
             <th style={{ width: '60px' }}>Hours</th>
             <th style={{ width: '100px' }}>Type</th>
             <th style={{ width: '100px' }}>Category</th>
-            <th>Prerequisites</th>
+            <th style={{ width: '150px' }}>Prerequisites</th>
+            <th>Expected Doctors</th>
             <th style={{ width: '40px' }}></th>
           </tr>
         </thead>
         <tbody>
           {courses.map((course, i) => (
             <tr key={i}>
-              <td><input value={course.code} onChange={e => updateCourse(i, 'code', e.target.value)} /></td>
-              <td><input value={course.name_en} onChange={e => updateCourse(i, 'name_en', e.target.value)} /></td>
-              <td><input value={course.name_ar} onChange={e => updateCourse(i, 'name_ar', e.target.value)} dir="rtl" /></td>
-              <td><input type="number" value={course.hours} onChange={e => updateCourse(i, 'hours', e.target.value)} /></td>
+              <td><input id={`input-${i}-code`} value={course.code} onChange={e => updateCourse(i, 'code', e.target.value)} onKeyDown={e => handleKeyDown(e, i, 'code')} /></td>
+              <td><input id={`input-${i}-name_en`} value={course.name_en} onChange={e => updateCourse(i, 'name_en', e.target.value)} onKeyDown={e => handleKeyDown(e, i, 'name_en')} /></td>
+              <td><input id={`input-${i}-name_ar`} value={course.name_ar} onChange={e => updateCourse(i, 'name_ar', e.target.value)} dir="rtl" onKeyDown={e => handleKeyDown(e, i, 'name_ar')} /></td>
+              <td><input id={`input-${i}-hours`} type="number" value={course.hours} onChange={e => updateCourse(i, 'hours', e.target.value)} onKeyDown={e => handleKeyDown(e, i, 'hours')} /></td>
               <td>
-                <select value={course.type || 'mandatory'} onChange={e => updateCourse(i, 'type', e.target.value)}>
+                <select id={`input-${i}-type`} value={course.type || 'mandatory'} onChange={e => updateCourse(i, 'type', e.target.value)} onKeyDown={e => handleKeyDown(e, i, 'type')}>
                   <option value="mandatory">Mandatory</option>
                   <option value="elective">Elective</option>
                 </select>
               </td>
               <td>
-                <select value={course.category || 'department'} onChange={e => updateCourse(i, 'category', e.target.value)}>
+                <select id={`input-${i}-category`} value={course.category || 'department'} onChange={e => updateCourse(i, 'category', e.target.value)} onKeyDown={e => handleKeyDown(e, i, 'category')}>
                   <option value="department">Department</option>
                   <option value="faculty">Faculty</option>
                   <option value="general">General</option>
                 </select>
               </td>
-              <td><input value={(course.prereq || []).join(', ')} onChange={e => updateCourse(i, 'prereq', e.target.value)} placeholder="CS101, MA102" /></td>
+              <td><input id={`input-${i}-prereq`} value={(course.prereq || []).join(',')} onChange={e => updateCourse(i, 'prereq', e.target.value)} placeholder="CS101,MA102" onKeyDown={e => handleKeyDown(e, i, 'prereq')} /></td>
+              <td><input id={`input-${i}-expected_doctors`} value={(course.expected_doctors || []).join(',')} onChange={e => updateCourse(i, 'expected_doctors', e.target.value)} placeholder="Dr. Ahmed,Dr. Ali" onKeyDown={e => handleKeyDown(e, i, 'expected_doctors')} /></td>
               <td><button className="delete-btn" onClick={() => deleteRow(i)}><Trash2 size={14} /></button></td>
             </tr>
           ))}

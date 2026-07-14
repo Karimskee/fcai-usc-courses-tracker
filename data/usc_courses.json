@@ -606,7 +606,9 @@
             "hours": 0,
             "prereq": [],
             "note": "University requirement, does not count towards graduation hours",
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "general",
             "type": "mandatory"
           },
@@ -616,7 +618,9 @@
             "name_ar": "صياغة التقارير العلمية والفنية",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "general",
             "type": "mandatory"
           },
@@ -626,7 +630,9 @@
             "name_ar": "مبادئ ادارة",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Emad"
+            ],
             "category": "general",
             "type": "mandatory"
           },
@@ -636,7 +642,9 @@
             "name_ar": "رياضيات-1",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -646,7 +654,9 @@
             "name_ar": "تراكيب محددة",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -656,7 +666,9 @@
             "name_ar": "مقدمة في الحاسبات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -666,7 +678,9 @@
             "name_ar": "أشباه الموصلات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "faculty",
             "type": "mandatory"
           }
