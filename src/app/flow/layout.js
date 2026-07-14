@@ -69,6 +69,12 @@ export default function FlowLayout({ children }) {
     });
   };
 
+  const resetCourses = () => {
+    if (confirm("Are you sure you want to reset all your progress?")) {
+      setCompletedCourses(new Set());
+    }
+  };
+
   if (!mounted || !facultyKey) return null;
 
   const data = FACULTIES[facultyKey];
@@ -102,7 +108,8 @@ export default function FlowLayout({ children }) {
       allCoursesMap,
       completedCourses,
       toggleCourse,
-      cascadeUnmark
+      cascadeUnmark,
+      resetCourses
     }}>
       <div className="flow-layout">
         

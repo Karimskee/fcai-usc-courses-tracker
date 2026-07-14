@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useCallback } from 'react';
-import { ReactFlow, Background, Controls, applyNodeChanges, applyEdgeChanges } from '@xyflow/react';
+import { ReactFlow, Background, Controls, ControlButton, applyNodeChanges, applyEdgeChanges } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { useFlow } from './layout';
 import CourseNode from '../../components/CourseNode';
@@ -75,7 +75,7 @@ export default function FlowPage() {
 import { useState, useEffect } from 'react';
 
 function FlowCanvas({ initialNodes, initialEdges }) {
-  const { data, completedCourses } = useFlow();
+  const { data, completedCourses, resetCourses } = useFlow();
   
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
@@ -179,7 +179,14 @@ function FlowCanvas({ initialNodes, initialEdges }) {
         proOptions={{ hideAttribution: true }}
       >
         <Background color="#27272a" gap={20} size={1} />
-        <Controls showInteractive={false} className="dark-controls" />
+        <Controls showInteractive={false} className="dark-controls">
+          <ControlButton onClick={resetCourses} title="Reset Progress" style={{ order: -1 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 14L4 9l5-5" />
+              <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11" />
+            </svg>
+          </ControlButton>
+        </Controls>
       </ReactFlow>
 
       <style jsx global>{`
@@ -203,12 +210,17 @@ function FlowCanvas({ initialNodes, initialEdges }) {
           border: 1px solid var(--border-color);
           border-radius: 8px;
           overflow: hidden;
+          display: flex;
+          flex-direction: column;
         }
         
         .dark-controls button {
           background: transparent;
           border-bottom: 1px solid var(--border-color);
           fill: var(--text-primary);
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         .dark-controls button:last-child {
           border-bottom: none;
