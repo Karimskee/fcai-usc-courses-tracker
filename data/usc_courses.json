@@ -1967,7 +1967,7 @@
               "IS202"
             ],
             "expected_doctors": [
-              "Dr. Asmaa | Dr. Sara"
+              "Dr. Sara"
             ],
             "category": "faculty",
             "type": "mandatory"
