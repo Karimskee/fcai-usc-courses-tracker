@@ -80,11 +80,25 @@ function CourseNode({ data }) {
         onTouchMove={handleTouchMove}
         className={`course-bubble state-${data.state}`}
       >
-        <Handle type="target" position={Position.Bottom} className="hidden-handle" />
+        {data.hasPrereq && (
+          <Handle 
+            type="target" 
+            position={Position.Bottom} 
+            isConnectable={false}
+            style={{ pointerEvents: 'none', cursor: 'default' }} 
+          />
+        )}
         
         <span className="course-name">{data.name}</span>
         
-        <Handle type="source" position={Position.Top} className="hidden-handle" />
+        {data.isPrereqForSomething && (
+          <Handle 
+            type="source" 
+            position={Position.Top} 
+            isConnectable={false}
+            style={{ pointerEvents: 'none', cursor: 'default' }} 
+          />
+        )}
       </div>
 
       {showTooltip && (
@@ -141,10 +155,6 @@ function CourseNode({ data }) {
         
         .state-completed:hover {
           transform: translateY(-2px);
-        }
-
-        .hidden-handle {
-          opacity: 0;
         }
       `}</style>
     </>

@@ -96,6 +96,21 @@ function FlowCanvas({ initialNodes, initialEdges }) {
       addAll(d.elective);
     });
 
+    const isPrereqFor = new Set();
+    const hasPrereqSet = new Set();
+    
+    initialNodes.forEach(node => {
+      const course = allCourses.get(node.id);
+      if (course && course.prereq) {
+        course.prereq.forEach(p => {
+          if (initialNodes.some(n => n.id === p)) {
+            isPrereqFor.add(p);
+            hasPrereqSet.add(node.id);
+          }
+        });
+      }
+    });
+
     const buildNodeData = (node) => {
       const course = allCourses.get(node.id);
       if (!course) return node;
@@ -116,7 +131,9 @@ function FlowCanvas({ initialNodes, initialEdges }) {
           hours: course.hours,
           prereq: course.prereq,
           doctors: course.expected_doctors,
-          state
+          state,
+          hasPrereq: hasPrereqSet.has(node.id),
+          isPrereqForSomething: isPrereqFor.has(node.id)
         }
       };
     };
@@ -182,6 +199,8 @@ function FlowCanvas({ initialNodes, initialEdges }) {
         }}
         minZoom={0.1}
         maxZoom={2}
+        nodesConnectable={false}
+        elementsSelectable={false}
         proOptions={{ hideAttribution: true }}
       >
         <Background color="#27272a" gap={20} size={1} />
