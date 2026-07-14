@@ -1,6 +1,7 @@
 'use client';
 
 import { useMemo, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { ReactFlow, Background, Controls, ControlButton, applyNodeChanges, applyEdgeChanges } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { useFlow } from './layout';
@@ -77,6 +78,7 @@ import { useState, useEffect } from 'react';
 
 function FlowCanvas({ initialNodes, initialEdges }) {
   const { data, completedCourses, resetCourses } = useFlow();
+  const router = useRouter();
   
   const [nodes, setNodes] = useState([]);
   const [edges, setEdges] = useState([]);
@@ -205,6 +207,12 @@ function FlowCanvas({ initialNodes, initialEdges }) {
       >
         <Background color="#27272a" gap={20} size={1} />
         <Controls showInteractive={false} className="dark-controls">
+          <ControlButton onClick={() => router.push('/')} title="Home" style={{ order: -2 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </ControlButton>
           <ControlButton onClick={resetCourses} title="Reset Progress" style={{ order: -1 }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 14L4 9l5-5" />
