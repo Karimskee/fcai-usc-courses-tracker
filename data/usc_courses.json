@@ -196,7 +196,9 @@
             "prereq": [
               "CS101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -208,7 +210,9 @@
             "prereq": [
               "CS104"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Salem"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -220,7 +224,9 @@
             "prereq": [
               "IS101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -230,7 +236,9 @@
             "name_ar": "شبكات الحاسبات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -242,7 +250,9 @@
             "prereq": [
               "MA101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -252,7 +262,9 @@
             "name_ar": "المعالجات الدقيقة ولغة التجميع",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Salem"
+            ],
             "category": "faculty",
             "type": "mandatory"
           }
@@ -266,7 +278,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -278,7 +292,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -290,7 +306,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -302,7 +320,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -314,7 +334,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -326,7 +348,9 @@
             "prereq": [
               "MA103"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           }
@@ -340,7 +364,9 @@
             "prereq": [
               "CS203"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -352,7 +378,9 @@
             "prereq": [
               "IS202"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -364,7 +392,9 @@
             "prereq": [
               "CS204"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -376,7 +406,9 @@
             "prereq": [
               "CS203"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -386,7 +418,9 @@
             "name_ar": "مقدمة في الذكاء الاصطناعي",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -399,7 +433,10 @@
               "CS203"
             ],
             "type": "mandatory",
-            "category": "department"
+            "category": "department",
+            "expected_doctors": [
+              "Dr. Engi"
+            ]
           }
         ],
         "level_3_sem_2": [
