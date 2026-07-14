@@ -1,7 +1,46 @@
 {
   "meta": {
     "faculty": "ENG",
-    "departments": []
+    "departments": [
+      "SE"
+    ]
   },
-  "departments": {}
+  "departments": {
+    "SE": {
+      "name_en": "Software Engineering",
+      "name_ar": "Software Engineering",
+      "semesters": {
+        "level_1_sem_1": [
+          {
+            "code": "CODE_1",
+            "name_en": "First Course",
+            "name_ar": "المقرر الأول",
+            "hours": 3,
+            "prereq": [],
+            "type": "elective",
+            "category": "department"
+          }
+        ],
+        "level_1_sem_2": [
+          {
+            "code": "NEW_CODE",
+            "name_en": "Second Course",
+            "name_ar": "مقرر جديد",
+            "hours": 3,
+            "prereq": [
+              "CODE_1"
+            ],
+            "type": "mandatory",
+            "category": "department"
+          }
+        ],
+        "level_2_sem_1": [],
+        "level_2_sem_2": [],
+        "level_3_sem_1": [],
+        "level_3_sem_2": [],
+        "level_4_sem_1": [],
+        "level_4_sem_2": []
+      }
+    }
+  }
 }
