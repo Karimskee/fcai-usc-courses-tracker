@@ -952,7 +952,9 @@
             "prereq": [
               "CS101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -964,7 +966,9 @@
             "prereq": [
               "CS104"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Salem"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -976,7 +980,9 @@
             "prereq": [
               "IS101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -986,7 +992,9 @@
             "name_ar": "شبكات الحاسبات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -998,7 +1006,9 @@
             "prereq": [
               "MA101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1010,7 +1020,9 @@
             "prereq": [
               "IS101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "department",
             "type": "elective"
           }
