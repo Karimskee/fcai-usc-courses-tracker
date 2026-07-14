@@ -416,8 +416,7 @@
             "name_ar": "النمذجة والمحاكاة",
             "hours": 3,
             "prereq": [
-              "ST201",
-              "CS201"
+              "IS205"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -543,7 +542,7 @@
             ],
             "expected_doctors": [],
             "category": "department",
-            "type": "elective"
+            "type": "mandatory"
           },
           {
             "code": "CS404",
@@ -555,7 +554,7 @@
             ],
             "expected_doctors": [],
             "category": "department",
-            "type": "elective"
+            "type": "mandatory"
           },
           {
             "code": "IS405",
@@ -590,6 +589,156 @@
             "expected_doctors": [],
             "category": "department",
             "type": "mandatory"
+          }
+        ],
+        "electives": [
+          {
+            "code": "GN105",
+            "name_en": "Communication & Negotiation Skills",
+            "name_ar": "مهارات التفاوض والاتصال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN106",
+            "name_en": "Innovation and entrepreneurship",
+            "name_ar": "الابداع وريادة الاعمال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN107",
+            "name_en": "Creative Thinking and Problem Solving",
+            "name_ar": "التفكير الابداعي وحل المشكلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "MA001",
+            "name_en": "Math-0",
+            "name_ar": "تأهيلي رياضيات-0",
+            "hours": 0,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA201",
+            "name_en": "Mathematics-3",
+            "name_ar": "رياضيات-3",
+            "hours": 3,
+            "prereq": [
+              "MA102"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS204",
+            "name_en": "File Organization and Processing",
+            "name_ar": "تنظيم ومعالجة الملفات",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS206",
+            "name_en": "Operation Research Systems & Applications",
+            "name_ar": "نظم بحوث العمليات وتطبيقاتها",
+            "hours": 3,
+            "prereq": [
+              "IS205"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "ST202",
+            "name_en": "Statistical Methods",
+            "name_ar": "طرق إحصائية",
+            "hours": 3,
+            "prereq": [
+              "ST201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "CS303",
+            "name_en": "Scientific Programming",
+            "name_ar": "برمجة علمية",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "CS304",
+            "name_en": "Web Services",
+            "name_ar": "خدمات الويب",
+            "hours": 3,
+            "prereq": [
+              "CS206"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS303",
+            "name_en": "Database Application Programming",
+            "name_ar": "برمجة تطبيقات قواعد البيانات",
+            "hours": 3,
+            "prereq": [
+              "IS301"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS304",
+            "name_en": "E-Business",
+            "name_ar": "الأعمال الإلكترونية",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS312",
+            "name_en": "Spatial Data Mining",
+            "name_ar": "تنقيب البيانات المكانية",
+            "hours": 3,
+            "prereq": [
+              "CS307"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
           }
         ]
       }
@@ -1151,7 +1300,7 @@
             ],
             "expected_doctors": [],
             "category": "department",
-            "type": "elective"
+            "type": "mandatory"
           },
           {
             "code": "IS409",
@@ -1163,7 +1312,7 @@
             ],
             "expected_doctors": [],
             "category": "department",
-            "type": "elective"
+            "type": "mandatory"
           },
           {
             "code": "IS408",
@@ -1174,6 +1323,156 @@
             "expected_doctors": [],
             "category": "department",
             "type": "mandatory"
+          }
+        ],
+        "electives": [
+          {
+            "code": "GN105",
+            "name_en": "Communication & Negotiation Skills",
+            "name_ar": "مهارات التفاوض والاتصال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN106",
+            "name_en": "Innovation and entrepreneurship",
+            "name_ar": "الابداع وريادة الاعمال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN107",
+            "name_en": "Creative Thinking and Problem Solving",
+            "name_ar": "التفكير الابداعي وحل المشكلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "MA001",
+            "name_en": "Math-0",
+            "name_ar": "تأهيلي رياضيات-0",
+            "hours": 0,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA201",
+            "name_en": "Mathematics-3",
+            "name_ar": "رياضيات-3",
+            "hours": 3,
+            "prereq": [
+              "MA102"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS204",
+            "name_en": "File Organization and Processing",
+            "name_ar": "تنظيم ومعالجة الملفات",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS206",
+            "name_en": "Operation Research Systems & Applications",
+            "name_ar": "نظم بحوث العمليات وتطبيقاتها",
+            "hours": 3,
+            "prereq": [
+              "IS205"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "ST202",
+            "name_en": "Statistical Methods",
+            "name_ar": "طرق إحصائية",
+            "hours": 3,
+            "prereq": [
+              "ST201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "CS303",
+            "name_en": "Scientific Programming",
+            "name_ar": "برمجة علمية",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "CS304",
+            "name_en": "Web Services",
+            "name_ar": "خدمات الويب",
+            "hours": 3,
+            "prereq": [
+              "CS206"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS303",
+            "name_en": "Database Application Programming",
+            "name_ar": "برمجة تطبيقات قواعد البيانات",
+            "hours": 3,
+            "prereq": [
+              "IS301"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS304",
+            "name_en": "E-Business",
+            "name_ar": "الأعمال الإلكترونية",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS312",
+            "name_en": "Spatial Data Mining",
+            "name_ar": "تنقيب البيانات المكانية",
+            "hours": 3,
+            "prereq": [
+              "CS307"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
           }
         ]
       }
@@ -1527,6 +1826,30 @@
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
+          },
+          {
+            "code": "AI301",
+            "name_en": "Web and Network Programming",
+            "name_ar": "برمجة الشبكات والانترنت",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI303",
+            "name_en": "Web & Social Media Analytics",
+            "name_ar": "تحليلات الويب والوسائط الاجتماعية",
+            "hours": 3,
+            "prereq": [
+              "CS304"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
           }
         ],
         "level_3_sem_2": [
@@ -1731,6 +2054,168 @@
             "expected_doctors": [],
             "category": "department",
             "type": "mandatory"
+          }
+        ],
+        "electives": [
+          {
+            "code": "GN105",
+            "name_en": "Communication & Negotiation Skills",
+            "name_ar": "مهارات التفاوض والاتصال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN106",
+            "name_en": "Innovation and entrepreneurship",
+            "name_ar": "الابداع وريادة الاعمال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN107",
+            "name_en": "Creative Thinking and Problem Solving",
+            "name_ar": "التفكير الابداعي وحل المشكلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "MA001",
+            "name_en": "Math-0",
+            "name_ar": "تأهيلي رياضيات-0",
+            "hours": 0,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA201",
+            "name_en": "Mathematics-3",
+            "name_ar": "رياضيات-3",
+            "hours": 3,
+            "prereq": [
+              "MA102"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS204",
+            "name_en": "File Organization and Processing",
+            "name_ar": "تنظيم ومعالجة الملفات",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS206",
+            "name_en": "Operation Research Systems & Applications",
+            "name_ar": "نظم بحوث العمليات وتطبيقاتها",
+            "hours": 3,
+            "prereq": [
+              "IS205"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "ST202",
+            "name_en": "Statistical Methods",
+            "name_ar": "طرق إحصائية",
+            "hours": 3,
+            "prereq": [
+              "ST201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "CS303",
+            "name_en": "Scientific Programming",
+            "name_ar": "برمجة علمية",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "CS304",
+            "name_en": "Web Services",
+            "name_ar": "خدمات الويب",
+            "hours": 3,
+            "prereq": [
+              "CS206"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS303",
+            "name_en": "Database Application Programming",
+            "name_ar": "برمجة تطبيقات قواعد البيانات",
+            "hours": 3,
+            "prereq": [
+              "IS301"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS304",
+            "name_en": "E-Business",
+            "name_ar": "الأعمال الإلكترونية",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "AI306",
+            "name_en": "Fuzzy Logic and Intelligent Systems",
+            "name_ar": "المنطق الضبابي والأنظمة الذكية",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "IS312",
+            "name_en": "Spatial Data Mining",
+            "name_ar": "تنقيب البيانات المكانية",
+            "hours": 3,
+            "prereq": [
+              "CS307"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
           }
         ]
       }
@@ -2070,8 +2555,7 @@
             "name_ar": "النمذجة والمحاكاة",
             "hours": 3,
             "prereq": [
-              "ST201",
-              "CS201"
+              "IS205"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -2305,6 +2789,178 @@
             "expected_doctors": [],
             "category": "department",
             "type": "mandatory"
+          }
+        ],
+        "electives": [
+          {
+            "code": "GN105",
+            "name_en": "Communication & Negotiation Skills",
+            "name_ar": "مهارات التفاوض والاتصال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN106",
+            "name_en": "Innovation and entrepreneurship",
+            "name_ar": "الابداع وريادة الاعمال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN107",
+            "name_en": "Creative Thinking and Problem Solving",
+            "name_ar": "التفكير الابداعي وحل المشكلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "MA001",
+            "name_en": "Math-0",
+            "name_ar": "تأهيلي رياضيات-0",
+            "hours": 0,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "BIO001",
+            "name_en": "Biology-0",
+            "name_ar": "تأهيلي علم الأحياء-0",
+            "hours": 0,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS204",
+            "name_en": "File Organization and Processing",
+            "name_ar": "تنظيم ومعالجة الملفات",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS206",
+            "name_en": "Operation Research Systems & Applications",
+            "name_ar": "نظم بحوث العمليات وتطبيقاتها",
+            "hours": 3,
+            "prereq": [
+              "IS205"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "ST202",
+            "name_en": "Statistical Methods",
+            "name_ar": "طرق إحصائية",
+            "hours": 3,
+            "prereq": [
+              "ST201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "CS303",
+            "name_en": "Scientific Programming",
+            "name_ar": "برمجة علمية",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "CS304",
+            "name_en": "Web Services",
+            "name_ar": "خدمات الويب",
+            "hours": 3,
+            "prereq": [
+              "CS206"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS303",
+            "name_en": "Database Application Programming",
+            "name_ar": "برمجة تطبيقات قواعد البيانات",
+            "hours": 3,
+            "prereq": [
+              "IS301"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "IS304",
+            "name_en": "E-Business",
+            "name_ar": "الأعمال الإلكترونية",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "elective"
+          },
+          {
+            "code": "BI306",
+            "name_en": "Biophysics",
+            "name_ar": "الفيزياء الحيوية",
+            "hours": 3,
+            "prereq": [
+              "BI302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "BI308",
+            "name_en": "System Biology",
+            "name_ar": "نظم علم الأحياء",
+            "hours": 3,
+            "prereq": [
+              "BI302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "IS312",
+            "name_en": "Spatial Data Mining",
+            "name_ar": "تنقيب البيانات المكانية",
+            "hours": 3,
+            "prereq": [
+              "CS307"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
           }
         ]
       }
