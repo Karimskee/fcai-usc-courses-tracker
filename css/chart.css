@@ -1,0 +1,204 @@
+.chart-container {
+    flex: 1;
+    overflow: auto;
+    position: relative;
+    padding: var(--spacing-6);
+    cursor: grab;
+}
+
+.chart-container:active {
+    cursor: grabbing;
+}
+
+.chart-wrapper {
+    position: relative;
+    min-width: max-content; /* Ensure it expands to fit all columns */
+    min-height: max-content;
+    padding-bottom: var(--spacing-8);
+}
+
+.arrows-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Let clicks pass through to cards */
+    z-index: 1;
+}
+
+/* Base styles for paths */
+.arrow-path {
+    fill: none;
+    stroke-width: 2px;
+    stroke: var(--card-border-locked);
+    transition: stroke var(--transition-normal);
+}
+
+.arrow-path.active {
+    stroke: var(--accent-primary);
+    stroke-width: 2.5px;
+}
+
+.arrow-path.completed {
+    stroke: var(--accent-success);
+}
+
+.arrow-path.animated {
+    stroke-dasharray: 8;
+    animation: flowLine 1s linear infinite;
+}
+
+[dir="rtl"] .arrow-path.animated {
+    animation: flowLineRtl 1s linear infinite;
+}
+
+@keyframes flowLine {
+    to { stroke-dashoffset: -16; }
+}
+
+@keyframes flowLineRtl {
+    to { stroke-dashoffset: 16; }
+}
+
+.course-grid {
+    display: flex;
+    gap: var(--spacing-6);
+    position: relative;
+    z-index: 2;
+}
+
+.semester-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    width: 200px; /* Fixed width for cards */
+    flex-shrink: 0;
+}
+
+.semester-header {
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding-bottom: var(--spacing-2);
+    border-bottom: 2px solid var(--bg-tertiary);
+    margin-bottom: var(--spacing-2);
+    font-size: 0.875rem;
+}
+
+.course-group-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin-top: var(--spacing-2);
+    margin-bottom: calc(var(--spacing-2) * -1); /* Pull cards closer */
+}
+
+/* Course Card */
+.course-card {
+    position: relative;
+    background: var(--card-locked);
+    border: 2px dashed var(--card-border-locked);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-3);
+    cursor: default;
+    transition: all var(--transition-normal);
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    min-height: 80px;
+}
+
+/* Available State */
+.course-card.available {
+    background: var(--card-available);
+    border: 2px solid var(--card-border-available);
+    cursor: pointer;
+    box-shadow: var(--shadow-glow);
+}
+
+.course-card.available:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px hsla(192, 91%, 54%, 0.6);
+}
+
+/* Completed State */
+.course-card.completed {
+    background: var(--card-completed);
+    border: 2px solid var(--card-border-completed);
+    cursor: pointer;
+}
+
+.course-card.completed:hover {
+    transform: translateY(-2px);
+}
+
+.course-code {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-hours {
+    background: var(--bg-primary);
+    padding: 2px 6px;
+    border-radius: var(--radius-full);
+    font-size: 0.65rem;
+}
+
+.course-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* Category Colors (Subtle tints) */
+.course-card.cat-general_mandatory, .course-card.cat-general_elective {
+    border-top-color: hsl(35, 92%, 53%);
+}
+
+.course-card.cat-faculty_mandatory, .course-card.cat-faculty_elective {
+    border-top-color: hsl(262, 83%, 58%);
+}
+
+.course-card.completed.cat-general_mandatory { border-color: var(--accent-success); }
+.course-card.completed.cat-faculty_mandatory { border-color: var(--accent-success); }
+
+/* Status Icon */
+.status-icon {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
+    background: var(--accent-success);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+[dir="rtl"] .status-icon {
+    right: auto;
+    left: -8px;
+}
+
+.course-card.completed .status-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.status-icon svg {
+    width: 14px;
+    height: 14px;
+}
