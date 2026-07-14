@@ -4,7 +4,6 @@ import { useMemo, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { ReactFlow, Background, Controls, ControlButton, MiniMap, applyNodeChanges, applyEdgeChanges } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
-import dagre from 'dagre';
 import { useFlow } from './layout';
 import CourseNode from '../../components/CourseNode';
 import SemesterGroupNode from '../../components/SemesterGroupNode';
@@ -26,11 +25,7 @@ export default function FlowPage() {
     const nodes = [];
     const edges = [];
     
-    if (!deptData || !deptData.study_plan) return { initialNodes: [], initialEdges: [] };
-
-    const g = new dagre.graphlib.Graph({ compound: true });
-    g.setGraph({ rankdir: 'BT', nodesep: 50, ranksep: 150 }); // Slightly increased ranksep for bezier curves
-    g.setDefaultEdgeLabel(() => ({}));
+    if (!deptData || !deptData.semesters) return { initialNodes: [], initialEdges: [] };
 
     const semesters = [
       'level_1_sem_1', 'level_1_sem_2',
@@ -41,117 +36,64 @@ export default function FlowPage() {
 
     const addedNodes = new Set();
     
-    // Add Semester Group Nodes
-    semesters.forEach(sem => {
-      // Clean up the semester name for display
+    // Layout parameters
+    const NODE_WIDTH = 250;
+    const NODE_HEIGHT = 90;
+    const GAP_X = 40;
+    const GAP_Y = 220; // Distance between semesters
+    const TITLE_PADDING = 50;
+    const PADDING_BOX = 40; // Horizontal padding for the group box
+
+    let currentY = 0;
+    
+    // We process only semesters that exist in the actual object
+    semesters.forEach((sem) => {
+      const coursesInSem = deptData.semesters[sem] || [];
+      if (coursesInSem.length === 0) return;
+
       const semLabel = sem.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
       
+      const rowWidth = coursesInSem.length * NODE_WIDTH + (coursesInSem.length - 1) * GAP_X;
+      
+      // Calculate group dimensions and absolute position
+      const groupWidth = rowWidth + PADDING_BOX;
+      const groupHeight = NODE_HEIGHT + TITLE_PADDING + 30; // 50 for title, 30 for bottom padding
+      const groupX = -groupWidth / 2;
+      const groupY = currentY;
+
+      // Add Semester Group Node
       nodes.push({
         id: sem,
         type: 'semesterGroup',
         data: { label: semLabel },
+        position: { x: groupX, y: groupY },
+        style: { width: groupWidth, height: groupHeight },
         draggable: false,
         selectable: false
       });
-      g.setNode(sem, { label: semLabel, clusterLabelPos: 'top' });
-    });
 
-    semesters.forEach((sem) => {
-      const coursesInSem = deptData.study_plan[sem] || [];
-      
-      coursesInSem.forEach((code) => {
+      // Add Course Nodes (positioned relative to their parent group)
+      coursesInSem.forEach((course, index) => {
+        const code = course.code;
         if (addedNodes.has(code)) return;
         addedNodes.add(code);
         
-        g.setNode(code, { width: 250, height: 90 });
-        g.setParent(code, sem);
+        // Relative X coordinate inside the group box
+        // We start with half the padding to center it horizontally inside the box
+        const relativeX = (PADDING_BOX / 2) + index * (NODE_WIDTH + GAP_X);
+        const relativeY = TITLE_PADDING;
         
         nodes.push({
           id: code,
           type: 'courseNode',
           parentId: sem,
           extent: 'parent',
+          position: { x: relativeX, y: relativeY },
           data: { code, label: code }
         });
       });
-    });
 
-    // Add edges to Dagre for calculation
-    Object.values(deptData.departments || {}).forEach(dept => {
-      // Collect all prerequisites from the study plan to feed into Dagre
-      // This helps Dagre know the connections so it can minimize line crossings
-    });
-    // Wait, initialEdges aren't computed until FlowCanvas!
-    // Dagre needs edges to minimize crossings.
-    // Let's compute edges here as well.
-    const allCourses = new Map();
-    const addAll = (arr) => arr?.forEach(c => allCourses.set(c.code, c));
-    addAll(deptData.general_requirements?.mandatory);
-    addAll(deptData.general_requirements?.elective);
-    if(deptData.general_requirements?.university_requirement) allCourses.set(deptData.general_requirements.university_requirement.code, deptData.general_requirements.university_requirement);
-    addAll(deptData.faculty_requirements?.mandatory);
-    addAll(deptData.faculty_requirements?.elective);
-    Object.values(deptData.departments || {}).forEach(d => {
-      addAll(d.mandatory);
-      addAll(d.elective);
-    });
-
-    // We will rely on FlowCanvas to draw the visual edges, but we must feed them to Dagre here!
-    nodes.forEach(node => {
-      if (node.type === 'courseNode') {
-        const course = allCourses.get(node.id);
-        if (course && course.prereq) {
-          course.prereq.forEach(p => {
-            if (nodes.some(n => n.id === p)) {
-              g.setEdge(p, node.id, { weight: 1 });
-            }
-          });
-        }
-      }
-    });
-
-    // Force semester groups to stack vertically bottom-to-top
-    // Dagre does not support edges between compound (group) nodes directly.
-    // Instead, we create an invisible dummy child node in each semester and link them!
-    semesters.forEach((sem, i) => {
-      const dummyId = `dummy_${sem}`;
-      g.setNode(dummyId, { width: 1, height: 1 });
-      g.setParent(dummyId, sem);
-      
-      if (i > 0) {
-        g.setEdge(`dummy_${semesters[i - 1]}`, dummyId, { weight: 1000 });
-      }
-    });
-
-    // Run the algorithmic layout
-    dagre.layout(g);
-
-    // Apply the mathematically perfect coordinates to the nodes
-    nodes.forEach((node) => {
-      const nodeWithPosition = g.node(node.id);
-      node.targetPosition = 'bottom';
-      node.sourcePosition = 'top';
-      
-      if (node.type === 'semesterGroup') {
-        const groupWidth = nodeWithPosition.width + 40;
-        node.style = { 
-          width: groupWidth, 
-          height: nodeWithPosition.height + 80 // extra room for title
-        };
-        // FORCE the group to perfectly center itself along the vertical axis (X=0)
-        node.position = {
-          x: -groupWidth / 2,
-          y: nodeWithPosition.y - nodeWithPosition.height / 2 - 50 // Shift up for title
-        };
-      } else {
-        const parentPosition = g.node(node.parentId);
-        if (parentPosition) {
-          node.position = {
-            x: nodeWithPosition.x - parentPosition.x + parentPosition.width / 2 - nodeWithPosition.width / 2 + 20,
-            y: nodeWithPosition.y - parentPosition.y + parentPosition.height / 2 - nodeWithPosition.height / 2 + 50
-          };
-        }
-      }
+      currentY -= (groupHeight + GAP_Y);
     });
 
     return { initialNodes: nodes, initialEdges: edges };
@@ -176,7 +118,7 @@ export default function FlowPage() {
 import { useState, useEffect } from 'react';
 
 function FlowCanvas({ initialNodes, initialEdges }) {
-  const { data, completedCourses, resetCourses } = useFlow();
+  const { data, deptData, completedCourses, resetCourses } = useFlow();
   const router = useRouter();
   
   const [nodes, setNodes] = useState([]);
@@ -186,15 +128,8 @@ function FlowCanvas({ initialNodes, initialEdges }) {
   useEffect(() => {
     // We need to inject the full course data and status into the nodes
     const allCourses = new Map();
-    const addAll = (arr) => arr.forEach(c => allCourses.set(c.code, c));
-    addAll(data.general_requirements.mandatory);
-    addAll(data.general_requirements.elective);
-    if(data.general_requirements.university_requirement) allCourses.set(data.general_requirements.university_requirement.code, data.general_requirements.university_requirement);
-    addAll(data.faculty_requirements.mandatory);
-    addAll(data.faculty_requirements.elective);
-    Object.values(data.departments).forEach(d => {
-      addAll(d.mandatory);
-      addAll(d.elective);
+    Object.values(deptData.semesters || {}).forEach(courseList => {
+      courseList.forEach(c => allCourses.set(c.code, c));
     });
 
     const isPrereqFor = new Set();

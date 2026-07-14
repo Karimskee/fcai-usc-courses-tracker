@@ -4,1159 +4,2282 @@
     "faculty_name_ar": "كلية الحاسبات والذكاء الاصطناعي - جامعة مدينة السادات",
     "faculty_name_en": "Faculty of Computers and Artificial Intelligence - Sadat City University",
     "total_hours_required": 145,
-    "departments": ["CS", "IS", "AI", "BI"],
+    "departments": [
+      "CS",
+      "IS",
+      "AI",
+      "BI"
+    ],
     "source": "FCAI USC Regulations PDF"
-  },
-  "general_requirements": {
-    "label_en": "General Requirements",
-    "label_ar": "المتطلبات العامة",
-    "total_hours": 12,
-    "mandatory_hours": 6,
-    "elective_hours": 6,
-    "mandatory": [
-      {
-        "code": "GN101",
-        "name_en": "Scientific & Technical Report Writing",
-        "name_ar": "صياغة التقارير العلمية والفنية",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "GN102",
-        "name_en": "Fundamentals of Management",
-        "name_ar": "مبادئ ادارة",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      }
-    ],
-    "elective": [
-      {
-        "code": "GN103",
-        "name_en": "Fundamentals of Economics",
-        "name_ar": "مبادئ الاقتصاد",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "GN104",
-        "name_en": "Professional Ethics",
-        "name_ar": "أخلاقيات المهنة",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "GN105",
-        "name_en": "Fundamentals of Accounting",
-        "name_ar": "مبادئ المحاسبة",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "GN106",
-        "name_en": "Introduction to Law",
-        "name_ar": "مقدمة في القانون",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      }
-    ],
-    "university_requirement": {
-      "code": "HM101",
-      "name_en": "Human Rights",
-      "name_ar": "حقوق الإنسان",
-      "hours": 0,
-      "prereq": [],
-      "note": "University requirement, does not count towards graduation hours",
-      "expected_doctors": []
-    }
-  },
-  "faculty_requirements": {
-    "label_en": "Faculty Requirements",
-    "label_ar": "متطلبات الكلية",
-    "total_hours": 72,
-    "mandatory_hours": 66,
-    "elective_hours": 6,
-    "mandatory": [
-      {
-        "code": "MA101",
-        "name_en": "Mathematics-1",
-        "name_ar": "رياضيات-1",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "MA102",
-        "name_en": "Discrete Mathematics",
-        "name_ar": "تراكيب محددة",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "MA103",
-        "name_en": "Mathematics-2",
-        "name_ar": "رياضيات-2",
-        "hours": 3,
-        "prereq": ["MA101"],
-        "expected_doctors": []
-      },
-      {
-        "code": "MA201",
-        "name_en": "Mathematics-3",
-        "name_ar": "رياضيات-3",
-        "hours": 3,
-        "prereq": ["MA103"],
-        "expected_doctors": []
-      },
-      {
-        "code": "ST201",
-        "name_en": "Statistics & Probabilities",
-        "name_ar": "إحصاء واحتمالات",
-        "hours": 3,
-        "prereq": ["MA101"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS101",
-        "name_en": "Fundamentals of Programming",
-        "name_ar": "مبادئ برمجة",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS102",
-        "name_en": "Computer Introduction",
-        "name_ar": "مقدمة في الحاسبات",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS103",
-        "name_en": "Semiconductors",
-        "name_ar": "أشباه الموصلات",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS104",
-        "name_en": "Logic Design-1",
-        "name_ar": "تصميم منطقي",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS101",
-        "name_en": "Introduction to IS",
-        "name_ar": "مقدمة نظم المعلومات",
-        "hours": 3,
-        "prereq": [],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS201",
-        "name_en": "Computer Programming-1",
-        "name_ar": "برمجة حاسبات-1",
-        "hours": 3,
-        "prereq": ["CS101"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS202",
-        "name_en": "Computer Architecture & Organization",
-        "name_ar": "معمارية وتنظيم الحاسب",
-        "hours": 3,
-        "prereq": ["CS103", "CS104"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS203",
-        "name_en": "Computer Programming-2",
-        "name_ar": "برمجة حاسبات-2",
-        "hours": 3,
-        "prereq": ["CS201"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS204",
-        "name_en": "Data Structure",
-        "name_ar": "هياكل البيانات",
-        "hours": 3,
-        "prereq": ["CS201"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS205",
-        "name_en": "Operating Systems-1",
-        "name_ar": "نظم تشغيل-1",
-        "hours": 3,
-        "prereq": ["CS201"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS206",
-        "name_en": "Web Design and Development",
-        "name_ar": "تصميم وتطوير الويب",
-        "hours": 3,
-        "prereq": ["CS101"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS207",
-        "name_en": "Microprocessors and Assembly Language",
-        "name_ar": "المعالجات الدقيقة ولغة التجميع",
-        "hours": 3,
-        "prereq": ["CS202"],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS201",
-        "name_en": "Multimedia",
-        "name_ar": "وسائط متعددة",
-        "hours": 3,
-        "prereq": ["CS101"],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS202",
-        "name_en": "Systems Analysis & Design-1",
-        "name_ar": "تحليل وتصميم نظم-1",
-        "hours": 3,
-        "prereq": ["IS101"],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS203",
-        "name_en": "Computer Networks",
-        "name_ar": "شبكات الحاسبات",
-        "hours": 3,
-        "prereq": ["CS102"],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS205",
-        "name_en": "Introduction to Operation Research & Decision Support",
-        "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
-        "hours": 3,
-        "prereq": ["MA101"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS301",
-        "name_en": "Software Engineering-1",
-        "name_ar": "هندسة البرمجيات-1",
-        "hours": 3,
-        "prereq": ["CS203", "IS202"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS302",
-        "name_en": "Analysis and Design of Algorithms",
-        "name_ar": "تحليل وتصميم الخوارزميات",
-        "hours": 3,
-        "prereq": ["CS204", "MA201"],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS301",
-        "name_en": "Database Systems-1",
-        "name_ar": "نظم قواعد البيانات-1",
-        "hours": 3,
-        "prereq": ["CS203"],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS302",
-        "name_en": "Modeling & Simulation",
-        "name_ar": "النمذجة والمحاكاة",
-        "hours": 3,
-        "prereq": ["ST201", "CS201"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS305",
-        "name_en": "Artificial Intelligence",
-        "name_ar": "الذكاء الاصطناعي",
-        "hours": 3,
-        "prereq": ["CS204"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS306",
-        "name_en": "Introduction in Artificial Intelligence",
-        "name_ar": "مقدمة في الذكاء الاصطناعي",
-        "hours": 3,
-        "prereq": ["CS204"],
-        "expected_doctors": []
-      }
-    ],
-    "elective": [
-      {
-        "code": "CS304",
-        "name_en": "E-commerce",
-        "name_ar": "الأعمال الإلكترونية",
-        "hours": 3,
-        "prereq": ["IS203"],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS304",
-        "name_en": "E-Business",
-        "name_ar": "الأعمال الإلكترونية",
-        "hours": 3,
-        "prereq": ["IS203"],
-        "expected_doctors": []
-      },
-      {
-        "code": "IS303",
-        "name_en": "Management Information Systems",
-        "name_ar": "نظم المعلومات الإدارية",
-        "hours": 3,
-        "prereq": ["IS101"],
-        "expected_doctors": []
-      },
-      {
-        "code": "CS303",
-        "name_en": "Numerical Methods",
-        "name_ar": "الطرق العددية",
-        "hours": 3,
-        "prereq": ["MA201", "CS201"],
-        "expected_doctors": []
-      }
-    ]
   },
   "departments": {
     "CS": {
       "name_en": "Computer Science",
       "name_ar": "علوم الحاسب",
-      "mandatory_hours": 42,
-      "elective_hours": 15,
-      "mandatory": [
-        {
-          "code": "CS307",
-          "name_en": "Software Engineering-2",
-          "name_ar": "هندسة البرمجيات-2",
-          "hours": 3,
-          "prereq": ["CS301"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS308",
-          "name_en": "Operating Systems-2",
-          "name_ar": "نظم تشغيل-2",
-          "hours": 3,
-          "prereq": ["CS205"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS309",
-          "name_en": "Computer Programming-3",
-          "name_ar": "برمجة حاسبات-3",
-          "hours": 3,
-          "prereq": ["CS203"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS310",
-          "name_en": "Machine Learning",
-          "name_ar": "تعلم الآلة",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS311",
-          "name_en": "Formal Languages and Automata Theory",
-          "name_ar": "اللغات الشكلية ونظرية الآليات",
-          "hours": 3,
-          "prereq": ["CS203"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS312",
-          "name_en": "Internet Computing",
-          "name_ar": "حسابات الإنترنت",
-          "hours": 3,
-          "prereq": ["CS203"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS313",
-          "name_en": "Advanced Computer Programming",
-          "name_ar": "برمجة حاسبات متقدمة",
-          "hours": 3,
-          "prereq": ["CS309"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS305",
-          "name_en": "Database Systems-2",
-          "name_ar": "نظم قواعد البيانات-2",
-          "hours": 3,
-          "prereq": ["IS301"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS401",
-          "name_en": "Knowledge Based Systems",
-          "name_ar": "نظم قواعد المعرفة",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS402",
-          "name_en": "Distributed Systems",
-          "name_ar": "النظم الموزعة",
-          "hours": 3,
-          "prereq": ["CS308"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS403",
-          "name_en": "Compiler Design",
-          "name_ar": "بناء المترجمات",
-          "hours": 3,
-          "prereq": ["CS311"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS405",
-          "name_en": "Parallel Programming",
-          "name_ar": "البرمجة المتوازية",
-          "hours": 3,
-          "prereq": ["CS308"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS406",
-          "name_en": "Computer Security",
-          "name_ar": "أمن الحاسب",
-          "hours": 3,
-          "prereq": ["IS203"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS408",
-          "name_en": "Project",
-          "name_ar": "المشروع",
-          "hours": 6,
-          "prereq": [],
-          "expected_doctors": []
-        }
-      ],
-      "elective": [
-        {
-          "code": "CS314",
-          "name_en": "Computer Arabization",
-          "name_ar": "تعريب الحاسبات",
-          "hours": 3,
-          "prereq": ["CS309"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS409",
-          "name_en": "Mobile Application Programming",
-          "name_ar": "برمجة تطبيقات المحمول",
-          "hours": 3,
-          "prereq": ["CS309"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS410",
-          "name_en": "Game Programming",
-          "name_ar": "برمجة الالعاب",
-          "hours": 3,
-          "prereq": ["CS309"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS411",
-          "name_en": "Embedded Systems",
-          "name_ar": "الانظمة المدمجة",
-          "hours": 3,
-          "prereq": ["CS308"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS412",
-          "name_en": "Robotics",
-          "name_ar": "الكائنات الآلية",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS405",
-          "name_en": "Cloud Computing",
-          "name_ar": "حوسبة سحابية",
-          "hours": 3,
-          "prereq": ["CS205"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI405",
-          "name_en": "Bioinformatics",
-          "name_ar": "المعلوماتية الحيوية",
-          "hours": 3,
-          "prereq": ["CS302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS208",
-          "name_en": "Selected Topics in CS",
-          "name_ar": "موضوعات مختارة",
-          "hours": 3,
-          "prereq": [],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS407",
-          "name_en": "Human Computer Interaction",
-          "name_ar": "اتصال الإنسان بالحاسب",
-          "hours": 3,
-          "prereq": ["CS301"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS404",
-          "name_en": "Natural Language Processing",
-          "name_ar": "معالجة اللغات الطبيعية",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        }
-      ],
-      "study_plan": {
-        "level_1_sem_1": ["HM101", "GN101", "GN102", "MA101", "MA102", "CS102", "CS103"],
-        "level_1_sem_2": ["CS104", "MA103", "IS101", "CS101", "GN103", "GN104"],
-        "level_2_sem_1": ["CS201", "CS202", "IS202", "IS203", "ST201", "CS207"],
-        "level_2_sem_2": ["IS201", "CS206", "CS203", "CS204", "CS205", "IS205"],
-        "level_3_sem_1": ["CS301", "CS302", "IS301", "CS309", "CS306"],
-        "level_3_sem_2": ["CS310", "CS307", "CS308", "IS302", "CS312", "CS313"],
-        "level_4_sem_1": ["CS305", "CS402", "CS403", "CS405", "CS406", "CS408"],
-        "level_4_sem_2": ["CS401", "CS407", "CS404", "IS405", "CS412", "CS408"]
+      "semesters": {
+        "level_1_sem_1": [
+          {
+            "code": "HM101",
+            "name_en": "Human Rights",
+            "name_ar": "حقوق الإنسان",
+            "hours": 0,
+            "prereq": [],
+            "note": "University requirement, does not count towards graduation hours",
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN101",
+            "name_en": "Scientific & Technical Report Writing",
+            "name_ar": "صياغة التقارير العلمية والفنية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN102",
+            "name_en": "Fundamentals of Management",
+            "name_ar": "مبادئ ادارة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA101",
+            "name_en": "Mathematics-1",
+            "name_ar": "رياضيات-1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA102",
+            "name_en": "Discrete Mathematics",
+            "name_ar": "تراكيب محددة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS102",
+            "name_en": "Computer Introduction",
+            "name_ar": "مقدمة في الحاسبات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS103",
+            "name_en": "Semiconductors",
+            "name_ar": "أشباه الموصلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_1_sem_2": [
+          {
+            "code": "CS104",
+            "name_en": "Logic Design-1",
+            "name_ar": "تصميم منطقي",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA103",
+            "name_en": "Mathematics-2",
+            "name_ar": "رياضيات-2",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS101",
+            "name_en": "Introduction to IS",
+            "name_ar": "مقدمة نظم المعلومات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS101",
+            "name_en": "Fundamentals of Programming",
+            "name_ar": "مبادئ برمجة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN103",
+            "name_en": "Fundamentals of Economics",
+            "name_ar": "مبادئ الاقتصاد",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN104",
+            "name_en": "Professional Ethics",
+            "name_ar": "أخلاقيات المهنة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          }
+        ],
+        "level_2_sem_1": [
+          {
+            "code": "CS201",
+            "name_en": "Computer Programming-1",
+            "name_ar": "برمجة حاسبات-1",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS202",
+            "name_en": "Computer Architecture & Organization",
+            "name_ar": "معمارية وتنظيم الحاسب",
+            "hours": 3,
+            "prereq": [
+              "CS103",
+              "CS104"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS202",
+            "name_en": "Systems Analysis & Design-1",
+            "name_ar": "تحليل وتصميم نظم-1",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS203",
+            "name_en": "Computer Networks",
+            "name_ar": "شبكات الحاسبات",
+            "hours": 3,
+            "prereq": [
+              "CS102"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "ST201",
+            "name_en": "Statistics & Probabilities",
+            "name_ar": "إحصاء واحتمالات",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS207",
+            "name_en": "Microprocessors and Assembly Language",
+            "name_ar": "المعالجات الدقيقة ولغة التجميع",
+            "hours": 3,
+            "prereq": [
+              "CS202"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_2_sem_2": [
+          {
+            "code": "IS201",
+            "name_en": "Multimedia",
+            "name_ar": "وسائط متعددة",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS206",
+            "name_en": "Web Design and Development",
+            "name_ar": "تصميم وتطوير الويب",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS203",
+            "name_en": "Computer Programming-2",
+            "name_ar": "برمجة حاسبات-2",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS204",
+            "name_en": "Data Structure",
+            "name_ar": "هياكل البيانات",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS205",
+            "name_en": "Operating Systems-1",
+            "name_ar": "نظم تشغيل-1",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS205",
+            "name_en": "Introduction to Operation Research & Decision Support",
+            "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_1": [
+          {
+            "code": "CS301",
+            "name_en": "Software Engineering-1",
+            "name_ar": "هندسة البرمجيات-1",
+            "hours": 3,
+            "prereq": [
+              "CS203",
+              "IS202"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS302",
+            "name_en": "Analysis and Design of Algorithms",
+            "name_ar": "تحليل وتصميم الخوارزميات",
+            "hours": 3,
+            "prereq": [
+              "CS204",
+              "MA201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS301",
+            "name_en": "Database Systems-1",
+            "name_ar": "نظم قواعد البيانات-1",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS309",
+            "name_en": "Computer Programming-3",
+            "name_ar": "برمجة حاسبات-3",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS306",
+            "name_en": "Introduction in Artificial Intelligence",
+            "name_ar": "مقدمة في الذكاء الاصطناعي",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_2": [
+          {
+            "code": "CS310",
+            "name_en": "Machine Learning",
+            "name_ar": "تعلم الآلة",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS307",
+            "name_en": "Software Engineering-2",
+            "name_ar": "هندسة البرمجيات-2",
+            "hours": 3,
+            "prereq": [
+              "CS301"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS308",
+            "name_en": "Operating Systems-2",
+            "name_ar": "نظم تشغيل-2",
+            "hours": 3,
+            "prereq": [
+              "CS205"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS302",
+            "name_en": "Modeling & Simulation",
+            "name_ar": "النمذجة والمحاكاة",
+            "hours": 3,
+            "prereq": [
+              "ST201",
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS312",
+            "name_en": "Internet Computing",
+            "name_ar": "حسابات الإنترنت",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS313",
+            "name_en": "Advanced Computer Programming",
+            "name_ar": "برمجة حاسبات متقدمة",
+            "hours": 3,
+            "prereq": [
+              "CS309"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_1": [
+          {
+            "code": "CS305",
+            "name_en": "Artificial Intelligence",
+            "name_ar": "الذكاء الاصطناعي",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS402",
+            "name_en": "Distributed Systems",
+            "name_ar": "النظم الموزعة",
+            "hours": 3,
+            "prereq": [
+              "CS308"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS403",
+            "name_en": "Compiler Design",
+            "name_ar": "بناء المترجمات",
+            "hours": 3,
+            "prereq": [
+              "CS311"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS405",
+            "name_en": "Parallel Programming",
+            "name_ar": "البرمجة المتوازية",
+            "hours": 3,
+            "prereq": [
+              "CS308"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS406",
+            "name_en": "Computer Security",
+            "name_ar": "أمن الحاسب",
+            "hours": 3,
+            "prereq": [
+              "IS203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS408",
+            "name_en": "Project",
+            "name_ar": "المشروع",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_2": [
+          {
+            "code": "CS401",
+            "name_en": "Knowledge Based Systems",
+            "name_ar": "نظم قواعد المعرفة",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS407",
+            "name_en": "Human Computer Interaction",
+            "name_ar": "اتصال الإنسان بالحاسب",
+            "hours": 3,
+            "prereq": [
+              "CS301"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "CS404",
+            "name_en": "Natural Language Processing",
+            "name_ar": "معالجة اللغات الطبيعية",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "IS405",
+            "name_en": "Cloud Computing",
+            "name_ar": "حوسبة سحابية",
+            "hours": 3,
+            "prereq": [
+              "CS205"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "CS412",
+            "name_en": "Robotics",
+            "name_ar": "الكائنات الآلية",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "CS408",
+            "name_en": "Project",
+            "name_ar": "المشروع",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ]
       }
     },
     "IS": {
       "name_en": "Information Systems",
       "name_ar": "نظم المعلومات",
-      "mandatory_hours": 42,
-      "elective_hours": 15,
-      "mandatory": [
-        {
-          "code": "IS305",
-          "name_en": "Database Systems-2",
-          "name_ar": "نظم قواعد البيانات-2",
-          "hours": 3,
-          "prereq": ["IS301"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS306",
-          "name_en": "Systems Analysis and Design-2",
-          "name_ar": "تحليل وتصميم نظم-2",
-          "hours": 3,
-          "prereq": ["IS202"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS401",
-          "name_en": "Business Intelligence",
-          "name_ar": "ذكاء الأعمال",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS307",
-          "name_en": "Information Storage & Retrieval",
-          "name_ar": "تخزين واسترجاع المعلومات",
-          "hours": 3,
-          "prereq": ["IS301"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS308",
-          "name_en": "Information Security",
-          "name_ar": "أمن المعلومات",
-          "hours": 3,
-          "prereq": ["MA103"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS402",
-          "name_en": "Modern Database Systems",
-          "name_ar": "نظم قواعد بيانات حديثة",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS403",
-          "name_en": "Data Mining",
-          "name_ar": "تنقيب البيانات",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS404",
-          "name_en": "Distributed Data Management",
-          "name_ar": "إدارة البيانات الموزعة",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS405",
-          "name_en": "Cloud Computing",
-          "name_ar": "حوسبة سحابية",
-          "hours": 3,
-          "prereq": ["CS205"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS309",
-          "name_en": "Enterprise Architecture",
-          "name_ar": "بنية الشركات",
-          "hours": 3,
-          "prereq": ["IS101"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS406",
-          "name_en": "Geographic IS",
-          "name_ar": "نظم المعلومات الجغرافية",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS407",
-          "name_en": "Big Data Analytics",
-          "name_ar": "تحليل البيانات الضخمة",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS408",
-          "name_en": "Project",
-          "name_ar": "مشروع",
-          "hours": 6,
-          "prereq": [],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS311",
-          "name_en": "IS Project Management",
-          "name_ar": "إدارة مشروعات نظم المعلومات",
-          "hours": 3,
-          "prereq": [],
-          "expected_doctors": []
-        }
-      ],
-      "elective": [
-        {
-          "code": "IS207",
-          "name_en": "IS Strategy, Management & Acquisition",
-          "name_ar": "إستراتيجيات وإدارة وإكتساب نظم المعلومات",
-          "hours": 3,
-          "prereq": ["IS101"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS208",
-          "name_en": "Web Information Systems",
-          "name_ar": "نظم معلومات الويب",
-          "hours": 3,
-          "prereq": ["CS206"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS409",
-          "name_en": "Intelligent IS",
-          "name_ar": "نظم المعلومات الذكية",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS310",
-          "name_en": "Multimedia IS & Digital Libraries",
-          "name_ar": "نظم معلومات الوسائط المتعددة والمكتبات الرقمية",
-          "hours": 3,
-          "prereq": ["IS201"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS410",
-          "name_en": "Business Process Management",
-          "name_ar": "إدارة العمليات التجارية",
-          "hours": 3,
-          "prereq": ["IS304"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS411",
-          "name_en": "Knowledge Management",
-          "name_ar": "إدارة المعرفة",
-          "hours": 3,
-          "prereq": ["IS403"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS412",
-          "name_en": "Social Informatics",
-          "name_ar": "المعلوماتية المجتمعية",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI405",
-          "name_en": "Bioinformatics",
-          "name_ar": "المعلوماتية الحيوية",
-          "hours": 3,
-          "prereq": ["CS302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS413",
-          "name_en": "IS Innovation and New Technologies",
-          "name_ar": "نظم معلومات مبتكرة وتكنولوجيا جديدة",
-          "hours": 3,
-          "prereq": ["IS403"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS209",
-          "name_en": "Selected Topics in IS",
-          "name_ar": "موضوعات مختارة",
-          "hours": 3,
-          "prereq": [],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS413",
-          "name_en": "Data Science",
-          "name_ar": "علوم البيانات",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        }
-      ],
-      "study_plan": {
-        "level_1_sem_1": ["HM101", "GN101", "GN102", "MA101", "MA102", "CS102", "CS103"],
-        "level_1_sem_2": ["CS104", "MA103", "IS101", "CS101", "GN103", "GN104"],
-        "level_2_sem_1": ["CS201", "CS202", "IS202", "IS203", "ST201", "IS207"],
-        "level_2_sem_2": ["IS201", "CS206", "CS203", "CS204", "CS205", "IS205"],
-        "level_3_sem_1": ["CS301", "CS302", "IS301", "IS302", "IS306"],
-        "level_3_sem_2": ["IS305", "IS307", "IS309", "CS305", "IS311", "IS310"],
-        "level_4_sem_1": ["IS401", "IS402", "IS403", "IS404", "IS405", "IS408"],
-        "level_4_sem_2": ["IS406", "IS407", "IS412", "IS409", "IS408"]
+      "semesters": {
+        "level_1_sem_1": [
+          {
+            "code": "HM101",
+            "name_en": "Human Rights",
+            "name_ar": "حقوق الإنسان",
+            "hours": 0,
+            "prereq": [],
+            "note": "University requirement, does not count towards graduation hours",
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN101",
+            "name_en": "Scientific & Technical Report Writing",
+            "name_ar": "صياغة التقارير العلمية والفنية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN102",
+            "name_en": "Fundamentals of Management",
+            "name_ar": "مبادئ ادارة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA101",
+            "name_en": "Mathematics-1",
+            "name_ar": "رياضيات-1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA102",
+            "name_en": "Discrete Mathematics",
+            "name_ar": "تراكيب محددة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS102",
+            "name_en": "Computer Introduction",
+            "name_ar": "مقدمة في الحاسبات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS103",
+            "name_en": "Semiconductors",
+            "name_ar": "أشباه الموصلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_1_sem_2": [
+          {
+            "code": "CS104",
+            "name_en": "Logic Design-1",
+            "name_ar": "تصميم منطقي",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA103",
+            "name_en": "Mathematics-2",
+            "name_ar": "رياضيات-2",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS101",
+            "name_en": "Introduction to IS",
+            "name_ar": "مقدمة نظم المعلومات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS101",
+            "name_en": "Fundamentals of Programming",
+            "name_ar": "مبادئ برمجة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN103",
+            "name_en": "Fundamentals of Economics",
+            "name_ar": "مبادئ الاقتصاد",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN104",
+            "name_en": "Professional Ethics",
+            "name_ar": "أخلاقيات المهنة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          }
+        ],
+        "level_2_sem_1": [
+          {
+            "code": "CS201",
+            "name_en": "Computer Programming-1",
+            "name_ar": "برمجة حاسبات-1",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS202",
+            "name_en": "Computer Architecture & Organization",
+            "name_ar": "معمارية وتنظيم الحاسب",
+            "hours": 3,
+            "prereq": [
+              "CS103",
+              "CS104"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS202",
+            "name_en": "Systems Analysis & Design-1",
+            "name_ar": "تحليل وتصميم نظم-1",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS203",
+            "name_en": "Computer Networks",
+            "name_ar": "شبكات الحاسبات",
+            "hours": 3,
+            "prereq": [
+              "CS102"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "ST201",
+            "name_en": "Statistics & Probabilities",
+            "name_ar": "إحصاء واحتمالات",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS207",
+            "name_en": "IS Strategy, Management & Acquisition",
+            "name_ar": "إستراتيجيات وإدارة وإكتساب نظم المعلومات",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          }
+        ],
+        "level_2_sem_2": [
+          {
+            "code": "IS201",
+            "name_en": "Multimedia",
+            "name_ar": "وسائط متعددة",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS206",
+            "name_en": "Web Design and Development",
+            "name_ar": "تصميم وتطوير الويب",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS203",
+            "name_en": "Computer Programming-2",
+            "name_ar": "برمجة حاسبات-2",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS204",
+            "name_en": "Data Structure",
+            "name_ar": "هياكل البيانات",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS205",
+            "name_en": "Operating Systems-1",
+            "name_ar": "نظم تشغيل-1",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS205",
+            "name_en": "Introduction to Operation Research & Decision Support",
+            "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_1": [
+          {
+            "code": "CS301",
+            "name_en": "Software Engineering-1",
+            "name_ar": "هندسة البرمجيات-1",
+            "hours": 3,
+            "prereq": [
+              "CS203",
+              "IS202"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS302",
+            "name_en": "Analysis and Design of Algorithms",
+            "name_ar": "تحليل وتصميم الخوارزميات",
+            "hours": 3,
+            "prereq": [
+              "CS204",
+              "MA201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS301",
+            "name_en": "Database Systems-1",
+            "name_ar": "نظم قواعد البيانات-1",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS302",
+            "name_en": "Modeling & Simulation",
+            "name_ar": "النمذجة والمحاكاة",
+            "hours": 3,
+            "prereq": [
+              "ST201",
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS306",
+            "name_en": "Systems Analysis and Design-2",
+            "name_ar": "تحليل وتصميم نظم-2",
+            "hours": 3,
+            "prereq": [
+              "IS202"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_2": [
+          {
+            "code": "IS305",
+            "name_en": "Database Systems-2",
+            "name_ar": "نظم قواعد البيانات-2",
+            "hours": 3,
+            "prereq": [
+              "IS301"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS307",
+            "name_en": "Information Storage & Retrieval",
+            "name_ar": "تخزين واسترجاع المعلومات",
+            "hours": 3,
+            "prereq": [
+              "IS301"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS309",
+            "name_en": "Enterprise Architecture",
+            "name_ar": "بنية الشركات",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS305",
+            "name_en": "Artificial Intelligence",
+            "name_ar": "الذكاء الاصطناعي",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS311",
+            "name_en": "IS Project Management",
+            "name_ar": "إدارة مشروعات نظم المعلومات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS310",
+            "name_en": "Multimedia IS & Digital Libraries",
+            "name_ar": "نظم معلومات الوسائط المتعددة والمكتبات الرقمية",
+            "hours": 3,
+            "prereq": [
+              "IS201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          }
+        ],
+        "level_4_sem_1": [
+          {
+            "code": "IS401",
+            "name_en": "Business Intelligence",
+            "name_ar": "ذكاء الأعمال",
+            "hours": 3,
+            "prereq": [
+              "IS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS402",
+            "name_en": "Modern Database Systems",
+            "name_ar": "نظم قواعد بيانات حديثة",
+            "hours": 3,
+            "prereq": [
+              "IS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS403",
+            "name_en": "Data Mining",
+            "name_ar": "تنقيب البيانات",
+            "hours": 3,
+            "prereq": [
+              "IS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS404",
+            "name_en": "Distributed Data Management",
+            "name_ar": "إدارة البيانات الموزعة",
+            "hours": 3,
+            "prereq": [
+              "IS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS405",
+            "name_en": "Cloud Computing",
+            "name_ar": "حوسبة سحابية",
+            "hours": 3,
+            "prereq": [
+              "CS205"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS408",
+            "name_en": "Project",
+            "name_ar": "مشروع",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_2": [
+          {
+            "code": "IS406",
+            "name_en": "Geographic IS",
+            "name_ar": "نظم المعلومات الجغرافية",
+            "hours": 3,
+            "prereq": [
+              "IS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS407",
+            "name_en": "Big Data Analytics",
+            "name_ar": "تحليل البيانات الضخمة",
+            "hours": 3,
+            "prereq": [
+              "IS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS412",
+            "name_en": "Social Informatics",
+            "name_ar": "المعلوماتية المجتمعية",
+            "hours": 3,
+            "prereq": [
+              "IS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "IS409",
+            "name_en": "Intelligent IS",
+            "name_ar": "نظم المعلومات الذكية",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "IS408",
+            "name_en": "Project",
+            "name_ar": "مشروع",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ]
       }
     },
     "AI": {
       "name_en": "Artificial Intelligence",
       "name_ar": "الذكاء الاصطناعي",
-      "mandatory_hours": 42,
-      "elective_hours": 15,
-      "mandatory": [
-        {
-          "code": "AI301",
-          "name_en": "Web and Network Programming",
-          "name_ar": "برمجة الشبكات والانترنت",
-          "hours": 3,
-          "prereq": ["CS204"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI302",
-          "name_en": "Software Project Management",
-          "name_ar": "إدارة مشروعات البرمجيات",
-          "hours": 3,
-          "prereq": ["IS205"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI303",
-          "name_en": "Web & Social Media Analytics",
-          "name_ar": "تحليلات الويب والوسائط الاجتماعية",
-          "hours": 3,
-          "prereq": ["CS304"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS310",
-          "name_en": "Machine Learning",
-          "name_ar": "تعلم الآلة",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI304",
-          "name_en": "Computational Intelligence",
-          "name_ar": "الذكاء الحسابي",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI305",
-          "name_en": "Advanced Artificial Intelligence",
-          "name_ar": "الذكاء الاصطناعي متقدم",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI401",
-          "name_en": "High Performance Computing",
-          "name_ar": "الحوسبة فائقة الأداء",
-          "hours": 3,
-          "prereq": ["CS205"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI402",
-          "name_en": "Distributed and Concurrent Algorithms",
-          "name_ar": "الخوارزميات الموزعة والمتزامنة",
-          "hours": 3,
-          "prereq": ["CS302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS404",
-          "name_en": "Natural Language Processing",
-          "name_ar": "معالجة اللغات الطبيعية",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI403",
-          "name_en": "Data Analytics Programming",
-          "name_ar": "برمجة تحليل البيانات",
-          "hours": 3,
-          "prereq": ["CS203"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS412",
-          "name_en": "Robotics",
-          "name_ar": "الكائنات الآلية",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI404",
-          "name_en": "Neural Networks and Learning Machines",
-          "name_ar": "الشبكات العصبية وآلات التعلم",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI405",
-          "name_en": "Project",
-          "name_ar": "المشروع",
-          "hours": 6,
-          "prereq": [],
-          "expected_doctors": []
-        }
-      ],
-      "elective": [
-        {
-          "code": "AI306",
-          "name_en": "Fuzzy Logic and Intelligent Systems",
-          "name_ar": "المنطق الضبابي والأنظمة الذكية",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS312",
-          "name_en": "Spatial Data Mining",
-          "name_ar": "تنقيب البيانات المكانية",
-          "hours": 3,
-          "prereq": ["CS307"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS313",
-          "name_en": "Data Mining and Predictive Analytics",
-          "name_ar": "تنقيب البيانات والتحليلات التنبؤية",
-          "hours": 3,
-          "prereq": ["IS301"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI307",
-          "name_en": "Intelligent Agents",
-          "name_ar": "عملاء أذكياء",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS209",
-          "name_en": "Data Visualization and Dashboards",
-          "name_ar": "عرض مرئي للبيانات",
-          "hours": 3,
-          "prereq": [],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI406",
-          "name_en": "Intelligent Signal Processing",
-          "name_ar": "معالجة الإشارات الذكية",
-          "hours": 3,
-          "prereq": ["IS203"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI407",
-          "name_en": "Game Development",
-          "name_ar": "تطوير الألعاب",
-          "hours": 3,
-          "prereq": ["CS204"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI408",
-          "name_en": "Selected Topics in Artificial Intelligence",
-          "name_ar": "موضوعات مختارة في الذكاء الاصطناعي",
-          "hours": 3,
-          "prereq": [],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS407",
-          "name_en": "Big Data Analytics",
-          "name_ar": "تحليل البيانات الضخمة",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        }
-      ],
-      "study_plan": {
-        "level_1_sem_1": ["HM101", "GN101", "GN102", "MA101", "MA102", "CS102", "CS103"],
-        "level_1_sem_2": ["CS104", "MA103", "IS101", "CS101", "GN103", "GN104"],
-        "level_2_sem_1": ["CS201", "CS202", "IS202", "IS203", "ST201", "IS205"],
-        "level_2_sem_2": ["IS201", "CS206", "CS203", "CS204", "CS205", "CS209"],
-        "level_3_sem_1": ["CS301", "CS302", "IS301", "IS302", "CS305"],
-        "level_3_sem_2": ["AI302", "IS313", "CS310", "AI304", "AI305", "AI307"],
-        "level_4_sem_1": ["AI402", "CS404", "AI403", "CS412", "AI404", "AI405"],
-        "level_4_sem_2": ["AI401", "AI406", "AI407", "AI408", "AI405"]
+      "semesters": {
+        "level_1_sem_1": [
+          {
+            "code": "HM101",
+            "name_en": "Human Rights",
+            "name_ar": "حقوق الإنسان",
+            "hours": 0,
+            "prereq": [],
+            "note": "University requirement, does not count towards graduation hours",
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN101",
+            "name_en": "Scientific & Technical Report Writing",
+            "name_ar": "صياغة التقارير العلمية والفنية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN102",
+            "name_en": "Fundamentals of Management",
+            "name_ar": "مبادئ ادارة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA101",
+            "name_en": "Mathematics-1",
+            "name_ar": "رياضيات-1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA102",
+            "name_en": "Discrete Mathematics",
+            "name_ar": "تراكيب محددة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS102",
+            "name_en": "Computer Introduction",
+            "name_ar": "مقدمة في الحاسبات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS103",
+            "name_en": "Semiconductors",
+            "name_ar": "أشباه الموصلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_1_sem_2": [
+          {
+            "code": "CS104",
+            "name_en": "Logic Design-1",
+            "name_ar": "تصميم منطقي",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA103",
+            "name_en": "Mathematics-2",
+            "name_ar": "رياضيات-2",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS101",
+            "name_en": "Introduction to IS",
+            "name_ar": "مقدمة نظم المعلومات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS101",
+            "name_en": "Fundamentals of Programming",
+            "name_ar": "مبادئ برمجة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN103",
+            "name_en": "Fundamentals of Economics",
+            "name_ar": "مبادئ الاقتصاد",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN104",
+            "name_en": "Professional Ethics",
+            "name_ar": "أخلاقيات المهنة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          }
+        ],
+        "level_2_sem_1": [
+          {
+            "code": "CS201",
+            "name_en": "Computer Programming-1",
+            "name_ar": "برمجة حاسبات-1",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS202",
+            "name_en": "Computer Architecture & Organization",
+            "name_ar": "معمارية وتنظيم الحاسب",
+            "hours": 3,
+            "prereq": [
+              "CS103",
+              "CS104"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS202",
+            "name_en": "Systems Analysis & Design-1",
+            "name_ar": "تحليل وتصميم نظم-1",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS203",
+            "name_en": "Computer Networks",
+            "name_ar": "شبكات الحاسبات",
+            "hours": 3,
+            "prereq": [
+              "CS102"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "ST201",
+            "name_en": "Statistics & Probabilities",
+            "name_ar": "إحصاء واحتمالات",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS205",
+            "name_en": "Introduction to Operation Research & Decision Support",
+            "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_2_sem_2": [
+          {
+            "code": "IS201",
+            "name_en": "Multimedia",
+            "name_ar": "وسائط متعددة",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS206",
+            "name_en": "Web Design and Development",
+            "name_ar": "تصميم وتطوير الويب",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS203",
+            "name_en": "Computer Programming-2",
+            "name_ar": "برمجة حاسبات-2",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS204",
+            "name_en": "Data Structure",
+            "name_ar": "هياكل البيانات",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS205",
+            "name_en": "Operating Systems-1",
+            "name_ar": "نظم تشغيل-1",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS209",
+            "name_en": "Data Visualization and Dashboards",
+            "name_ar": "عرض مرئي للبيانات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          }
+        ],
+        "level_3_sem_1": [
+          {
+            "code": "CS301",
+            "name_en": "Software Engineering-1",
+            "name_ar": "هندسة البرمجيات-1",
+            "hours": 3,
+            "prereq": [
+              "CS203",
+              "IS202"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS302",
+            "name_en": "Analysis and Design of Algorithms",
+            "name_ar": "تحليل وتصميم الخوارزميات",
+            "hours": 3,
+            "prereq": [
+              "CS204",
+              "MA201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS301",
+            "name_en": "Database Systems-1",
+            "name_ar": "نظم قواعد البيانات-1",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS302",
+            "name_en": "Modeling & Simulation",
+            "name_ar": "النمذجة والمحاكاة",
+            "hours": 3,
+            "prereq": [
+              "ST201",
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS305",
+            "name_en": "Artificial Intelligence",
+            "name_ar": "الذكاء الاصطناعي",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_2": [
+          {
+            "code": "AI302",
+            "name_en": "Software Project Management",
+            "name_ar": "إدارة مشروعات البرمجيات",
+            "hours": 3,
+            "prereq": [
+              "IS205"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS313",
+            "name_en": "Data Mining and Predictive Analytics",
+            "name_ar": "تنقيب البيانات والتحليلات التنبؤية",
+            "hours": 3,
+            "prereq": [
+              "IS301"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "CS310",
+            "name_en": "Machine Learning",
+            "name_ar": "تعلم الآلة",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI304",
+            "name_en": "Computational Intelligence",
+            "name_ar": "الذكاء الحسابي",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI305",
+            "name_en": "Advanced Artificial Intelligence",
+            "name_ar": "الذكاء الاصطناعي متقدم",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI307",
+            "name_en": "Intelligent Agents",
+            "name_ar": "عملاء أذكياء",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          }
+        ],
+        "level_4_sem_1": [
+          {
+            "code": "AI402",
+            "name_en": "Distributed and Concurrent Algorithms",
+            "name_ar": "الخوارزميات الموزعة والمتزامنة",
+            "hours": 3,
+            "prereq": [
+              "CS302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS404",
+            "name_en": "Natural Language Processing",
+            "name_ar": "معالجة اللغات الطبيعية",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI403",
+            "name_en": "Data Analytics Programming",
+            "name_ar": "برمجة تحليل البيانات",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS412",
+            "name_en": "Robotics",
+            "name_ar": "الكائنات الآلية",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI404",
+            "name_en": "Neural Networks and Learning Machines",
+            "name_ar": "الشبكات العصبية وآلات التعلم",
+            "hours": 3,
+            "prereq": [
+              "CS305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI405",
+            "name_en": "Project",
+            "name_ar": "المشروع",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_2": [
+          {
+            "code": "AI401",
+            "name_en": "High Performance Computing",
+            "name_ar": "الحوسبة فائقة الأداء",
+            "hours": 3,
+            "prereq": [
+              "CS205"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI406",
+            "name_en": "Intelligent Signal Processing",
+            "name_ar": "معالجة الإشارات الذكية",
+            "hours": 3,
+            "prereq": [
+              "IS203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "AI407",
+            "name_en": "Game Development",
+            "name_ar": "تطوير الألعاب",
+            "hours": 3,
+            "prereq": [
+              "CS204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "AI408",
+            "name_en": "Selected Topics in Artificial Intelligence",
+            "name_ar": "موضوعات مختارة في الذكاء الاصطناعي",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "AI405",
+            "name_en": "Project",
+            "name_ar": "المشروع",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ]
       }
     },
     "BI": {
       "name_en": "Bioinformatics",
       "name_ar": "المعلوماتية الحيوية",
-      "mandatory_hours": 42,
-      "elective_hours": 15,
-      "mandatory": [
-        {
-          "code": "BI301",
-          "name_en": "Biology-1",
-          "name_ar": "علم الأحياء-1",
-          "hours": 3,
-          "prereq": [],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI302",
-          "name_en": "Biology-2",
-          "name_ar": "علم الأحياء-2",
-          "hours": 3,
-          "prereq": ["BI301"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI303",
-          "name_en": "Organic Chemistry",
-          "name_ar": "الكيمياء العضوية",
-          "hours": 3,
-          "prereq": [],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI304",
-          "name_en": "Biochemistry",
-          "name_ar": "الكيمياء الحيوية",
-          "hours": 3,
-          "prereq": ["BI303"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI401",
-          "name_en": "Molecular & Cell Biology",
-          "name_ar": "علم الأحياء الجزيئية والخلوية",
-          "hours": 3,
-          "prereq": ["BI302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI402",
-          "name_en": "Genetics",
-          "name_ar": "علم الوراثة",
-          "hours": 3,
-          "prereq": ["BI302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI305",
-          "name_en": "Genetic Algorithms",
-          "name_ar": "الخوارزميات الجينية",
-          "hours": 3,
-          "prereq": ["MA201"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI403",
-          "name_en": "Bio-computing",
-          "name_ar": "حسابات حيوية",
-          "hours": 3,
-          "prereq": ["BI302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI404",
-          "name_en": "Biological Sequence Analysis",
-          "name_ar": "تحليل السلسلة الحيوية",
-          "hours": 3,
-          "prereq": ["BI302", "CS302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI405",
-          "name_en": "Bioinformatics",
-          "name_ar": "المعلوماتية الحيوية",
-          "hours": 3,
-          "prereq": ["CS302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI406",
-          "name_en": "Computational Biology",
-          "name_ar": "الحوسبة الحيوية",
-          "hours": 3,
-          "prereq": ["BI302", "CS302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI407",
-          "name_en": "Structural Bioinformatics",
-          "name_ar": "المعلوماتية الحيوية الهيكلية",
-          "hours": 3,
-          "prereq": ["BI405"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI408",
-          "name_en": "Project",
-          "name_ar": "مشروع",
-          "hours": 6,
-          "prereq": [],
-          "expected_doctors": []
-        }
-      ],
-      "elective": [
-        {
-          "code": "BI306",
-          "name_en": "Biophysics",
-          "name_ar": "الفيزياء الحيوية",
-          "hours": 3,
-          "prereq": ["BI302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "CS310",
-          "name_en": "Machine Learning",
-          "name_ar": "تعلم الآلة",
-          "hours": 3,
-          "prereq": ["CS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI307",
-          "name_en": "Mathematical Biology",
-          "name_ar": "رياضة حيوية",
-          "hours": 3,
-          "prereq": ["BI301", "MA201"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI409",
-          "name_en": "Genomics and Proteomics",
-          "name_ar": "علم الجينات والبروتينات",
-          "hours": 3,
-          "prereq": ["BI405"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI308",
-          "name_en": "System Biology",
-          "name_ar": "نظم علم الأحياء",
-          "hours": 3,
-          "prereq": ["BI302"],
-          "expected_doctors": []
-        },
-        {
-          "code": "IS403",
-          "name_en": "Data Mining",
-          "name_ar": "تنقيب البيانات",
-          "hours": 3,
-          "prereq": ["IS305"],
-          "expected_doctors": []
-        },
-        {
-          "code": "AI404",
-          "name_en": "Neural Networks and Learning Machines",
-          "name_ar": "الشبكات العصبية وآلات التعلم",
-          "hours": 3,
-          "prereq": ["MA201"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI309",
-          "name_en": "Selected Topics in Computational Biology-1",
-          "name_ar": "موضوعات مختارة في الحوسبة الحيوية-1",
-          "hours": 3,
-          "prereq": ["BI301"],
-          "expected_doctors": []
-        },
-        {
-          "code": "BI310",
-          "name_en": "Selected Topics in Computational Biology-2",
-          "name_ar": "موضوعات مختارة في الحوسبة الحيوية-2",
-          "hours": 3,
-          "prereq": ["BI301"],
-          "expected_doctors": []
-        }
-      ],
-      "study_plan": {
-        "level_1_sem_1": ["HM101", "GN101", "GN102", "MA101", "MA102", "CS102", "CS103"],
-        "level_1_sem_2": ["CS104", "MA103", "IS101", "CS101", "GN103", "GN104"],
-        "level_2_sem_1": ["CS201", "CS202", "IS202", "IS203", "ST201", "MA201"],
-        "level_2_sem_2": ["IS201", "CS206", "CS203", "CS204", "CS205", "IS205"],
-        "level_3_sem_1": ["CS301", "CS302", "IS301", "IS302", "BI301", "BI303"],
-        "level_3_sem_2": ["BI302", "BI304", "BI305", "BI307", "BI309", "BI310"],
-        "level_4_sem_1": ["BI401", "BI405", "BI403", "BI404", "AI404", "BI408"],
-        "level_4_sem_2": ["BI402", "BI406", "BI409", "BI407", "BI408"]
+      "semesters": {
+        "level_1_sem_1": [
+          {
+            "code": "HM101",
+            "name_en": "Human Rights",
+            "name_ar": "حقوق الإنسان",
+            "hours": 0,
+            "prereq": [],
+            "note": "University requirement, does not count towards graduation hours",
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN101",
+            "name_en": "Scientific & Technical Report Writing",
+            "name_ar": "صياغة التقارير العلمية والفنية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN102",
+            "name_en": "Fundamentals of Management",
+            "name_ar": "مبادئ ادارة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA101",
+            "name_en": "Mathematics-1",
+            "name_ar": "رياضيات-1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA102",
+            "name_en": "Discrete Mathematics",
+            "name_ar": "تراكيب محددة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS102",
+            "name_en": "Computer Introduction",
+            "name_ar": "مقدمة في الحاسبات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS103",
+            "name_en": "Semiconductors",
+            "name_ar": "أشباه الموصلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_1_sem_2": [
+          {
+            "code": "CS104",
+            "name_en": "Logic Design-1",
+            "name_ar": "تصميم منطقي",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA103",
+            "name_en": "Mathematics-2",
+            "name_ar": "رياضيات-2",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS101",
+            "name_en": "Introduction to IS",
+            "name_ar": "مقدمة نظم المعلومات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS101",
+            "name_en": "Fundamentals of Programming",
+            "name_ar": "مبادئ برمجة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "GN103",
+            "name_en": "Fundamentals of Economics",
+            "name_ar": "مبادئ الاقتصاد",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          },
+          {
+            "code": "GN104",
+            "name_en": "Professional Ethics",
+            "name_ar": "أخلاقيات المهنة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "general",
+            "type": "elective"
+          }
+        ],
+        "level_2_sem_1": [
+          {
+            "code": "CS201",
+            "name_en": "Computer Programming-1",
+            "name_ar": "برمجة حاسبات-1",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS202",
+            "name_en": "Computer Architecture & Organization",
+            "name_ar": "معمارية وتنظيم الحاسب",
+            "hours": 3,
+            "prereq": [
+              "CS103",
+              "CS104"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS202",
+            "name_en": "Systems Analysis & Design-1",
+            "name_ar": "تحليل وتصميم نظم-1",
+            "hours": 3,
+            "prereq": [
+              "IS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS203",
+            "name_en": "Computer Networks",
+            "name_ar": "شبكات الحاسبات",
+            "hours": 3,
+            "prereq": [
+              "CS102"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "ST201",
+            "name_en": "Statistics & Probabilities",
+            "name_ar": "إحصاء واحتمالات",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "MA201",
+            "name_en": "Mathematics-3",
+            "name_ar": "رياضيات-3",
+            "hours": 3,
+            "prereq": [
+              "MA103"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_2_sem_2": [
+          {
+            "code": "IS201",
+            "name_en": "Multimedia",
+            "name_ar": "وسائط متعددة",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS206",
+            "name_en": "Web Design and Development",
+            "name_ar": "تصميم وتطوير الويب",
+            "hours": 3,
+            "prereq": [
+              "CS101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS203",
+            "name_en": "Computer Programming-2",
+            "name_ar": "برمجة حاسبات-2",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS204",
+            "name_en": "Data Structure",
+            "name_ar": "هياكل البيانات",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS205",
+            "name_en": "Operating Systems-1",
+            "name_ar": "نظم تشغيل-1",
+            "hours": 3,
+            "prereq": [
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS205",
+            "name_en": "Introduction to Operation Research & Decision Support",
+            "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
+            "hours": 3,
+            "prereq": [
+              "MA101"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_1": [
+          {
+            "code": "CS301",
+            "name_en": "Software Engineering-1",
+            "name_ar": "هندسة البرمجيات-1",
+            "hours": 3,
+            "prereq": [
+              "CS203",
+              "IS202"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "CS302",
+            "name_en": "Analysis and Design of Algorithms",
+            "name_ar": "تحليل وتصميم الخوارزميات",
+            "hours": 3,
+            "prereq": [
+              "CS204",
+              "MA201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS301",
+            "name_en": "Database Systems-1",
+            "name_ar": "نظم قواعد البيانات-1",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "IS302",
+            "name_en": "Modeling & Simulation",
+            "name_ar": "النمذجة والمحاكاة",
+            "hours": 3,
+            "prereq": [
+              "ST201",
+              "CS201"
+            ],
+            "expected_doctors": [],
+            "category": "faculty",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI301",
+            "name_en": "Biology-1",
+            "name_ar": "علم الأحياء-1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI303",
+            "name_en": "Organic Chemistry",
+            "name_ar": "الكيمياء العضوية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_2": [
+          {
+            "code": "BI302",
+            "name_en": "Biology-2",
+            "name_ar": "علم الأحياء-2",
+            "hours": 3,
+            "prereq": [
+              "BI301"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI304",
+            "name_en": "Biochemistry",
+            "name_ar": "الكيمياء الحيوية",
+            "hours": 3,
+            "prereq": [
+              "BI303"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI305",
+            "name_en": "Genetic Algorithms",
+            "name_ar": "الخوارزميات الجينية",
+            "hours": 3,
+            "prereq": [
+              "MA201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI307",
+            "name_en": "Mathematical Biology",
+            "name_ar": "رياضة حيوية",
+            "hours": 3,
+            "prereq": [
+              "BI301",
+              "MA201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "BI309",
+            "name_en": "Selected Topics in Computational Biology-1",
+            "name_ar": "موضوعات مختارة في الحوسبة الحيوية-1",
+            "hours": 3,
+            "prereq": [
+              "BI301"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "BI310",
+            "name_en": "Selected Topics in Computational Biology-2",
+            "name_ar": "موضوعات مختارة في الحوسبة الحيوية-2",
+            "hours": 3,
+            "prereq": [
+              "BI301"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          }
+        ],
+        "level_4_sem_1": [
+          {
+            "code": "BI401",
+            "name_en": "Molecular & Cell Biology",
+            "name_ar": "علم الأحياء الجزيئية والخلوية",
+            "hours": 3,
+            "prereq": [
+              "BI302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI405",
+            "name_en": "Bioinformatics",
+            "name_ar": "المعلوماتية الحيوية",
+            "hours": 3,
+            "prereq": [
+              "CS302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI403",
+            "name_en": "Bio-computing",
+            "name_ar": "حسابات حيوية",
+            "hours": 3,
+            "prereq": [
+              "BI302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI404",
+            "name_en": "Biological Sequence Analysis",
+            "name_ar": "تحليل السلسلة الحيوية",
+            "hours": 3,
+            "prereq": [
+              "BI302",
+              "CS302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "AI404",
+            "name_en": "Neural Networks and Learning Machines",
+            "name_ar": "الشبكات العصبية وآلات التعلم",
+            "hours": 3,
+            "prereq": [
+              "MA201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "BI408",
+            "name_en": "Project",
+            "name_ar": "مشروع",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_2": [
+          {
+            "code": "BI402",
+            "name_en": "Genetics",
+            "name_ar": "علم الوراثة",
+            "hours": 3,
+            "prereq": [
+              "BI302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI406",
+            "name_en": "Computational Biology",
+            "name_ar": "الحوسبة الحيوية",
+            "hours": 3,
+            "prereq": [
+              "BI302",
+              "CS302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI409",
+            "name_en": "Genomics and Proteomics",
+            "name_ar": "علم الجينات والبروتينات",
+            "hours": 3,
+            "prereq": [
+              "BI405"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "elective"
+          },
+          {
+            "code": "BI407",
+            "name_en": "Structural Bioinformatics",
+            "name_ar": "المعلوماتية الحيوية الهيكلية",
+            "hours": 3,
+            "prereq": [
+              "BI405"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "BI408",
+            "name_en": "Project",
+            "name_ar": "مشروع",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ]
       }
     }
   }

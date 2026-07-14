@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, Plus, Trash2, LogOut } from 'lucide-react';
+import { Save, Plus, Trash2, LogOut, ChevronRight, Folder, BookOpen, Edit2, Check, X } from 'lucide-react';
+import { saveFacultyLocal, deleteFacultyLocal } from '../actions';
 
 export default function AdminPage() {
   const [token, setToken] = useState('');
@@ -9,44 +10,42 @@ export default function AdminPage() {
   const [repo, setRepo] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   
-  const [data, setData] = useState(null);
-  const [fileSha, setFileSha] = useState('');
-  const [faculty, setFaculty] = useState('USC');
-  const [view, setView] = useState('mandatory'); // mandatory, elective
-  const [dept, setDept] = useState('CS');
+  // State
+  const [faculties, setFaculties] = useState([]); // List of file objects
+  const [selectedFaculty, setSelectedFaculty] = useState(null); // The loaded JSON
+  const [selectedFacultyFile, setSelectedFacultyFile] = useState(null); // The file metadata (sha, path)
+  
+  const [selectedDeptKey, setSelectedDeptKey] = useState(null);
+  const [selectedSemester, setSelectedSemester] = useState(null);
   
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [isDirty, setIsDirty] = useState(false);
 
   useEffect(() => {
-    const savedToken = sessionStorage.getItem('gh_token');
-    const savedOwner = sessionStorage.getItem('gh_owner');
-    const savedRepo = sessionStorage.getItem('gh_repo');
-    if (savedToken && savedOwner && savedRepo) {
-      setToken(savedToken);
-      setOwner(savedOwner);
-      setRepo(savedRepo);
+    const t = sessionStorage.getItem('gh_token');
+    const o = sessionStorage.getItem('gh_owner');
+    const r = sessionStorage.getItem('gh_repo');
+    if (t && o && r) {
+      setToken(t); setOwner(o); setRepo(r);
       setIsAuthenticated(true);
-      fetchData(faculty, savedToken, savedOwner, savedRepo);
+      fetchFaculties(t, o, r);
     }
   }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setLoading(true);
-    setError('');
+    setLoading(true); setError('');
     try {
       const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
-      if (!res.ok) throw new Error('Invalid credentials or missing permissions.');
-      
+      if (!res.ok) throw new Error('Invalid credentials');
       sessionStorage.setItem('gh_token', token);
       sessionStorage.setItem('gh_owner', owner);
       sessionStorage.setItem('gh_repo', repo);
       setIsAuthenticated(true);
-      fetchData(faculty, token, owner, repo);
+      fetchFaculties(token, owner, repo);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -57,29 +56,18 @@ export default function AdminPage() {
   const handleLogout = () => {
     sessionStorage.clear();
     setIsAuthenticated(false);
-    setData(null);
   };
 
-  const fetchData = async (fac, t = token, o = owner, r = repo) => {
+  const fetchFaculties = async (t, o, r) => {
     setLoading(true);
     try {
-      const path = `data/${fac.toLowerCase()}_courses.json`;
-      const res = await fetch(`https://api.github.com/repos/${o}/${r}/contents/${path}`, {
+      const res = await fetch(`https://api.github.com/repos/${o}/${r}/contents/data`, {
         headers: { Authorization: `Bearer ${t}`, Accept: 'application/vnd.github.v3+json' }
       });
-      if (!res.ok) throw new Error(`Failed to load ${path}`);
-      
-      const resData = await res.json();
-      setFileSha(resData.sha);
-      
-      // Fix for decoding unicode properly from base64
-      const b64 = resData.content.replace(/\s/g, '');
-      const str = decodeURIComponent(escape(atob(b64)));
-      const parsed = JSON.parse(str);
-      
-      setData(parsed);
-      setDept(Object.keys(parsed.departments)[0]);
-      setIsDirty(false);
+      if (!res.ok) throw new Error('Failed to load data folder');
+      const files = await res.json();
+      const facFiles = files.filter(f => f.name.endsWith('_courses.json'));
+      setFaculties(facFiles);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -87,36 +75,59 @@ export default function AdminPage() {
     }
   };
 
-  const handleFacultyChange = (f) => {
-    setFaculty(f);
-    fetchData(f);
+  const loadFaculty = async (file) => {
+    if (isDirty && !confirm("Unsaved changes will be lost. Continue?")) return;
+    setLoading(true);
+    try {
+      const res = await fetch(file.url, {
+        headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github.v3+json' }
+      });
+      const resData = await res.json();
+      const b64 = resData.content.replace(/\s/g, '');
+      const str = decodeURIComponent(escape(atob(b64)));
+      setSelectedFaculty(JSON.parse(str));
+      setSelectedFacultyFile({ path: file.path, sha: resData.sha });
+      setSelectedDeptKey(null);
+      setSelectedSemester(null);
+      setIsDirty(false);
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSave = async () => {
-    if (!isDirty) return;
+    if (!isDirty || !selectedFacultyFile) return;
     setLoading(true);
     try {
-      const path = `data/${faculty.toLowerCase()}_courses.json`;
-      const jsonStr = JSON.stringify(data, null, 2);
+      const jsonStr = JSON.stringify(selectedFaculty, null, 2);
       const b64 = btoa(unescape(encodeURIComponent(jsonStr)));
       
       const payload = {
-        message: `Admin Panel: Update ${faculty} data`,
+        message: `Admin Panel: Update ${selectedFacultyFile.path}`,
         content: b64,
-        sha: fileSha
+        sha: selectedFacultyFile.sha
       };
       
-      const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+      const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${selectedFacultyFile.path}`, {
         method: 'PUT',
         headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
       
       if (!res.ok) throw new Error('Failed to commit changes.');
-      
       const resData = await res.json();
-      setFileSha(resData.content.sha);
+      
+      await saveFacultyLocal(selectedFacultyFile.path.replace('data/', ''), jsonStr);
+      
+      setSelectedFacultyFile({ ...selectedFacultyFile, sha: resData.content.sha });
       setIsDirty(false);
+      
+      // Crucially, refetch the faculties list so the main list gets the new SHA!
+      // Otherwise, deleting this faculty later in the same session will fail due to SHA mismatch.
+      await fetchFaculties(token, owner, repo);
+      
       alert('Changes published successfully!');
     } catch (err) {
       alert(`Error publishing: ${err.message}`);
@@ -125,29 +136,114 @@ export default function AdminPage() {
     }
   };
 
+  // FACULTY CRUD
+  const addFaculty = async () => {
+    const name = prompt("Enter new faculty ID (e.g. 'alex' for alex_courses.json):");
+    if (!name) return;
+    const path = `data/${name.toLowerCase()}_courses.json`;
+    const initialData = {
+      meta: { faculty: name.toUpperCase(), departments: [] },
+      departments: {}
+    };
+    
+    setLoading(true);
+    try {
+      const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(initialData, null, 2))));
+      const payload = { message: `Create ${path}`, content: b64 };
+      const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`, {
+        method: 'PUT',
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Failed to create file');
+      
+      await saveFacultyLocal(`${name.toLowerCase()}_courses.json`, JSON.stringify(initialData, null, 2));
+      
+      await fetchFaculties(token, owner, repo);
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const deleteFaculty = async (file) => {
+    if (!confirm(`Are you sure you want to permanently delete ${file.name}?`)) return;
+    setLoading(true);
+    try {
+      const payload = { message: `Delete ${file.path}`, sha: file.sha };
+      const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${file.path}`, {
+        method: 'DELETE',
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Failed to delete');
+      
+      await deleteFacultyLocal(file.path.replace('data/', ''));
+      
+      if (selectedFacultyFile?.path === file.path) {
+        setSelectedFaculty(null); setSelectedFacultyFile(null);
+      }
+      await fetchFaculties(token, owner, repo);
+    } catch (err) {
+      alert(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // DEPT CRUD
+  const addDept = () => {
+    const code = prompt("Enter Department Code (e.g. 'SE'):");
+    if (!code || selectedFaculty.departments[code]) return;
+    const name = prompt("Enter Department Full Name:");
+    
+    const newData = { ...selectedFaculty };
+    newData.departments[code] = {
+      name_en: name || code,
+      name_ar: name || code,
+      semesters: {
+        level_1_sem_1: [], level_1_sem_2: [],
+        level_2_sem_1: [], level_2_sem_2: [],
+        level_3_sem_1: [], level_3_sem_2: [],
+        level_4_sem_1: [], level_4_sem_2: []
+      }
+    };
+    if (!newData.meta.departments) newData.meta.departments = [];
+    if (!newData.meta.departments.includes(code)) newData.meta.departments.push(code);
+    
+    setSelectedFaculty(newData);
+    setIsDirty(true);
+  };
+
+  const deleteDept = (code) => {
+    if (!confirm(`Delete department ${code}?`)) return;
+    const newData = { ...selectedFaculty };
+    delete newData.departments[code];
+    newData.meta.departments = newData.meta.departments.filter(c => c !== code);
+    setSelectedFaculty(newData);
+    setIsDirty(true);
+    if (selectedDeptKey === code) setSelectedDeptKey(null);
+  };
+
   if (!isAuthenticated) {
     return (
       <div className="auth-container">
         <form onSubmit={handleLogin} className="glass-panel auth-box">
           <h2>Admin Authentication</h2>
           <p>Requires a GitHub PAT with repo access.</p>
-          
-          <input type="text" placeholder="GitHub Owner (e.g., Karimskee)" required value={owner} onChange={e => setOwner(e.target.value)} />
+          <input type="text" placeholder="GitHub Owner" required value={owner} onChange={e => setOwner(e.target.value)} />
           <input type="text" placeholder="Repository Name" required value={repo} onChange={e => setRepo(e.target.value)} />
           <input type="password" placeholder="ghp_..." required value={token} onChange={e => setToken(e.target.value)} />
-          
           {error && <div className="error">{error}</div>}
-          
-          <button type="submit" className="btn" disabled={loading}>
-            {loading ? 'Verifying...' : 'Login'}
-          </button>
+          <button type="submit" className="btn" disabled={loading}>{loading ? 'Verifying...' : 'Login'}</button>
         </form>
         <style jsx>{`
           .auth-container { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--bg-color); }
           .auth-box { padding: 40px; border-radius: 16px; display: flex; flex-direction: column; gap: 16px; width: 400px; }
           h2 { font-size: 20px; font-weight: 600; }
           p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
-          input { background: var(--bg-color); border: 1px solid var(--border-color); color: white; padding: 12px; border-radius: 8px; font-size: 14px; outline: none; transition: border-color 0.2s; }
+          input { background: var(--bg-color); border: 1px solid var(--border-color); color: white; padding: 12px; border-radius: 8px; font-size: 14px; outline: none; }
           input:focus { border-color: var(--text-secondary); }
           .error { color: #ef4444; font-size: 13px; }
         `}</style>
@@ -157,115 +253,194 @@ export default function AdminPage() {
 
   return (
     <div className="admin-layout">
-      <aside className="sidebar glass-panel">
-        <div className="sidebar-header">
-          <h3>FCAI Admin</h3>
+      {/* HEADER BREADCRUMBS */}
+      <header className="topbar">
+        <div className="breadcrumbs">
+          <button onClick={() => { setSelectedFaculty(null); setSelectedDeptKey(null); }}>Admin</button>
+          {selectedFaculty && (
+            <>
+              <ChevronRight size={14} />
+              <button onClick={() => { setSelectedDeptKey(null); setSelectedSemester(null); }}>{selectedFaculty.meta.faculty}</button>
+            </>
+          )}
+          {selectedDeptKey && (
+            <>
+              <ChevronRight size={14} />
+              <button onClick={() => setSelectedSemester(null)}>{selectedDeptKey}</button>
+            </>
+          )}
+          {selectedSemester && (
+            <>
+              <ChevronRight size={14} />
+              <span>{selectedSemester.replace(/_/g, ' ').toUpperCase()}</span>
+            </>
+          )}
+        </div>
+        
+        <div className="actions">
+          {isDirty && <span className="dirty-badge">Unsaved Changes</span>}
+          <button className="btn" onClick={handleSave} disabled={!isDirty || loading} style={{ opacity: isDirty ? 1 : 0.5 }}>
+            <Save size={16} /> {loading ? 'Saving...' : 'Publish to GitHub'}
+          </button>
           <button className="btn-icon" onClick={handleLogout} title="Logout"><LogOut size={16} /></button>
         </div>
-        
-        <select className="dark-select" value={faculty} onChange={e => handleFacultyChange(e.target.value)}>
-          <option value="USC">FCAI USC</option>
-          <option value="NUSC">FCAI NUSC</option>
-        </select>
-        
-        <div className="nav-section">
-          <h4>Departments</h4>
-          {data && Object.keys(data.departments).map(d => (
-            <button key={d} className={`nav-item ${dept === d ? 'active' : ''}`} onClick={() => setDept(d)}>
-              {data.departments[d].name_en}
-            </button>
-          ))}
-        </div>
-      </aside>
+      </header>
 
-      <main className="main-content">
-        <header className="topbar">
-          <div className="tabs">
-            <button className={`tab ${view === 'mandatory' ? 'active' : ''}`} onClick={() => setView('mandatory')}>Mandatory Courses</button>
-            <button className={`tab ${view === 'elective' ? 'active' : ''}`} onClick={() => setView('elective')}>Elective Courses</button>
+      <main className="content">
+        {/* VIEW 1: FACULTIES */}
+        {!selectedFaculty && (
+          <div className="view-grid">
+            <h2>Faculties</h2>
+            <div className="card-grid">
+              {faculties.map(f => (
+                <div key={f.sha} className="card glass-panel">
+                  <div className="card-content" onClick={() => loadFaculty(f)}>
+                    <Folder size={24} className="icon" />
+                    <h3>{f.name.replace('_courses.json', '').toUpperCase()}</h3>
+                    <p>{f.path}</p>
+                  </div>
+                  <button className="delete-btn" onClick={(e) => { e.stopPropagation(); deleteFaculty(f); }}><Trash2 size={16} /></button>
+                </div>
+              ))}
+              <div className="card glass-panel add-card" onClick={addFaculty}>
+                <Plus size={24} />
+                <h3>Add Faculty</h3>
+              </div>
+            </div>
           </div>
-          
-          <button className="btn" onClick={handleSave} disabled={!isDirty || loading} style={{ opacity: isDirty ? 1 : 0.5 }}>
-            <Save size={18} /> {loading ? 'Saving...' : 'Publish to GitHub'}
-          </button>
-        </header>
+        )}
 
-        {data && <NotionTable 
-          courses={data.departments[dept][view]} 
-          onUpdate={(newCourses) => {
-            const newData = { ...data };
-            newData.departments[dept][view] = newCourses;
-            setData(newData);
-            setIsDirty(true);
-          }}
-        />}
+        {/* VIEW 2: DEPARTMENTS */}
+        {selectedFaculty && !selectedDeptKey && (
+          <div className="view-grid">
+            <h2>Departments in {selectedFaculty.meta.faculty}</h2>
+            <div className="card-grid">
+              {Object.keys(selectedFaculty.departments).map(d => (
+                <div key={d} className="card glass-panel">
+                  <div className="card-content" onClick={() => setSelectedDeptKey(d)}>
+                    <BookOpen size={24} className="icon" />
+                    <h3>{d}</h3>
+                    <p>{selectedFaculty.departments[d].name_en}</p>
+                  </div>
+                  <button className="delete-btn" onClick={(e) => { e.stopPropagation(); deleteDept(d); }}><Trash2 size={16} /></button>
+                </div>
+              ))}
+              <div className="card glass-panel add-card" onClick={addDept}>
+                <Plus size={24} />
+                <h3>Add Department</h3>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* VIEW 3: COURSES (Grouped by Semester) */}
+        {selectedFaculty && selectedDeptKey && (
+          <div className="courses-view">
+            <div className="semester-tabs">
+              {Object.keys(selectedFaculty.departments[selectedDeptKey].semesters || {}).map(sem => (
+                <button 
+                  key={sem} 
+                  className={`sem-tab ${selectedSemester === sem ? 'active' : ''}`}
+                  onClick={() => setSelectedSemester(sem)}
+                >
+                  {sem.replace(/_/g, ' ').toUpperCase()}
+                </button>
+              ))}
+              <button className="sem-tab add" onClick={() => {
+                const s = prompt("Semester key (e.g. level_5_sem_1):");
+                if(s) {
+                  const newData = {...selectedFaculty};
+                  newData.departments[selectedDeptKey].semesters[s] = [];
+                  setSelectedFaculty(newData); setIsDirty(true);
+                }
+              }}><Plus size={14}/> Add Sem</button>
+            </div>
+            
+            {selectedSemester && (
+              <CoursesTable 
+                courses={selectedFaculty.departments[selectedDeptKey].semesters[selectedSemester]}
+                onUpdate={(newCourses) => {
+                  const newData = {...selectedFaculty};
+                  newData.departments[selectedDeptKey].semesters[selectedSemester] = newCourses;
+                  setSelectedFaculty(newData);
+                  setIsDirty(true);
+                }}
+              />
+            )}
+            {!selectedSemester && (
+              <div className="empty-state">Select a semester to manage its courses.</div>
+            )}
+          </div>
+        )}
       </main>
 
       <style jsx>{`
-        .admin-layout { display: flex; height: 100vh; background: var(--bg-color); }
-        .sidebar { width: 260px; display: flex; flex-direction: column; gap: 24px; padding: 24px; border-right: 1px solid var(--border-color); border-radius: 0; }
-        .sidebar-header { display: flex; justify-content: space-between; align-items: center; }
-        .sidebar-header h3 { font-size: 16px; font-weight: 600; }
-        .btn-icon { background: transparent; border: none; color: var(--text-secondary); cursor: pointer; padding: 4px; border-radius: 4px; }
-        .btn-icon:hover { background: rgba(255,255,255,0.1); color: white; }
-        .dark-select { background: var(--bg-tertiary); color: white; border: 1px solid var(--border-color); padding: 8px 12px; border-radius: 8px; outline: none; }
-        .nav-section { display: flex; flex-direction: column; gap: 8px; }
-        .nav-section h4 { font-size: 12px; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.5px; margin-bottom: 4px; }
-        .nav-item { background: transparent; border: none; color: var(--text-secondary); text-align: left; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; transition: background 0.2s; }
-        .nav-item:hover { background: rgba(255,255,255,0.05); }
-        .nav-item.active { background: rgba(255,255,255,0.1); color: white; font-weight: 500; }
+        .admin-layout { display: flex; flex-direction: column; height: 100vh; background: var(--bg-color); }
+        .topbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; border-bottom: 1px solid var(--border-color); background: var(--bg-secondary); }
+        .breadcrumbs { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; }
+        .breadcrumbs button { background: transparent; border: none; color: var(--text-secondary); cursor: pointer; transition: color 0.2s; }
+        .breadcrumbs button:hover { color: white; }
+        .breadcrumbs span { color: white; }
+        .actions { display: flex; align-items: center; gap: 16px; }
+        .dirty-badge { font-size: 12px; color: #fbbf24; background: rgba(251, 191, 36, 0.1); padding: 4px 8px; border-radius: 4px; }
         
-        .main-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
-        .topbar { display: flex; justify-content: space-between; align-items: center; padding: 24px 32px; border-bottom: 1px solid var(--border-color); }
-        .tabs { display: flex; gap: 16px; }
-        .tab { background: transparent; border: none; color: var(--text-secondary); font-size: 15px; font-weight: 500; cursor: pointer; padding-bottom: 4px; border-bottom: 2px solid transparent; transition: all 0.2s; }
-        .tab:hover { color: white; }
-        .tab.active { color: white; border-bottom-color: white; }
+        .content { flex: 1; overflow: auto; padding: 32px; }
+        .view-grid h2 { margin-bottom: 24px; font-size: 24px; font-weight: 600; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 24px; }
+        .card { border-radius: 12px; position: relative; overflow: hidden; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); }
+        .card-content { padding: 24px; cursor: pointer; display: flex; flex-direction: column; gap: 8px; }
+        .card .icon { color: var(--accent-green); margin-bottom: 8px; }
+        .card h3 { font-size: 18px; font-weight: 600; }
+        .card p { font-size: 13px; color: var(--text-secondary); }
+        .delete-btn { position: absolute; top: 12px; right: 12px; background: rgba(239, 68, 68, 0.1); color: #ef4444; border: none; padding: 6px; border-radius: 6px; cursor: pointer; opacity: 0; transition: all 0.2s; }
+        .card:hover .delete-btn { opacity: 1; }
+        .delete-btn:hover { background: #ef4444; color: white; }
+        .add-card { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; cursor: pointer; color: var(--text-secondary); border: 2px dashed var(--border-color); background: transparent; min-height: 140px; }
+        .add-card:hover { color: white; border-color: var(--text-secondary); }
+        
+        .courses-view { display: flex; flex-direction: column; height: 100%; gap: 24px; }
+        .semester-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+        .sem-tab { background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); color: var(--text-secondary); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 500; transition: all 0.2s; display: flex; align-items: center; gap: 6px;}
+        .sem-tab:hover { background: rgba(255,255,255,0.1); color: white; }
+        .sem-tab.active { background: var(--accent-green); color: black; border-color: var(--accent-green); }
+        .sem-tab.add { border-style: dashed; }
+        .empty-state { flex: 1; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 15px; }
       `}</style>
     </div>
   );
 }
 
-function NotionTable({ courses, onUpdate }) {
+function CoursesTable({ courses, onUpdate }) {
   const updateCourse = (index, field, value) => {
     const updated = [...courses];
     if (field === 'hours') value = parseInt(value) || 0;
-    if (field === 'prereq' || field === 'expected_doctors') {
-      value = value.split(',').map(s => s.trim()).filter(s => s);
-    }
+    if (field === 'prereq') value = value.split(',').map(s => s.trim()).filter(s => s);
     updated[index] = { ...updated[index], [field]: value };
     onUpdate(updated);
   };
 
   const addRow = () => {
-    const newCourse = {
-      code: 'NEW_CODE',
-      name_en: 'New Course',
-      name_ar: 'مقرر جديد',
-      hours: 3,
-      prereq: [],
-      expected_doctors: []
-    };
-    onUpdate([...courses, newCourse]);
+    onUpdate([...courses, { code: 'NEW_CODE', name_en: 'New Course', name_ar: 'مقرر جديد', hours: 3, prereq: [], type: 'mandatory', category: 'department' }]);
   };
 
   const deleteRow = (index) => {
-    const updated = courses.filter((_, i) => i !== index);
-    onUpdate(updated);
+    onUpdate(courses.filter((_, i) => i !== index));
   };
 
   return (
-    <div className="table-container">
+    <div className="table-container glass-panel">
       <table className="notion-table">
         <thead>
           <tr>
             <th style={{ width: '100px' }}>Code</th>
-            <th style={{ width: '250px' }}>Name (EN)</th>
-            <th style={{ width: '250px' }}>Name (AR)</th>
-            <th style={{ width: '80px' }}>Hours</th>
+            <th style={{ width: '220px' }}>Name (EN)</th>
+            <th style={{ width: '220px' }}>Name (AR)</th>
+            <th style={{ width: '60px' }}>Hours</th>
+            <th style={{ width: '100px' }}>Type</th>
+            <th style={{ width: '100px' }}>Category</th>
             <th>Prerequisites</th>
-            <th>Expected Doctors</th>
-            <th style={{ width: '50px' }}></th>
+            <th style={{ width: '40px' }}></th>
           </tr>
         </thead>
         <tbody>
@@ -275,13 +450,25 @@ function NotionTable({ courses, onUpdate }) {
               <td><input value={course.name_en} onChange={e => updateCourse(i, 'name_en', e.target.value)} /></td>
               <td><input value={course.name_ar} onChange={e => updateCourse(i, 'name_ar', e.target.value)} dir="rtl" /></td>
               <td><input type="number" value={course.hours} onChange={e => updateCourse(i, 'hours', e.target.value)} /></td>
+              <td>
+                <select value={course.type || 'mandatory'} onChange={e => updateCourse(i, 'type', e.target.value)}>
+                  <option value="mandatory">Mandatory</option>
+                  <option value="elective">Elective</option>
+                </select>
+              </td>
+              <td>
+                <select value={course.category || 'department'} onChange={e => updateCourse(i, 'category', e.target.value)}>
+                  <option value="department">Department</option>
+                  <option value="faculty">Faculty</option>
+                  <option value="general">General</option>
+                </select>
+              </td>
               <td><input value={(course.prereq || []).join(', ')} onChange={e => updateCourse(i, 'prereq', e.target.value)} placeholder="CS101, MA102" /></td>
-              <td><input value={(course.expected_doctors || []).join(', ')} onChange={e => updateCourse(i, 'expected_doctors', e.target.value)} placeholder="Dr. Ahmed" /></td>
               <td><button className="delete-btn" onClick={() => deleteRow(i)}><Trash2 size={14} /></button></td>
             </tr>
           ))}
           <tr>
-            <td colSpan={7} className="add-row">
+            <td colSpan={8} className="add-row">
               <button onClick={addRow}><Plus size={16} /> New Course</button>
             </td>
           </tr>
@@ -289,17 +476,20 @@ function NotionTable({ courses, onUpdate }) {
       </table>
 
       <style jsx>{`
-        .table-container { flex: 1; overflow: auto; padding: 32px; }
+        .table-container { flex: 1; overflow: auto; border-radius: 12px; }
         .notion-table { width: 100%; border-collapse: collapse; text-align: left; }
-        th { font-size: 12px; font-weight: 500; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        th { font-size: 11px; font-weight: 600; color: var(--text-secondary); border-bottom: 1px solid var(--border-color); padding: 12px 16px; text-transform: uppercase; letter-spacing: 0.5px; position: sticky; top: 0; background: rgba(20,20,20,0.9); backdrop-filter: blur(8px); z-index: 10; }
         td { border-bottom: 1px solid rgba(255,255,255,0.05); padding: 0; position: relative; }
         td:focus-within { outline: 1px solid var(--accent-green); z-index: 1; }
-        input { width: 100%; height: 100%; padding: 12px; background: transparent; border: none; color: white; font-size: 14px; outline: none; font-family: inherit; }
-        input:hover { background: rgba(255,255,255,0.02); }
+        input, select { width: 100%; height: 100%; padding: 12px 16px; background: transparent; border: none; color: white; font-size: 13px; outline: none; font-family: inherit; }
+        select { appearance: none; cursor: pointer; color: var(--text-secondary); }
+        select:focus { color: white; }
+        option { background: var(--bg-color); color: white; }
+        input:hover, select:hover { background: rgba(255,255,255,0.02); }
         .delete-btn { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; opacity: 0; transition: opacity 0.2s; }
         tr:hover .delete-btn { opacity: 1; }
         .delete-btn:hover { color: #ef4444; background: rgba(239, 68, 68, 0.1); }
-        .add-row button { width: 100%; display: flex; align-items: center; gap: 8px; padding: 12px; background: transparent; border: none; color: var(--text-secondary); font-size: 14px; cursor: pointer; transition: color 0.2s; }
+        .add-row button { width: 100%; display: flex; align-items: center; gap: 8px; padding: 12px 16px; background: transparent; border: none; color: var(--text-secondary); font-size: 13px; cursor: pointer; transition: color 0.2s; }
         .add-row button:hover { color: white; background: rgba(255,255,255,0.02); }
       `}</style>
     </div>

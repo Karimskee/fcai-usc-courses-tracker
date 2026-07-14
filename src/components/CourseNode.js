@@ -5,7 +5,7 @@ import { Handle, Position } from '@xyflow/react';
 import { useFlow } from '../app/flow/layout';
 
 function CourseNode({ data }) {
-  const { toggleCourse, cascadeUnmark, data: globalData, completedCourses } = useFlow();
+  const { toggleCourse, cascadeUnmark, data: globalData, deptKey, completedCourses } = useFlow();
   const [showTooltip, setShowTooltip] = useState(false);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
   const nodeRef = useRef(null);
@@ -14,7 +14,7 @@ function CourseNode({ data }) {
   const handleClick = () => {
     if (data.state === 'completed') {
       // Find what depends on this
-      const cascadeLocks = getCascadeLocks(data.code, completedCourses, globalData);
+      const cascadeLocks = getCascadeLocks(data.code, completedCourses, globalData, deptKey);
       if (cascadeLocks.length > 0) {
         if (confirm(`Unmarking this will lock: ${cascadeLocks.join(', ')}\nProceed?`)) {
           cascadeUnmark(data.code, cascadeLocks);
@@ -246,10 +246,9 @@ function TooltipPortal({ pos, data }) {
 }
 
 // Helper to calculate cascade locks
-function getCascadeLocks(courseCode, completedCourses, globalData) {
+function getCascadeLocks(courseCode, completedCourses, globalData, deptKey) {
   // Build adjacency list for dependents
   const dependents = new Map();
-  const allDeps = Object.values(globalData.departments);
   const addCourse = (c) => {
     if (c.prereq) {
       c.prereq.forEach(p => {
@@ -259,14 +258,11 @@ function getCascadeLocks(courseCode, completedCourses, globalData) {
     }
   };
   
-  globalData.general_requirements.mandatory.forEach(addCourse);
-  globalData.general_requirements.elective.forEach(addCourse);
-  globalData.faculty_requirements.mandatory.forEach(addCourse);
-  globalData.faculty_requirements.elective.forEach(addCourse);
-  allDeps.forEach(d => {
-    d.mandatory.forEach(addCourse);
-    d.elective.forEach(addCourse);
-  });
+  if (deptKey && globalData.departments[deptKey]) {
+    Object.values(globalData.departments[deptKey].semesters || {}).forEach(courseList => {
+      courseList.forEach(addCourse);
+    });
+  }
 
   const locks = new Set();
   const checkQueue = [...(dependents.get(courseCode) || [])];

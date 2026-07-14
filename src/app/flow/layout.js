@@ -2,10 +2,7 @@
 
 import { useState, useEffect, createContext, useContext } from 'react';
 import { useRouter } from 'next/navigation';
-import uscData from '../../../data/usc_courses.json';
-import nuscData from '../../../data/nusc_courses.json';
-
-const FACULTIES = { USC: uscData, NUSC: nuscData };
+import { getFacultiesData } from '../actions';
 
 const FlowContext = createContext(null);
 export const useFlow = () => useContext(FlowContext);
@@ -13,19 +10,22 @@ export const useFlow = () => useContext(FlowContext);
 export default function FlowLayout({ children }) {
   const router = useRouter();
   const [mounted, setMounted] = useState(false);
+  const [facultiesData, setFacultiesData] = useState(null);
   const [facultyKey, setFacultyKey] = useState(null);
   const [deptKey, setDeptKey] = useState(null);
   const [completedCourses, setCompletedCourses] = useState(new Set());
 
   // Load state from local storage
   useEffect(() => {
-    const f = localStorage.getItem('fcai_tracker_faculty');
-    const d = localStorage.getItem('fcai_tracker_department');
-    
-    if (!f || !d || !FACULTIES[f] || !FACULTIES[f].departments[d]) {
-      router.push('/'); // invalid state, back to landing
-      return;
-    }
+    getFacultiesData().then(data => {
+      setFacultiesData(data);
+      const f = localStorage.getItem('fcai_tracker_faculty');
+      const d = localStorage.getItem('fcai_tracker_department');
+      
+      if (!f || !d || !data[f] || !data[f].departments[d]) {
+        router.push('/'); // invalid state, back to landing
+        return;
+      }
     
     setFacultyKey(f);
     setDeptKey(d);
@@ -39,6 +39,7 @@ export default function FlowLayout({ children }) {
     }
     
     setMounted(true);
+    });
   }, [router]);
 
   // Save progress automatically
@@ -75,9 +76,9 @@ export default function FlowLayout({ children }) {
     }
   };
 
-  if (!mounted || !facultyKey) return null;
+  if (!mounted || !facultyKey || !facultiesData) return null;
 
-  const data = FACULTIES[facultyKey];
+  const data = facultiesData[facultyKey];
   const deptData = data.departments[deptKey];
   const totalHoursRequired = data.meta.total_hours_required || 145;
 
@@ -85,11 +86,10 @@ export default function FlowLayout({ children }) {
   let completedHours = 0;
   // Combine all courses to lookup hours
   const allCoursesMap = new Map();
-  [...data.general_requirements.mandatory, ...data.general_requirements.elective, 
-   ...(data.general_requirements.university_requirement ? [data.general_requirements.university_requirement] : []),
-   ...data.faculty_requirements.mandatory, ...data.faculty_requirements.elective,
-   ...deptData.mandatory, ...deptData.elective].forEach(c => {
+  Object.values(deptData.semesters || {}).forEach(courseList => {
+    courseList.forEach(c => {
       allCoursesMap.set(c.code, c.hours);
+    });
   });
 
   completedCourses.forEach(code => {

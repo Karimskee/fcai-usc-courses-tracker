@@ -3,13 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Network } from 'lucide-react';
-import uscData from '../../data/usc_courses.json';
-import nuscData from '../../data/nusc_courses.json';
-
-const FACULTIES = {
-  USC: uscData,
-  NUSC: nuscData,
-};
+import { getFacultiesData } from './actions';
 
 export default function LandingPage() {
   const router = useRouter();
@@ -17,10 +11,22 @@ export default function LandingPage() {
   const [faculty, setFaculty] = useState('USC');
   const [department, setDepartment] = useState('');
   
-  const departments = Object.entries(FACULTIES[faculty].departments).map(([key, data]) => ({
+  const [facultiesData, setFacultiesData] = useState(null);
+  
+  useEffect(() => {
+    getFacultiesData().then(data => {
+      setFacultiesData(data);
+      const keys = Object.keys(data);
+      if (keys.length > 0) {
+        setFaculty(keys[0]);
+      }
+    });
+  }, []);
+
+  const departments = facultiesData && faculty && facultiesData[faculty] ? Object.entries(facultiesData[faculty].departments).map(([key, data]) => ({
     id: key,
     name: data.name_en,
-  }));
+  })) : [];
 
   // Auto-select first department when faculty changes
   useEffect(() => {
@@ -56,8 +62,9 @@ export default function LandingPage() {
               onChange={(e) => setFaculty(e.target.value)}
               className="apple-select"
             >
-              <option value="USC">FCAI USC</option>
-              <option value="NUSC">FCAI NUSC</option>
+              {facultiesData && Object.keys(facultiesData).map(key => (
+                <option key={key} value={key}>{facultiesData[key].meta?.faculty || key}</option>
+              ))}
             </select>
           </div>
 
@@ -77,8 +84,8 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <button className="btn btn-primary start-btn" onClick={handleStart}>
-          Enter Tracker
+        <button className="btn btn-primary start-btn" onClick={handleStart} disabled={!facultiesData}>
+          {facultiesData ? 'Enter Tracker' : 'Loading...'}
         </button>
       </div>
 

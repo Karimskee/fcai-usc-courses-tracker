@@ -4,167 +4,1160 @@
     "faculty_name_ar": "كلية الحاسبات والذكاء الاصطناعي - جامعة نيو سادات",
     "faculty_name_en": "Faculty of Computers and Artificial Intelligence - New Sadat City University",
     "total_hours_required": 144,
-    "departments": ["AI", "Networks"],
+    "departments": [
+      "AI",
+      "Networks"
+    ],
     "source": "FCAI NUSC Curriculums"
-  },
-  "general_requirements": {
-    "label_en": "General Requirements",
-    "label_ar": "المتطلبات العامة",
-    "total_hours": 0,
-    "mandatory_hours": 0,
-    "elective_hours": 0,
-    "mandatory": [],
-    "elective": [],
-    "university_requirement": null
-  },
-  "faculty_requirements": {
-    "label_en": "Faculty Requirements",
-    "label_ar": "متطلبات الكلية",
-    "total_hours": 0,
-    "mandatory_hours": 0,
-    "elective_hours": 0,
-    "mandatory": [],
-    "elective": []
   },
   "departments": {
     "AI": {
       "name_en": "Artificial Intelligence",
       "name_ar": "الذكاء الاصطناعي",
-      "mandatory_hours": 144,
-      "elective_hours": 0,
-      "mandatory": [
-        { "code": "N_AI101", "name_en": "Introduction to Networks", "name_ar": "مقدمة في الشبكات", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI102", "name_en": "Introduction to Information Systems", "name_ar": "مقدمة في نظم المعلومات", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI103", "name_en": "Introduction to Computers", "name_ar": "مقدمة في الحاسبات", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI104", "name_en": "Programming Fundamentals", "name_ar": "أساسيات البرمجة", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI105", "name_en": "Principles of Economics", "name_ar": "مبادئ الاقتصاد", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI106", "name_en": "Principles of Management", "name_ar": "مبادئ الإدارة", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI107", "name_en": "Community Issues", "name_ar": "قضايا مجتمعية", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI108", "name_en": "Scientific and Technical Report Writing", "name_ar": "صياغة التقارير العلمية والفنية", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI109", "name_en": "Mathematics I", "name_ar": "رياضيات 1", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI110", "name_en": "Mathematics II", "name_ar": "رياضيات 2", "hours": 3, "prereq": ["N_AI109"], "expected_doctors": [] },
-        { "code": "N_AI111", "name_en": "Logic Design", "name_ar": "تصميم منطقي", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI112", "name_en": "Discrete Structures", "name_ar": "تراكيب متقطعة", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI113", "name_en": "Innovation and Entrepreneurship", "name_ar": "الابتكار وريادة الأعمال", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI114", "name_en": "Semiconductors", "name_ar": "أشباه الموصلات", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI115", "name_en": "Professional Ethics", "name_ar": "أخلاقيات المهنة", "hours": 3, "prereq": [], "expected_doctors": [] },
-        
-        { "code": "N_AI201", "name_en": "Computer Programming I", "name_ar": "برمجة حاسبات 1", "hours": 3, "prereq": ["N_AI104"], "expected_doctors": [] },
-        { "code": "N_AI202", "name_en": "Computer Programming II", "name_ar": "برمجة حاسبات 2", "hours": 3, "prereq": ["N_AI201"], "expected_doctors": [] },
-        { "code": "N_AI203", "name_en": "Computer Organization and Architecture", "name_ar": "تنظيم وعمارة الحاسب", "hours": 3, "prereq": ["N_AI111"], "expected_doctors": [] },
-        { "code": "N_AI204", "name_en": "Computer Networks", "name_ar": "شبكات الحاسب", "hours": 3, "prereq": ["N_AI101"], "expected_doctors": [] },
-        { "code": "N_AI205", "name_en": "Systems Analysis and Design I", "name_ar": "تحليل وتصميم النظم 1", "hours": 3, "prereq": ["N_AI102"], "expected_doctors": [] },
-        { "code": "N_AI206", "name_en": "Database Systems I", "name_ar": "نظم قواعد البيانات 1", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI207", "name_en": "Data Structures", "name_ar": "هياكل البيانات", "hours": 3, "prereq": ["N_AI201"], "expected_doctors": [] },
-        { "code": "N_AI208", "name_en": "Operating Systems I", "name_ar": "نظم التشغيل 1", "hours": 3, "prereq": ["N_AI203"], "expected_doctors": [] },
-        { "code": "N_AI209", "name_en": "Web Design and Development", "name_ar": "تصميم وتطوير الويب", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI210", "name_en": "Software Engineering I", "name_ar": "هندسة البرمجيات 1", "hours": 3, "prereq": ["N_AI201"], "expected_doctors": [] },
-        { "code": "N_AI211", "name_en": "Analysis and Design of Algorithms", "name_ar": "تحليل وتصميم الخوارزميات", "hours": 3, "prereq": ["N_AI207"], "expected_doctors": [] },
-        { "code": "N_AI212", "name_en": "Statistics and Probability", "name_ar": "الإحصاء والاحتمالات", "hours": 3, "prereq": ["N_AI109"], "expected_doctors": [] },
-        
-        { "code": "N_AI301", "name_en": "Introduction to the Internet of Things (IoT)", "name_ar": "مقدمة في إنترنت الأشياء", "hours": 3, "prereq": ["N_AI204"], "expected_doctors": [] },
-        { "code": "N_AI302", "name_en": "Natural Language Processing (NLP)", "name_ar": "معالجة اللغات الطبيعية", "hours": 3, "prereq": ["N_AI207"], "expected_doctors": [] },
-        { "code": "N_AI303", "name_en": "Data Visualization", "name_ar": "تصوير البيانات", "hours": 3, "prereq": ["N_AI209"], "expected_doctors": [] },
-        { "code": "N_AI304", "name_en": "Data Mining and Predictive Analytics", "name_ar": "التنقيب في البيانات والتحليلات التنبؤية", "hours": 3, "prereq": ["N_AI206"], "expected_doctors": [] },
-        { "code": "N_AI305", "name_en": "Machine Learning", "name_ar": "تعلم الآلة", "hours": 3, "prereq": ["N_AI211", "N_AI212"], "expected_doctors": [] },
-        { "code": "N_AI306", "name_en": "Big Data Analytics", "name_ar": "تحليلات البيانات الضخمة", "hours": 3, "prereq": ["N_AI206"], "expected_doctors": [] },
-        { "code": "N_AI307", "name_en": "Fuzzy Logic and Intelligent Systems", "name_ar": "المنطق الضبابي والنظم الذكية", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI308", "name_en": "Computational Intelligence", "name_ar": "الذكاء الحسابي", "hours": 3, "prereq": ["N_AI305"], "expected_doctors": [] },
-        { "code": "N_AI309", "name_en": "Artificial Intelligence", "name_ar": "الذكاء الاصطناعي", "hours": 3, "prereq": ["N_AI207"], "expected_doctors": [] },
-        { "code": "N_AI310", "name_en": "Distributed and Concurrent Algorithms", "name_ar": "الخوارزميات الموزعة والمتزامنة", "hours": 3, "prereq": ["N_AI211"], "expected_doctors": [] },
-        { "code": "N_AI311", "name_en": "High-Performance Computing (HPC)", "name_ar": "الحوسبة عالية الأداء", "hours": 3, "prereq": ["N_AI203"], "expected_doctors": [] },
-        { "code": "N_AI312", "name_en": "Cloud Computing", "name_ar": "الحوسبة السحابية", "hours": 3, "prereq": ["N_AI204"], "expected_doctors": [] },
-        
-        { "code": "N_AI401", "name_en": "Graduation Project", "name_ar": "مشروع التخرج", "hours": 6, "prereq": [], "expected_doctors": [] },
-        { "code": "N_AI402", "name_en": "Mobile Application Development", "name_ar": "تطوير تطبيقات الموبايل", "hours": 3, "prereq": ["N_AI202"], "expected_doctors": [] },
-        { "code": "N_AI403", "name_en": "Web and Social Media Analytics", "name_ar": "تحليلات الويب ووسائل التواصل الاجتماعي", "hours": 3, "prereq": ["N_AI306"], "expected_doctors": [] },
-        { "code": "N_AI404", "name_en": "Data Analytics Programming", "name_ar": "برمجة تحليلات البيانات", "hours": 3, "prereq": ["N_AI202"], "expected_doctors": [] },
-        { "code": "N_AI405", "name_en": "Bioinformatics", "name_ar": "المعلوماتية الحيوية", "hours": 3, "prereq": ["N_AI211"], "expected_doctors": [] },
-        { "code": "N_AI406", "name_en": "Neural Networks and Deep Learning", "name_ar": "الشبكات العصبية والتعلم العميق", "hours": 3, "prereq": ["N_AI305"], "expected_doctors": [] },
-        { "code": "N_AI407", "name_en": "Computer Vision", "name_ar": "رؤية الحاسب", "hours": 3, "prereq": ["N_AI305"], "expected_doctors": [] },
-        { "code": "N_AI408", "name_en": "Robotics", "name_ar": "الروبوتات", "hours": 3, "prereq": ["N_AI309"], "expected_doctors": [] },
-        { "code": "N_AI409", "name_en": "Software Project Management", "name_ar": "إدارة مشاريع البرمجيات", "hours": 3, "prereq": ["N_AI210"], "expected_doctors": [] }
-      ],
-      "elective": [],
-      "study_plan": {
-        "level_1_sem_1": ["N_AI101", "N_AI102", "N_AI103", "N_AI104", "N_AI105", "N_AI106", "N_AI107", "N_AI108"],
-        "level_1_sem_2": ["N_AI109", "N_AI110", "N_AI111", "N_AI112", "N_AI113", "N_AI114", "N_AI115"],
-        "level_2_sem_1": ["N_AI201", "N_AI203", "N_AI204", "N_AI205", "N_AI206", "N_AI212"],
-        "level_2_sem_2": ["N_AI202", "N_AI207", "N_AI208", "N_AI209", "N_AI210", "N_AI211"],
-        "level_3_sem_1": ["N_AI301", "N_AI302", "N_AI303", "N_AI304", "N_AI305", "N_AI306"],
-        "level_3_sem_2": ["N_AI307", "N_AI308", "N_AI309", "N_AI310", "N_AI311", "N_AI312"],
-        "level_4_sem_1": ["N_AI402", "N_AI403", "N_AI404", "N_AI405", "N_AI401"],
-        "level_4_sem_2": ["N_AI406", "N_AI407", "N_AI408", "N_AI409", "N_AI401"]
+      "semesters": {
+        "level_1_sem_1": [
+          {
+            "code": "N_AI101",
+            "name_en": "Introduction to Networks",
+            "name_ar": "مقدمة في الشبكات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI102",
+            "name_en": "Introduction to Information Systems",
+            "name_ar": "مقدمة في نظم المعلومات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI103",
+            "name_en": "Introduction to Computers",
+            "name_ar": "مقدمة في الحاسبات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI104",
+            "name_en": "Programming Fundamentals",
+            "name_ar": "أساسيات البرمجة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI105",
+            "name_en": "Principles of Economics",
+            "name_ar": "مبادئ الاقتصاد",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI106",
+            "name_en": "Principles of Management",
+            "name_ar": "مبادئ الإدارة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI107",
+            "name_en": "Community Issues",
+            "name_ar": "قضايا مجتمعية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI108",
+            "name_en": "Scientific and Technical Report Writing",
+            "name_ar": "صياغة التقارير العلمية والفنية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_1_sem_2": [
+          {
+            "code": "N_AI109",
+            "name_en": "Mathematics I",
+            "name_ar": "رياضيات 1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI110",
+            "name_en": "Mathematics II",
+            "name_ar": "رياضيات 2",
+            "hours": 3,
+            "prereq": [
+              "N_AI109"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI111",
+            "name_en": "Logic Design",
+            "name_ar": "تصميم منطقي",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI112",
+            "name_en": "Discrete Structures",
+            "name_ar": "تراكيب متقطعة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI113",
+            "name_en": "Innovation and Entrepreneurship",
+            "name_ar": "الابتكار وريادة الأعمال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI114",
+            "name_en": "Semiconductors",
+            "name_ar": "أشباه الموصلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI115",
+            "name_en": "Professional Ethics",
+            "name_ar": "أخلاقيات المهنة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_2_sem_1": [
+          {
+            "code": "N_AI201",
+            "name_en": "Computer Programming I",
+            "name_ar": "برمجة حاسبات 1",
+            "hours": 3,
+            "prereq": [
+              "N_AI104"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI203",
+            "name_en": "Computer Organization and Architecture",
+            "name_ar": "تنظيم وعمارة الحاسب",
+            "hours": 3,
+            "prereq": [
+              "N_AI111"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI204",
+            "name_en": "Computer Networks",
+            "name_ar": "شبكات الحاسب",
+            "hours": 3,
+            "prereq": [
+              "N_AI101"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI205",
+            "name_en": "Systems Analysis and Design I",
+            "name_ar": "تحليل وتصميم النظم 1",
+            "hours": 3,
+            "prereq": [
+              "N_AI102"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI206",
+            "name_en": "Database Systems I",
+            "name_ar": "نظم قواعد البيانات 1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI212",
+            "name_en": "Statistics and Probability",
+            "name_ar": "الإحصاء والاحتمالات",
+            "hours": 3,
+            "prereq": [
+              "N_AI109"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_2_sem_2": [
+          {
+            "code": "N_AI202",
+            "name_en": "Computer Programming II",
+            "name_ar": "برمجة حاسبات 2",
+            "hours": 3,
+            "prereq": [
+              "N_AI201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI207",
+            "name_en": "Data Structures",
+            "name_ar": "هياكل البيانات",
+            "hours": 3,
+            "prereq": [
+              "N_AI201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI208",
+            "name_en": "Operating Systems I",
+            "name_ar": "نظم التشغيل 1",
+            "hours": 3,
+            "prereq": [
+              "N_AI203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI209",
+            "name_en": "Web Design and Development",
+            "name_ar": "تصميم وتطوير الويب",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI210",
+            "name_en": "Software Engineering I",
+            "name_ar": "هندسة البرمجيات 1",
+            "hours": 3,
+            "prereq": [
+              "N_AI201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI211",
+            "name_en": "Analysis and Design of Algorithms",
+            "name_ar": "تحليل وتصميم الخوارزميات",
+            "hours": 3,
+            "prereq": [
+              "N_AI207"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_1": [
+          {
+            "code": "N_AI301",
+            "name_en": "Introduction to the Internet of Things (IoT)",
+            "name_ar": "مقدمة في إنترنت الأشياء",
+            "hours": 3,
+            "prereq": [
+              "N_AI204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI302",
+            "name_en": "Natural Language Processing (NLP)",
+            "name_ar": "معالجة اللغات الطبيعية",
+            "hours": 3,
+            "prereq": [
+              "N_AI207"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI303",
+            "name_en": "Data Visualization",
+            "name_ar": "تصوير البيانات",
+            "hours": 3,
+            "prereq": [
+              "N_AI209"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI304",
+            "name_en": "Data Mining and Predictive Analytics",
+            "name_ar": "التنقيب في البيانات والتحليلات التنبؤية",
+            "hours": 3,
+            "prereq": [
+              "N_AI206"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI305",
+            "name_en": "Machine Learning",
+            "name_ar": "تعلم الآلة",
+            "hours": 3,
+            "prereq": [
+              "N_AI211",
+              "N_AI212"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI306",
+            "name_en": "Big Data Analytics",
+            "name_ar": "تحليلات البيانات الضخمة",
+            "hours": 3,
+            "prereq": [
+              "N_AI206"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_2": [
+          {
+            "code": "N_AI307",
+            "name_en": "Fuzzy Logic and Intelligent Systems",
+            "name_ar": "المنطق الضبابي والنظم الذكية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI308",
+            "name_en": "Computational Intelligence",
+            "name_ar": "الذكاء الحسابي",
+            "hours": 3,
+            "prereq": [
+              "N_AI305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI309",
+            "name_en": "Artificial Intelligence",
+            "name_ar": "الذكاء الاصطناعي",
+            "hours": 3,
+            "prereq": [
+              "N_AI207"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI310",
+            "name_en": "Distributed and Concurrent Algorithms",
+            "name_ar": "الخوارزميات الموزعة والمتزامنة",
+            "hours": 3,
+            "prereq": [
+              "N_AI211"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI311",
+            "name_en": "High-Performance Computing (HPC)",
+            "name_ar": "الحوسبة عالية الأداء",
+            "hours": 3,
+            "prereq": [
+              "N_AI203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI312",
+            "name_en": "Cloud Computing",
+            "name_ar": "الحوسبة السحابية",
+            "hours": 3,
+            "prereq": [
+              "N_AI204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_1": [
+          {
+            "code": "N_AI402",
+            "name_en": "Mobile Application Development",
+            "name_ar": "تطوير تطبيقات الموبايل",
+            "hours": 3,
+            "prereq": [
+              "N_AI202"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI403",
+            "name_en": "Web and Social Media Analytics",
+            "name_ar": "تحليلات الويب ووسائل التواصل الاجتماعي",
+            "hours": 3,
+            "prereq": [
+              "N_AI306"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI404",
+            "name_en": "Data Analytics Programming",
+            "name_ar": "برمجة تحليلات البيانات",
+            "hours": 3,
+            "prereq": [
+              "N_AI202"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI405",
+            "name_en": "Bioinformatics",
+            "name_ar": "المعلوماتية الحيوية",
+            "hours": 3,
+            "prereq": [
+              "N_AI211"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI401",
+            "name_en": "Graduation Project",
+            "name_ar": "مشروع التخرج",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_2": [
+          {
+            "code": "N_AI406",
+            "name_en": "Neural Networks and Deep Learning",
+            "name_ar": "الشبكات العصبية والتعلم العميق",
+            "hours": 3,
+            "prereq": [
+              "N_AI305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI407",
+            "name_en": "Computer Vision",
+            "name_ar": "رؤية الحاسب",
+            "hours": 3,
+            "prereq": [
+              "N_AI305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI408",
+            "name_en": "Robotics",
+            "name_ar": "الروبوتات",
+            "hours": 3,
+            "prereq": [
+              "N_AI309"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI409",
+            "name_en": "Software Project Management",
+            "name_ar": "إدارة مشاريع البرمجيات",
+            "hours": 3,
+            "prereq": [
+              "N_AI210"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_AI401",
+            "name_en": "Graduation Project",
+            "name_ar": "مشروع التخرج",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ]
       }
     },
     "Networks": {
       "name_en": "Networks",
       "name_ar": "الشبكات",
-      "mandatory_hours": 144,
-      "elective_hours": 0,
-      "mandatory": [
-        { "code": "N_NW101", "name_en": "Introduction to Networks", "name_ar": "مقدمة في الشبكات", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW102", "name_en": "Introduction to Information Systems", "name_ar": "مقدمة في نظم المعلومات", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW103", "name_en": "Introduction to Computers", "name_ar": "مقدمة في الحاسبات", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW104", "name_en": "Programming Fundamentals", "name_ar": "أساسيات البرمجة", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW105", "name_en": "Principles of Economics", "name_ar": "مبادئ الاقتصاد", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW106", "name_en": "Principles of Management", "name_ar": "مبادئ الإدارة", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW107", "name_en": "Community Issues", "name_ar": "قضايا مجتمعية", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW108", "name_en": "Scientific and Technical Report Writing", "name_ar": "صياغة التقارير العلمية والفنية", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW109", "name_en": "Mathematics I", "name_ar": "رياضيات 1", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW110", "name_en": "Mathematics II", "name_ar": "رياضيات 2", "hours": 3, "prereq": ["N_NW109"], "expected_doctors": [] },
-        { "code": "N_NW111", "name_en": "Logic Design", "name_ar": "تصميم منطقي", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW112", "name_en": "Discrete Structures", "name_ar": "تراكيب متقطعة", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW113", "name_en": "Innovation and Entrepreneurship", "name_ar": "الابتكار وريادة الأعمال", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW114", "name_en": "Semiconductors", "name_ar": "أشباه الموصلات", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW115", "name_en": "Professional Ethics", "name_ar": "أخلاقيات المهنة", "hours": 3, "prereq": [], "expected_doctors": [] },
-        
-        { "code": "N_NW201", "name_en": "Computer Programming I", "name_ar": "برمجة حاسبات 1", "hours": 3, "prereq": ["N_NW104"], "expected_doctors": [] },
-        { "code": "N_NW202", "name_en": "Computer Programming II", "name_ar": "برمجة حاسبات 2", "hours": 3, "prereq": ["N_NW201"], "expected_doctors": [] },
-        { "code": "N_NW203", "name_en": "Computer Organization and Architecture", "name_ar": "تنظيم وعمارة الحاسب", "hours": 3, "prereq": ["N_NW111"], "expected_doctors": [] },
-        { "code": "N_NW204", "name_en": "Computer Networks", "name_ar": "شبكات الحاسب", "hours": 3, "prereq": ["N_NW101"], "expected_doctors": [] },
-        { "code": "N_NW205", "name_en": "Systems Analysis and Design I", "name_ar": "تحليل وتصميم النظم 1", "hours": 3, "prereq": ["N_NW102"], "expected_doctors": [] },
-        { "code": "N_NW206", "name_en": "Database Systems I", "name_ar": "نظم قواعد البيانات 1", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW207", "name_en": "Data Structures", "name_ar": "هياكل البيانات", "hours": 3, "prereq": ["N_NW201"], "expected_doctors": [] },
-        { "code": "N_NW208", "name_en": "Operating Systems I", "name_ar": "نظم التشغيل 1", "hours": 3, "prereq": ["N_NW203"], "expected_doctors": [] },
-        { "code": "N_NW209", "name_en": "Web Design and Development", "name_ar": "تصميم وتطوير الويب", "hours": 3, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW210", "name_en": "Software Engineering I", "name_ar": "هندسة البرمجيات 1", "hours": 3, "prereq": ["N_NW201"], "expected_doctors": [] },
-        { "code": "N_NW211", "name_en": "Analysis and Design of Algorithms", "name_ar": "تحليل وتصميم الخوارزميات", "hours": 3, "prereq": ["N_NW207"], "expected_doctors": [] },
-        { "code": "N_NW212", "name_en": "Statistics and Probability", "name_ar": "الإحصاء والاحتمالات", "hours": 3, "prereq": ["N_NW109"], "expected_doctors": [] },
-
-        { "code": "N_NW301", "name_en": "Enterprise Software Engineering", "name_ar": "هندسة برمجيات المؤسسات", "hours": 3, "prereq": ["N_NW210"], "expected_doctors": [] },
-        { "code": "N_NW302", "name_en": "Operating Systems II", "name_ar": "نظم التشغيل 2", "hours": 3, "prereq": ["N_NW208"], "expected_doctors": [] },
-        { "code": "N_NW303", "name_en": "Artificial Intelligence Systems", "name_ar": "نظم الذكاء الاصطناعي", "hours": 3, "prereq": ["N_NW207"], "expected_doctors": [] },
-        { "code": "N_NW304", "name_en": "Cloud Computing Concepts and Management", "name_ar": "مفاهيم وإدارة الحوسبة السحابية", "hours": 3, "prereq": ["N_NW204"], "expected_doctors": [] },
-        { "code": "N_NW305", "name_en": "Image Processing", "name_ar": "معالجة الصور", "hours": 3, "prereq": ["N_NW207"], "expected_doctors": [] },
-        { "code": "N_NW306", "name_en": "Software-Defined Networking (SDN)", "name_ar": "الشبكات المعرفة بالبرمجيات", "hours": 3, "prereq": ["N_NW204"], "expected_doctors": [] },
-        { "code": "N_NW307", "name_en": "Machine Learning", "name_ar": "تعلم الآلة", "hours": 3, "prereq": ["N_NW211", "N_NW212"], "expected_doctors": [] },
-        { "code": "N_NW308", "name_en": "Network Design and Analysis", "name_ar": "تصميم وتحليل الشبكات", "hours": 3, "prereq": ["N_NW204"], "expected_doctors": [] },
-        { "code": "N_NW309", "name_en": "Network Programming", "name_ar": "برمجة الشبكات", "hours": 3, "prereq": ["N_NW204"], "expected_doctors": [] },
-        { "code": "N_NW310", "name_en": "Cloud Computing Security", "name_ar": "أمن الحوسبة السحابية", "hours": 3, "prereq": ["N_NW304"], "expected_doctors": [] },
-        { "code": "N_NW311", "name_en": "Internet of Things (IoT)", "name_ar": "إنترنت الأشياء", "hours": 3, "prereq": ["N_NW204"], "expected_doctors": [] },
-        { "code": "N_NW312", "name_en": "Network Administration", "name_ar": "إدارة الشبكات", "hours": 3, "prereq": ["N_NW204"], "expected_doctors": [] },
-
-        { "code": "N_NW401", "name_en": "Advanced Database Systems", "name_ar": "نظم قواعد البيانات المتقدمة", "hours": 3, "prereq": ["N_NW206"], "expected_doctors": [] },
-        { "code": "N_NW402", "name_en": "Graduation Project", "name_ar": "مشروع التخرج", "hours": 6, "prereq": [], "expected_doctors": [] },
-        { "code": "N_NW403", "name_en": "Computer Vision", "name_ar": "رؤية الحاسب", "hours": 3, "prereq": ["N_NW305"], "expected_doctors": [] },
-        { "code": "N_NW404", "name_en": "Mobile Application Development", "name_ar": "تطوير تطبيقات الموبايل", "hours": 3, "prereq": ["N_NW202"], "expected_doctors": [] },
-        { "code": "N_NW405", "name_en": "Computer and Network Forensics", "name_ar": "الطب الشرعي للحاسب والشبكات", "hours": 3, "prereq": ["N_NW204"], "expected_doctors": [] },
-        { "code": "N_NW406", "name_en": "Advanced Networks and Computer Engineering", "name_ar": "الشبكات وهندسة الحاسب المتقدمة", "hours": 3, "prereq": ["N_NW203", "N_NW204"], "expected_doctors": [] },
-        { "code": "N_NW407", "name_en": "Distributed Computing", "name_ar": "الحوسبة الموزعة", "hours": 3, "prereq": ["N_NW302"], "expected_doctors": [] },
-        { "code": "N_NW408", "name_en": "Electronic Commerce (E-Commerce)", "name_ar": "التجارة الإلكترونية", "hours": 3, "prereq": ["N_NW209"], "expected_doctors": [] },
-        { "code": "N_NW409", "name_en": "Networked Embedded Systems", "name_ar": "الأنظمة المدمجة الشبكية", "hours": 3, "prereq": ["N_NW203"], "expected_doctors": [] }
-      ],
-      "elective": [],
-      "study_plan": {
-        "level_1_sem_1": ["N_NW101", "N_NW102", "N_NW103", "N_NW104", "N_NW105", "N_NW106", "N_NW107", "N_NW108"],
-        "level_1_sem_2": ["N_NW109", "N_NW110", "N_NW111", "N_NW112", "N_NW113", "N_NW114", "N_NW115"],
-        "level_2_sem_1": ["N_NW201", "N_NW203", "N_NW204", "N_NW205", "N_NW206", "N_NW212"],
-        "level_2_sem_2": ["N_NW202", "N_NW207", "N_NW208", "N_NW209", "N_NW210", "N_NW211"],
-        "level_3_sem_1": ["N_NW301", "N_NW302", "N_NW303", "N_NW304", "N_NW305", "N_NW306"],
-        "level_3_sem_2": ["N_NW307", "N_NW308", "N_NW309", "N_NW310", "N_NW311", "N_NW312"],
-        "level_4_sem_1": ["N_NW401", "N_NW403", "N_NW404", "N_NW405", "N_NW402"],
-        "level_4_sem_2": ["N_NW406", "N_NW407", "N_NW408", "N_NW409", "N_NW402"]
+      "semesters": {
+        "level_1_sem_1": [
+          {
+            "code": "N_NW101",
+            "name_en": "Introduction to Networks",
+            "name_ar": "مقدمة في الشبكات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW102",
+            "name_en": "Introduction to Information Systems",
+            "name_ar": "مقدمة في نظم المعلومات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW103",
+            "name_en": "Introduction to Computers",
+            "name_ar": "مقدمة في الحاسبات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW104",
+            "name_en": "Programming Fundamentals",
+            "name_ar": "أساسيات البرمجة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW105",
+            "name_en": "Principles of Economics",
+            "name_ar": "مبادئ الاقتصاد",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW106",
+            "name_en": "Principles of Management",
+            "name_ar": "مبادئ الإدارة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW107",
+            "name_en": "Community Issues",
+            "name_ar": "قضايا مجتمعية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW108",
+            "name_en": "Scientific and Technical Report Writing",
+            "name_ar": "صياغة التقارير العلمية والفنية",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_1_sem_2": [
+          {
+            "code": "N_NW109",
+            "name_en": "Mathematics I",
+            "name_ar": "رياضيات 1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW110",
+            "name_en": "Mathematics II",
+            "name_ar": "رياضيات 2",
+            "hours": 3,
+            "prereq": [
+              "N_NW109"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW111",
+            "name_en": "Logic Design",
+            "name_ar": "تصميم منطقي",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW112",
+            "name_en": "Discrete Structures",
+            "name_ar": "تراكيب متقطعة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW113",
+            "name_en": "Innovation and Entrepreneurship",
+            "name_ar": "الابتكار وريادة الأعمال",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW114",
+            "name_en": "Semiconductors",
+            "name_ar": "أشباه الموصلات",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW115",
+            "name_en": "Professional Ethics",
+            "name_ar": "أخلاقيات المهنة",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_2_sem_1": [
+          {
+            "code": "N_NW201",
+            "name_en": "Computer Programming I",
+            "name_ar": "برمجة حاسبات 1",
+            "hours": 3,
+            "prereq": [
+              "N_NW104"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW203",
+            "name_en": "Computer Organization and Architecture",
+            "name_ar": "تنظيم وعمارة الحاسب",
+            "hours": 3,
+            "prereq": [
+              "N_NW111"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW204",
+            "name_en": "Computer Networks",
+            "name_ar": "شبكات الحاسب",
+            "hours": 3,
+            "prereq": [
+              "N_NW101"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW205",
+            "name_en": "Systems Analysis and Design I",
+            "name_ar": "تحليل وتصميم النظم 1",
+            "hours": 3,
+            "prereq": [
+              "N_NW102"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW206",
+            "name_en": "Database Systems I",
+            "name_ar": "نظم قواعد البيانات 1",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW212",
+            "name_en": "Statistics and Probability",
+            "name_ar": "الإحصاء والاحتمالات",
+            "hours": 3,
+            "prereq": [
+              "N_NW109"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_2_sem_2": [
+          {
+            "code": "N_NW202",
+            "name_en": "Computer Programming II",
+            "name_ar": "برمجة حاسبات 2",
+            "hours": 3,
+            "prereq": [
+              "N_NW201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW207",
+            "name_en": "Data Structures",
+            "name_ar": "هياكل البيانات",
+            "hours": 3,
+            "prereq": [
+              "N_NW201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW208",
+            "name_en": "Operating Systems I",
+            "name_ar": "نظم التشغيل 1",
+            "hours": 3,
+            "prereq": [
+              "N_NW203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW209",
+            "name_en": "Web Design and Development",
+            "name_ar": "تصميم وتطوير الويب",
+            "hours": 3,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW210",
+            "name_en": "Software Engineering I",
+            "name_ar": "هندسة البرمجيات 1",
+            "hours": 3,
+            "prereq": [
+              "N_NW201"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW211",
+            "name_en": "Analysis and Design of Algorithms",
+            "name_ar": "تحليل وتصميم الخوارزميات",
+            "hours": 3,
+            "prereq": [
+              "N_NW207"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_1": [
+          {
+            "code": "N_NW301",
+            "name_en": "Enterprise Software Engineering",
+            "name_ar": "هندسة برمجيات المؤسسات",
+            "hours": 3,
+            "prereq": [
+              "N_NW210"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW302",
+            "name_en": "Operating Systems II",
+            "name_ar": "نظم التشغيل 2",
+            "hours": 3,
+            "prereq": [
+              "N_NW208"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW303",
+            "name_en": "Artificial Intelligence Systems",
+            "name_ar": "نظم الذكاء الاصطناعي",
+            "hours": 3,
+            "prereq": [
+              "N_NW207"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW304",
+            "name_en": "Cloud Computing Concepts and Management",
+            "name_ar": "مفاهيم وإدارة الحوسبة السحابية",
+            "hours": 3,
+            "prereq": [
+              "N_NW204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW305",
+            "name_en": "Image Processing",
+            "name_ar": "معالجة الصور",
+            "hours": 3,
+            "prereq": [
+              "N_NW207"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW306",
+            "name_en": "Software-Defined Networking (SDN)",
+            "name_ar": "الشبكات المعرفة بالبرمجيات",
+            "hours": 3,
+            "prereq": [
+              "N_NW204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_3_sem_2": [
+          {
+            "code": "N_NW307",
+            "name_en": "Machine Learning",
+            "name_ar": "تعلم الآلة",
+            "hours": 3,
+            "prereq": [
+              "N_NW211",
+              "N_NW212"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW308",
+            "name_en": "Network Design and Analysis",
+            "name_ar": "تصميم وتحليل الشبكات",
+            "hours": 3,
+            "prereq": [
+              "N_NW204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW309",
+            "name_en": "Network Programming",
+            "name_ar": "برمجة الشبكات",
+            "hours": 3,
+            "prereq": [
+              "N_NW204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW310",
+            "name_en": "Cloud Computing Security",
+            "name_ar": "أمن الحوسبة السحابية",
+            "hours": 3,
+            "prereq": [
+              "N_NW304"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW311",
+            "name_en": "Internet of Things (IoT)",
+            "name_ar": "إنترنت الأشياء",
+            "hours": 3,
+            "prereq": [
+              "N_NW204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW312",
+            "name_en": "Network Administration",
+            "name_ar": "إدارة الشبكات",
+            "hours": 3,
+            "prereq": [
+              "N_NW204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_1": [
+          {
+            "code": "N_NW401",
+            "name_en": "Advanced Database Systems",
+            "name_ar": "نظم قواعد البيانات المتقدمة",
+            "hours": 3,
+            "prereq": [
+              "N_NW206"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW403",
+            "name_en": "Computer Vision",
+            "name_ar": "رؤية الحاسب",
+            "hours": 3,
+            "prereq": [
+              "N_NW305"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW404",
+            "name_en": "Mobile Application Development",
+            "name_ar": "تطوير تطبيقات الموبايل",
+            "hours": 3,
+            "prereq": [
+              "N_NW202"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW405",
+            "name_en": "Computer and Network Forensics",
+            "name_ar": "الطب الشرعي للحاسب والشبكات",
+            "hours": 3,
+            "prereq": [
+              "N_NW204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW402",
+            "name_en": "Graduation Project",
+            "name_ar": "مشروع التخرج",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ],
+        "level_4_sem_2": [
+          {
+            "code": "N_NW406",
+            "name_en": "Advanced Networks and Computer Engineering",
+            "name_ar": "الشبكات وهندسة الحاسب المتقدمة",
+            "hours": 3,
+            "prereq": [
+              "N_NW203",
+              "N_NW204"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW407",
+            "name_en": "Distributed Computing",
+            "name_ar": "الحوسبة الموزعة",
+            "hours": 3,
+            "prereq": [
+              "N_NW302"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW408",
+            "name_en": "Electronic Commerce (E-Commerce)",
+            "name_ar": "التجارة الإلكترونية",
+            "hours": 3,
+            "prereq": [
+              "N_NW209"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW409",
+            "name_en": "Networked Embedded Systems",
+            "name_ar": "الأنظمة المدمجة الشبكية",
+            "hours": 3,
+            "prereq": [
+              "N_NW203"
+            ],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          },
+          {
+            "code": "N_NW402",
+            "name_en": "Graduation Project",
+            "name_ar": "مشروع التخرج",
+            "hours": 6,
+            "prereq": [],
+            "expected_doctors": [],
+            "category": "department",
+            "type": "mandatory"
+          }
+        ]
       }
     }
   }
