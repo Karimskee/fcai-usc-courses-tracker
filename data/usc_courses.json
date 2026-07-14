@@ -1489,7 +1489,9 @@
             "hours": 0,
             "prereq": [],
             "note": "University requirement, does not count towards graduation hours",
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "general",
             "type": "mandatory"
           },
@@ -1499,7 +1501,9 @@
             "name_ar": "صياغة التقارير العلمية والفنية",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "general",
             "type": "mandatory"
           },
@@ -1509,7 +1513,9 @@
             "name_ar": "مبادئ ادارة",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Emad"
+            ],
             "category": "general",
             "type": "mandatory"
           },
@@ -1519,7 +1525,9 @@
             "name_ar": "رياضيات-1",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1529,7 +1537,9 @@
             "name_ar": "تراكيب محددة",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr.  Heba"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1539,7 +1549,9 @@
             "name_ar": "مقدمة في الحاسبات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1549,7 +1561,9 @@
             "name_ar": "أشباه الموصلات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "faculty",
             "type": "mandatory"
           }
@@ -1563,7 +1577,9 @@
             "prereq": [
               "CS103"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1575,7 +1591,9 @@
             "prereq": [
               "MA101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1585,7 +1603,9 @@
             "name_ar": "مقدمة نظم المعلومات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1597,7 +1617,9 @@
             "prereq": [
               "CS102"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr.  Heba"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1607,7 +1629,9 @@
             "name_ar": "مبادئ الاقتصاد",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Emad"
+            ],
             "category": "general",
             "type": "elective"
           },
@@ -1617,7 +1641,9 @@
             "name_ar": "أخلاقيات المهنة",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "general",
             "type": "elective"
           }
@@ -1631,7 +1657,9 @@
             "prereq": [
               "CS101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1643,7 +1671,9 @@
             "prereq": [
               "CS104"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Salem"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1655,7 +1685,9 @@
             "prereq": [
               "IS101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1665,7 +1697,9 @@
             "name_ar": "شبكات الحاسبات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1677,7 +1711,9 @@
             "prereq": [
               "MA101"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Karam"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1689,7 +1725,9 @@
             "prereq": [
               "MA103"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Heba"
+            ],
             "category": "faculty",
             "type": "mandatory"
           }
@@ -1703,7 +1741,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1715,7 +1755,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1727,7 +1769,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1739,7 +1783,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Tarek"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1751,7 +1797,9 @@
             "prereq": [
               "CS201"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1761,7 +1809,9 @@
             "name_ar": "عرض مرئي للبيانات",
             "hours": 3,
             "prereq": [],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "department",
             "type": "elective"
           }
@@ -1775,7 +1825,9 @@
             "prereq": [
               "CS203"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1787,7 +1839,9 @@
             "prereq": [
               "IS202"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa | Dr. Sara"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1799,7 +1853,9 @@
             "prereq": [
               "CS204"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ahmed Tealab"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1811,7 +1867,9 @@
             "prereq": [
               "IS205"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Heba"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1823,7 +1881,9 @@
             "prereq": [
               "CS203"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "faculty",
             "type": "mandatory"
           },
@@ -1835,19 +1895,9 @@
             "prereq": [
               "CS204"
             ],
-            "expected_doctors": [],
-            "category": "department",
-            "type": "mandatory"
-          },
-          {
-            "code": "AI303",
-            "name_en": "Web & Social Media Analytics",
-            "name_ar": "تحليلات الويب والوسائط الاجتماعية",
-            "hours": 3,
-            "prereq": [
-              "CS304"
+            "expected_doctors": [
+              "Dr. Ahmed Salem"
             ],
-            "expected_doctors": [],
             "category": "department",
             "type": "mandatory"
           }
@@ -1861,7 +1911,9 @@
             "prereq": [
               "IS205"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Ibrahim"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1873,7 +1925,9 @@
             "prereq": [
               "IS301"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "department",
             "type": "elective"
           },
@@ -1885,7 +1939,9 @@
             "prereq": [
               "CS305"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1897,7 +1953,9 @@
             "prereq": [
               "CS305"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Asmaa"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1909,7 +1967,9 @@
             "prereq": [
               "CS305"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "department",
             "type": "mandatory"
           },
@@ -1921,7 +1981,9 @@
             "prereq": [
               "CS305"
             ],
-            "expected_doctors": [],
+            "expected_doctors": [
+              "Dr. Engi"
+            ],
             "category": "department",
             "type": "elective"
           }
