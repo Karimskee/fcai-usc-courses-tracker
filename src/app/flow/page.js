@@ -2,7 +2,7 @@
 
 import { useMemo, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import { ReactFlow, Background, Controls, ControlButton, applyNodeChanges, applyEdgeChanges } from '@xyflow/react';
+import { ReactFlow, Background, Controls, ControlButton, MiniMap, applyNodeChanges, applyEdgeChanges } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { useFlow } from './layout';
 import CourseNode from '../../components/CourseNode';
@@ -35,6 +35,8 @@ export default function FlowPage() {
     const Y_SPACING = 250;
     const X_SPACING = 250; // Increased to prevent longer course names from overlapping
     
+    const addedNodes = new Set();
+    
     // Bottom-to-top: Level 1 Sem 1 is at Y = semesters.length * Y_SPACING
     
     semesters.forEach((sem, semIndex) => {
@@ -43,6 +45,9 @@ export default function FlowPage() {
       const y = (semesters.length - semIndex) * Y_SPACING;
       
       coursesInSem.forEach((code, i) => {
+        if (addedNodes.has(code)) return;
+        addedNodes.add(code);
+        
         const x = startX + i * X_SPACING;
         
         nodes.push({
@@ -220,6 +225,25 @@ function FlowCanvas({ initialNodes, initialEdges }) {
             </svg>
           </ControlButton>
         </Controls>
+        <MiniMap 
+          nodeColor={(n) => {
+            if (n.data?.state === 'completed') return '#10b981';
+            if (n.data?.state === 'available') return '#a1a1aa';
+            return '#3f3f46';
+          }}
+          maskColor="rgba(0, 0, 0, 0.75)"
+          style={{ 
+            backgroundColor: 'var(--bg-tertiary)', 
+            border: '1px solid var(--border-color)', 
+            borderRadius: '8px',
+            overflow: 'hidden',
+            width: 150,
+            height: 100
+          }}
+          position="bottom-right"
+          pannable
+          zoomable
+        />
       </ReactFlow>
 
       <style jsx global>{`
