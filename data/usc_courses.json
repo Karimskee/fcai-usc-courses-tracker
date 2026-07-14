@@ -295,7 +295,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA101"
+              "MA103"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -455,7 +455,7 @@
             "name_ar": "الذكاء الاصطناعي",
             "hours": 3,
             "prereq": [
-              "CS204"
+              "CS203"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -479,7 +479,7 @@
             "name_ar": "بناء المترجمات",
             "hours": 3,
             "prereq": [
-              "CS311"
+              "CS309"
             ],
             "expected_doctors": [],
             "category": "department",
@@ -491,7 +491,7 @@
             "name_ar": "البرمجة المتوازية",
             "hours": 3,
             "prereq": [
-              "CS308"
+              "CS309"
             ],
             "expected_doctors": [],
             "category": "department",
@@ -539,7 +539,7 @@
             "name_ar": "اتصال الإنسان بالحاسب",
             "hours": 3,
             "prereq": [
-              "CS301"
+              "CS307"
             ],
             "expected_doctors": [],
             "category": "department",
@@ -892,7 +892,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA101"
+              "MA103"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1015,7 +1015,7 @@
             "name_ar": "الذكاء الاصطناعي",
             "hours": 3,
             "prereq": [
-              "CS204"
+              "CS203"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1388,7 +1388,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA102"
+              "MA103"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1742,7 +1742,7 @@
         "level_1_sem_1": [
           {
             "code": "HM101",
-            "name_en": "Human Rights",
+            "name_en": "Social Issues",
             "name_ar": "حقوق الإنسان",
             "hours": 0,
             "prereq": [],
@@ -2019,7 +2019,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA102"
+              "MA103"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -2046,8 +2046,7 @@
             "name_ar": "تحليل وتصميم الخوارزميات",
             "hours": 3,
             "prereq": [
-              "CS204",
-              "MA201"
+              "IS202"
             ],
             "expected_doctors": [],
             "category": "faculty",
