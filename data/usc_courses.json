@@ -20,8 +20,8 @@
         "level_1_sem_1": [
           {
             "code": "HM101",
-            "name_en": "Human Rights",
-            "name_ar": "حقوق الإنسان",
+            "name_en": "Social Issues",
+            "name_ar": "قضايا مجتمعية",
             "hours": 0,
             "prereq": [],
             "note": "University requirement, does not count towards graduation hours",
@@ -96,7 +96,9 @@
             "name_en": "Logic Design-1",
             "name_ar": "تصميم منطقي",
             "hours": 3,
-            "prereq": [],
+            "prereq": [
+              "CS103"
+            ],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -128,7 +130,9 @@
             "name_en": "Fundamentals of Programming",
             "name_ar": "مبادئ برمجة",
             "hours": 3,
-            "prereq": [],
+            "prereq": [
+              "CS102"
+            ],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -173,7 +177,6 @@
             "name_ar": "معمارية وتنظيم الحاسب",
             "hours": 3,
             "prereq": [
-              "CS103",
               "CS104"
             ],
             "expected_doctors": [],
@@ -197,9 +200,7 @@
             "name_en": "Computer Networks",
             "name_ar": "شبكات الحاسبات",
             "hours": 3,
-            "prereq": [
-              "CS102"
-            ],
+            "prereq": [],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -221,9 +222,7 @@
             "name_en": "Microprocessors and Assembly Language",
             "name_ar": "المعالجات الدقيقة ولغة التجميع",
             "hours": 3,
-            "prereq": [
-              "CS202"
-            ],
+            "prereq": [],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -236,7 +235,7 @@
             "name_ar": "وسائط متعددة",
             "hours": 3,
             "prereq": [
-              "CS101"
+              "CS201"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -248,7 +247,7 @@
             "name_ar": "تصميم وتطوير الويب",
             "hours": 3,
             "prereq": [
-              "CS101"
+              "CS201"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -310,8 +309,7 @@
             "name_ar": "هندسة البرمجيات-1",
             "hours": 3,
             "prereq": [
-              "CS203",
-              "IS202"
+              "CS203"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -323,8 +321,7 @@
             "name_ar": "تحليل وتصميم الخوارزميات",
             "hours": 3,
             "prereq": [
-              "CS204",
-              "MA201"
+              "IS202"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -336,7 +333,7 @@
             "name_ar": "نظم قواعد البيانات-1",
             "hours": 3,
             "prereq": [
-              "CS203"
+              "CS204"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -359,12 +356,21 @@
             "name_en": "Introduction in Artificial Intelligence",
             "name_ar": "مقدمة في الذكاء الاصطناعي",
             "hours": 3,
-            "prereq": [
-              "CS204"
-            ],
+            "prereq": [],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
+          },
+          {
+            "code": "CS305",
+            "name_en": "Artificial Intelligence",
+            "name_ar": "الذكاء الاصطناعي",
+            "hours": 3,
+            "prereq": [
+              "CS203"
+            ],
+            "type": "mandatory",
+            "category": "department"
           }
         ],
         "level_3_sem_2": [
@@ -595,8 +601,8 @@
         "level_1_sem_1": [
           {
             "code": "HM101",
-            "name_en": "Human Rights",
-            "name_ar": "حقوق الإنسان",
+            "name_en": "Social Issues",
+            "name_ar": "قضايا مجتمعية",
             "hours": 0,
             "prereq": [],
             "note": "University requirement, does not count towards graduation hours",
@@ -671,7 +677,9 @@
             "name_en": "Logic Design-1",
             "name_ar": "تصميم منطقي",
             "hours": 3,
-            "prereq": [],
+            "prereq": [
+              "CS103"
+            ],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -703,7 +711,9 @@
             "name_en": "Fundamentals of Programming",
             "name_ar": "مبادئ برمجة",
             "hours": 3,
-            "prereq": [],
+            "prereq": [
+              "CS102"
+            ],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -748,7 +758,6 @@
             "name_ar": "معمارية وتنظيم الحاسب",
             "hours": 3,
             "prereq": [
-              "CS103",
               "CS104"
             ],
             "expected_doctors": [],
@@ -772,9 +781,7 @@
             "name_en": "Computer Networks",
             "name_ar": "شبكات الحاسبات",
             "hours": 3,
-            "prereq": [
-              "CS102"
-            ],
+            "prereq": [],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -811,7 +818,7 @@
             "name_ar": "وسائط متعددة",
             "hours": 3,
             "prereq": [
-              "CS101"
+              "CS201"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -823,7 +830,7 @@
             "name_ar": "تصميم وتطوير الويب",
             "hours": 3,
             "prereq": [
-              "CS101"
+              "CS201"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -885,8 +892,7 @@
             "name_ar": "هندسة البرمجيات-1",
             "hours": 3,
             "prereq": [
-              "CS203",
-              "IS202"
+              "CS203"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -898,8 +904,7 @@
             "name_ar": "تحليل وتصميم الخوارزميات",
             "hours": 3,
             "prereq": [
-              "CS204",
-              "MA201"
+              "IS202"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -911,7 +916,7 @@
             "name_ar": "نظم قواعد البيانات-1",
             "hours": 3,
             "prereq": [
-              "CS203"
+              "CS204"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -923,8 +928,7 @@
             "name_ar": "النمذجة والمحاكاة",
             "hours": 3,
             "prereq": [
-              "ST201",
-              "CS201"
+              "IS205"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -941,6 +945,17 @@
             "expected_doctors": [],
             "category": "department",
             "type": "mandatory"
+          },
+          {
+            "code": "IS308",
+            "name_en": "Information Security",
+            "name_ar": "أمن المعلومات",
+            "hours": 3,
+            "prereq": [
+              "MA103"
+            ],
+            "type": "mandatory",
+            "category": "department"
           }
         ],
         "level_3_sem_2": [
@@ -1156,8 +1171,8 @@
         "level_1_sem_1": [
           {
             "code": "HM101",
-            "name_en": "Human Rights",
-            "name_ar": "حقوق الإنسان",
+            "name_en": "Social Issues",
+            "name_ar": "قضايا مجتمعية",
             "hours": 0,
             "prereq": [],
             "note": "University requirement, does not count towards graduation hours",
@@ -1232,7 +1247,9 @@
             "name_en": "Logic Design-1",
             "name_ar": "تصميم منطقي",
             "hours": 3,
-            "prereq": [],
+            "prereq": [
+              "CS103"
+            ],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -1264,7 +1281,9 @@
             "name_en": "Fundamentals of Programming",
             "name_ar": "مبادئ برمجة",
             "hours": 3,
-            "prereq": [],
+            "prereq": [
+              "CS102"
+            ],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -1309,7 +1328,6 @@
             "name_ar": "معمارية وتنظيم الحاسب",
             "hours": 3,
             "prereq": [
-              "CS103",
               "CS104"
             ],
             "expected_doctors": [],
@@ -1333,9 +1351,7 @@
             "name_en": "Computer Networks",
             "name_ar": "شبكات الحاسبات",
             "hours": 3,
-            "prereq": [
-              "CS102"
-            ],
+            "prereq": [],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -1358,7 +1374,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA101"
+              "MA102"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1372,7 +1388,7 @@
             "name_ar": "وسائط متعددة",
             "hours": 3,
             "prereq": [
-              "CS101"
+              "CS201"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1384,7 +1400,7 @@
             "name_ar": "تصميم وتطوير الويب",
             "hours": 3,
             "prereq": [
-              "CS101"
+              "CS201"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1444,8 +1460,7 @@
             "name_ar": "هندسة البرمجيات-1",
             "hours": 3,
             "prereq": [
-              "CS203",
-              "IS202"
+              "CS203"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1457,8 +1472,7 @@
             "name_ar": "تحليل وتصميم الخوارزميات",
             "hours": 3,
             "prereq": [
-              "CS204",
-              "MA201"
+              "IS202"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1470,7 +1484,7 @@
             "name_ar": "نظم قواعد البيانات-1",
             "hours": 3,
             "prereq": [
-              "CS203"
+              "CS204"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1482,8 +1496,7 @@
             "name_ar": "النمذجة والمحاكاة",
             "hours": 3,
             "prereq": [
-              "ST201",
-              "CS201"
+              "IS205"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1495,7 +1508,7 @@
             "name_ar": "الذكاء الاصطناعي",
             "hours": 3,
             "prereq": [
-              "CS204"
+              "CS203"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1791,7 +1804,9 @@
             "name_en": "Logic Design-1",
             "name_ar": "تصميم منطقي",
             "hours": 3,
-            "prereq": [],
+            "prereq": [
+              "CS103"
+            ],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -1823,7 +1838,9 @@
             "name_en": "Fundamentals of Programming",
             "name_ar": "مبادئ برمجة",
             "hours": 3,
-            "prereq": [],
+            "prereq": [
+              "CS102"
+            ],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -1868,7 +1885,6 @@
             "name_ar": "معمارية وتنظيم الحاسب",
             "hours": 3,
             "prereq": [
-              "CS103",
               "CS104"
             ],
             "expected_doctors": [],
@@ -1892,9 +1908,7 @@
             "name_en": "Computer Networks",
             "name_ar": "شبكات الحاسبات",
             "hours": 3,
-            "prereq": [
-              "CS102"
-            ],
+            "prereq": [],
             "expected_doctors": [],
             "category": "faculty",
             "type": "mandatory"
@@ -1917,7 +1931,7 @@
             "name_ar": "رياضيات-3",
             "hours": 3,
             "prereq": [
-              "MA103"
+              "MA102"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1931,7 +1945,7 @@
             "name_ar": "وسائط متعددة",
             "hours": 3,
             "prereq": [
-              "CS101"
+              "CS201"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1943,7 +1957,7 @@
             "name_ar": "تصميم وتطوير الويب",
             "hours": 3,
             "prereq": [
-              "CS101"
+              "CS201"
             ],
             "expected_doctors": [],
             "category": "faculty",
@@ -1991,7 +2005,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA101"
+              "MA102"
             ],
             "expected_doctors": [],
             "category": "faculty",
