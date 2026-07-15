@@ -312,6 +312,7 @@ function FlowCanvas({ initialNodes, initialEdges }) {
             bottom: 24px !important;
             left: 50% !important;
             transform: translateX(-50%) !important;
+            margin: 0 !important;
             box-shadow: 0 4px 20px rgba(0,0,0,0.5);
             padding: 6px 12px;
             gap: 12px;
