@@ -7,11 +7,23 @@ import { useFlow } from '../app/flow/layout';
 function CourseNode({ data }) {
   const { toggleCourse, cascadeUnmark, data: globalData, deptKey, completedCourses } = useFlow();
   const [showTooltip, setShowTooltip] = useState(false);
+  const [isHolding, setIsHolding] = useState(false);
+  const [isTouch, setIsTouch] = useState(false);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+  }, []);
   const nodeRef = useRef(null);
   const touchTimer = useRef(null);
+  const touchStartPos = useRef({ x: 0, y: 0 });
+  const wasLongPress = useRef(false);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    if (wasLongPress.current) {
+      wasLongPress.current = false;
+      return;
+    }
     if (data.state === 'completed') {
       // Find what depends on this
       const cascadeLocks = getCascadeLocks(data.code, completedCourses, globalData, deptKey);
@@ -47,15 +59,27 @@ function CourseNode({ data }) {
 
   const handleTouchStart = (e) => {
     const touch = e.touches[0];
+    touchStartPos.current = { x: touch.clientX, y: touch.clientY };
+    setIsHolding(true);
+    wasLongPress.current = false;
+
     touchTimer.current = setTimeout(() => {
-      setTooltipPos({ x: touch.clientX, y: touch.clientY - 80 }); // Above finger
+      wasLongPress.current = true;
+      setTooltipPos({ x: touchStartPos.current.x, y: touchStartPos.current.y - 80 });
       setShowTooltip(true);
-    }, 500); // 500ms long press
+    }, 400);
   };
 
   const handleTouchEnd = () => {
     if (touchTimer.current) clearTimeout(touchTimer.current);
     setShowTooltip(false);
+    setIsHolding(false);
+  };
+
+  const handleTouchCancel = () => {
+    if (touchTimer.current) clearTimeout(touchTimer.current);
+    setShowTooltip(false);
+    setIsHolding(false);
   };
 
   const handleTouchMove = (e) => {
@@ -63,7 +87,13 @@ function CourseNode({ data }) {
       const touch = e.touches[0];
       setTooltipPos({ x: touch.clientX, y: touch.clientY - 80 });
     } else {
-      if (touchTimer.current) clearTimeout(touchTimer.current);
+      const touch = e.touches[0];
+      const dx = Math.abs(touch.clientX - touchStartPos.current.x);
+      const dy = Math.abs(touch.clientY - touchStartPos.current.y);
+      if (dx > 15 || dy > 15) {
+        if (touchTimer.current) clearTimeout(touchTimer.current);
+        setIsHolding(false);
+      }
     }
   };
 
@@ -77,8 +107,9 @@ function CourseNode({ data }) {
         onMouseLeave={handleMouseLeave}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
+        onTouchCancel={handleTouchCancel}
         onTouchMove={handleTouchMove}
-        className={`course-bubble state-${data.state}`}
+        className={`course-bubble state-${data.state} ${isHolding ? 'is-holding' : ''} ${isTouch ? 'nodrag' : ''}`}
       >
         {data.hasPrereq && (
           <Handle 
@@ -121,9 +152,15 @@ function CourseNode({ data }) {
           justify-content: center;
           text-align: center;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
           box-shadow: 0 4px 6px rgba(0,0,0,0.3);
           user-select: none;
+        }
+
+        .is-holding {
+          transform: scale(1.05);
+          box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+          z-index: 10;
         }
 
         .course-name {

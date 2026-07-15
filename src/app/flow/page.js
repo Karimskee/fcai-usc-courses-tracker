@@ -237,7 +237,6 @@ function FlowCanvas({ initialNodes, initialEdges }) {
         maxZoom={2}
         nodesConnectable={false}
         elementsSelectable={false}
-        nodesDraggable={false}
         proOptions={{ hideAttribution: true }}
       >
         <Background color="#27272a" gap={20} size={1} />
