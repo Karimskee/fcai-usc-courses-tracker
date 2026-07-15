@@ -70,6 +70,23 @@ export default function FlowLayout({ children }) {
     });
   };
 
+  const toggleSemester = (semesterKey) => {
+    const courseCodes = deptData.semesters[semesterKey]?.map(c => c.code) || [];
+    if (courseCodes.length === 0) return;
+
+    setCompletedCourses(prev => {
+      const next = new Set(prev);
+      const allCompleted = courseCodes.every(code => next.has(code));
+      
+      if (allCompleted) {
+        courseCodes.forEach(code => next.delete(code));
+      } else {
+        courseCodes.forEach(code => next.add(code));
+      }
+      return next;
+    });
+  };
+
   const resetCourses = () => {
     if (confirm("Are you sure you want to reset all your progress?")) {
       setCompletedCourses(new Set());
@@ -109,6 +126,7 @@ export default function FlowLayout({ children }) {
       completedCourses,
       toggleCourse,
       cascadeUnmark,
+      toggleSemester,
       resetCourses
     }}>
       <div className="flow-layout">
