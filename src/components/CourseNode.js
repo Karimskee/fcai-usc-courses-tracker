@@ -211,7 +211,10 @@ function TooltipPortal({ pos, data, isTouch }) {
       style={{ left: pos.x, top: pos.y }}
     >
       <div className="tooltip-header">
-        <h4>{data.name}</h4>
+        <div className="tooltip-title-area">
+          <span className="tooltip-code">{data.code}</span>
+          <h4>{data.name}</h4>
+        </div>
         <span className="tooltip-hours">{data.hours} hrs</span>
       </div>
       
@@ -261,6 +264,20 @@ function TooltipPortal({ pos, data, isTouch }) {
           font-size: 14px;
           line-height: 1.3;
           font-weight: 600;
+        }
+        
+        .tooltip-title-area {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+        
+        .tooltip-code {
+          font-size: 11px;
+          color: var(--accent-green);
+          font-weight: 700;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
         }
         
         .tooltip-hours {
