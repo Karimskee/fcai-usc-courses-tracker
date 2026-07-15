@@ -65,7 +65,7 @@ function CourseNode({ data }) {
 
     touchTimer.current = setTimeout(() => {
       wasLongPress.current = true;
-      setTooltipPos({ x: touchStartPos.current.x, y: touchStartPos.current.y - 80 });
+      setTooltipPos({ x: touchStartPos.current.x, y: touchStartPos.current.y });
       setShowTooltip(true);
     }, 400);
   };
@@ -85,7 +85,7 @@ function CourseNode({ data }) {
   const handleTouchMove = (e) => {
     if (showTooltip) {
       const touch = e.touches[0];
-      setTooltipPos({ x: touch.clientX, y: touch.clientY - 80 });
+      setTooltipPos({ x: touch.clientX, y: touch.clientY });
     } else {
       const touch = e.touches[0];
       const dx = Math.abs(touch.clientX - touchStartPos.current.x);
@@ -136,6 +136,7 @@ function CourseNode({ data }) {
         <TooltipPortal 
           pos={tooltipPos} 
           data={data} 
+          isTouch={isTouch}
         />
       )}
 
@@ -201,13 +202,13 @@ function CourseNode({ data }) {
 // Portal for tooltip so it doesn't get clipped by React Flow zoom/pan
 import { createPortal } from 'react-dom';
 
-function TooltipPortal({ pos, data }) {
+function TooltipPortal({ pos, data, isTouch }) {
   if (typeof document === 'undefined') return null;
   
   return createPortal(
     <div 
-      className="rich-tooltip glass-panel"
-      style={{ left: pos.x + 15, top: pos.y + 15 }}
+      className={`rich-tooltip glass-panel ${isTouch ? 'touch-mode' : 'mouse-mode'}`}
+      style={{ left: pos.x, top: pos.y }}
     >
       <div className="tooltip-header">
         <h4>{data.name}</h4>
@@ -235,7 +236,16 @@ function TooltipPortal({ pos, data }) {
           border-radius: 12px;
           width: 250px;
           box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-          animation: fadeIn 0.2s ease;
+        }
+
+        .mouse-mode {
+          transform: translate(15px, 15px);
+          animation: fadeInMouse 0.2s ease;
+        }
+
+        .touch-mode {
+          transform: translate(-50%, calc(-100% - 20px));
+          animation: fadeInTouch 0.2s ease;
         }
         
         .tooltip-header {
@@ -272,9 +282,14 @@ function TooltipPortal({ pos, data }) {
           margin-bottom: 4px;
         }
         
-        @keyframes fadeIn {
-          from { opacity: 0; transform: scale(0.95); }
-          to { opacity: 1; transform: scale(1); }
+        @keyframes fadeInMouse {
+          from { opacity: 0; transform: translate(15px, 15px) scale(0.95); }
+          to { opacity: 1; transform: translate(15px, 15px) scale(1); }
+        }
+
+        @keyframes fadeInTouch {
+          from { opacity: 0; transform: translate(-50%, calc(-100% - 5px)) scale(0.95); }
+          to { opacity: 1; transform: translate(-50%, calc(-100% - 20px)) scale(1); }
         }
       `}</style>
     </div>,
