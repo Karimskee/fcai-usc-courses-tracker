@@ -79,9 +79,48 @@ export default function FlowLayout({ children }) {
       const allCompleted = courseCodes.every(code => next.has(code));
       
       if (allCompleted) {
-        courseCodes.forEach(code => next.delete(code));
+        // Build dependency graph
+        const dependents = new Map();
+        Object.values(deptData.semesters || {}).forEach(courseList => {
+          courseList.forEach(c => {
+            if (c.prereq) {
+              c.prereq.forEach(p => {
+                if (!dependents.has(p)) dependents.set(p, []);
+                dependents.get(p).push(c.code);
+              });
+            }
+          });
+        });
+
+        // Find all dependent courses to unmark
+        const toDelete = new Set();
+        const checkQueue = [...courseCodes];
+        
+        while (checkQueue.length > 0) {
+          const code = checkQueue.shift();
+          if (next.has(code)) {
+            toDelete.add(code);
+            const nextDeps = dependents.get(code) || [];
+            checkQueue.push(...nextDeps);
+          }
+        }
+        
+        toDelete.forEach(code => next.delete(code));
       } else {
-        courseCodes.forEach(code => next.add(code));
+        const addWithPrereqs = (code) => {
+          if (next.has(code)) return;
+          let foundCourse = null;
+          for (const sem in deptData.semesters) {
+            foundCourse = deptData.semesters[sem].find(c => c.code === code);
+            if (foundCourse) break;
+          }
+          if (foundCourse && foundCourse.prereq) {
+            foundCourse.prereq.forEach(prereqCode => addWithPrereqs(prereqCode));
+          }
+          next.add(code);
+        };
+
+        courseCodes.forEach(code => addWithPrereqs(code));
       }
       return next;
     });
