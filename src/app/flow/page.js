@@ -319,14 +319,16 @@ function FlowCanvas({ initialNodes, initialEdges }) {
           }
 
           .dark-controls button {
-            padding: 12px;
+            width: 52px;
+            height: 52px;
+            padding: 0;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.05);
           }
           
           .dark-controls svg {
-            width: 20px;
-            height: 20px;
+            width: 28px;
+            height: 28px;
           }
         }
         
