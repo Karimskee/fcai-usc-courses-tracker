@@ -123,7 +123,7 @@ export default function FlowLayout({ children }) {
           <div className="progress-track">
             <div 
               className="progress-fill" 
-              style={{ height: `${progressPercent}%` }}
+              style={{ '--progress': `${progressPercent}%` }}
             />
           </div>
         </aside>
@@ -136,7 +136,7 @@ export default function FlowLayout({ children }) {
         <style jsx>{`
           .flow-layout {
             display: flex;
-            height: 100vh;
+            height: 100dvh;
             width: 100vw;
             background: var(--bg-color);
           }
@@ -192,15 +192,53 @@ export default function FlowLayout({ children }) {
             bottom: 0;
             left: 0;
             width: 100%;
+            height: var(--progress);
             background: var(--accent-green);
             box-shadow: 0 0 10px var(--accent-green-glow);
-            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1), width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             border-radius: 999px;
           }
           
           .flow-main {
             flex: 1;
             position: relative;
+          }
+
+          @media (max-width: 768px) {
+            .flow-layout {
+              flex-direction: column;
+            }
+            .progress-sidebar {
+              width: 100%;
+              flex-direction: row;
+              padding: 12px 16px;
+              border-right: none;
+              border-bottom: 1px solid var(--border-color);
+            }
+            .progress-info {
+              flex-direction: row;
+              margin-bottom: 0;
+              margin-right: 16px;
+            }
+            .hours-text {
+              writing-mode: horizontal-tb;
+              transform: none;
+              margin-bottom: 0;
+              margin-right: 8px;
+            }
+            .hours-label {
+              writing-mode: horizontal-tb;
+              transform: none;
+            }
+            .progress-track {
+              width: 100%;
+              height: 6px;
+              flex: 1;
+            }
+            .progress-fill {
+              height: 100%;
+              width: var(--progress);
+            }
           }
         `}</style>
       </div>

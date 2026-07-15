@@ -18,7 +18,8 @@ export default function LandingPage() {
       setFacultiesData(data);
       const keys = Object.keys(data);
       if (keys.length > 0) {
-        setFaculty(keys[0]);
+        const defaultKey = keys.find(k => k === 'FCAI USC' || data[k].meta?.faculty === 'FCAI USC') || keys[0];
+        setFaculty(defaultKey);
       }
     });
   }, []);

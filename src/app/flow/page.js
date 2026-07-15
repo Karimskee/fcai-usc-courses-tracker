@@ -255,6 +255,7 @@ function FlowCanvas({ initialNodes, initialEdges }) {
           </ControlButton>
         </Controls>
         <MiniMap 
+          className="flow-minimap"
           nodeColor={(n) => {
             if (n.data?.state === 'completed') return '#10b981';
             if (n.data?.state === 'available') return '#a1a1aa';
@@ -298,6 +299,35 @@ function FlowCanvas({ initialNodes, initialEdges }) {
           overflow: hidden;
           display: flex;
           flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+          .flow-minimap {
+            display: none !important;
+          }
+          
+          .dark-controls {
+            flex-direction: row;
+            border-radius: 99px;
+            bottom: 24px !important;
+            left: 50% !important;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            padding: 8px 16px;
+            gap: 16px;
+            border: 1px solid var(--border-color);
+          }
+
+          .dark-controls button {
+            padding: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+          }
+          
+          .dark-controls svg {
+            width: 20px;
+            height: 20px;
+          }
         }
         
         .dark-controls button {
