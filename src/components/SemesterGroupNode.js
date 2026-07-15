@@ -48,7 +48,7 @@ export default function SemesterGroupNode({ data, id }) {
 
       <style jsx>{`
         .btn-check-sem {
-          background: rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.05); /* normal color */
           border: 1px solid rgba(255, 255, 255, 0.1);
           color: var(--text-secondary);
           padding: 4px 10px;
@@ -64,7 +64,7 @@ export default function SemesterGroupNode({ data, id }) {
           transform: scale(1.05);
         }
         .btn-check-sem.completed {
-          background: rgba(16, 185, 129, 0.1);
+          background: rgba(16, 185, 129, 0.1); /* green */
           border-color: rgba(16, 185, 129, 0.3);
           color: var(--accent-green);
         }
