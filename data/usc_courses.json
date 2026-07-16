@@ -248,7 +248,7 @@
             "name_ar": "إحصاء واحتمالات",
             "hours": 3,
             "prereq": [
-              "MA101"
+              "MA103"
             ],
             "expected_doctors": [
               "Dr. Karam"
@@ -1041,7 +1041,7 @@
             "name_ar": "إحصاء واحتمالات",
             "hours": 3,
             "prereq": [
-              "MA101"
+              "MA103"
             ],
             "expected_doctors": [
               "Dr. Karam"
@@ -1836,7 +1836,7 @@
             "name_ar": "إحصاء واحتمالات",
             "hours": 3,
             "prereq": [
-              "MA101"
+              "MA103"
             ],
             "expected_doctors": [
               "Dr. Karam"
