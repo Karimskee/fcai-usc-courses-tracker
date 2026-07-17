@@ -515,18 +515,6 @@
         ],
         "level_4_sem_1": [
           {
-            "code": "CS305",
-            "name_en": "Artificial Intelligence",
-            "name_ar": "الذكاء الاصطناعي",
-            "hours": 3,
-            "prereq": [
-              "CS203"
-            ],
-            "expected_doctors": [],
-            "category": "faculty",
-            "type": "mandatory"
-          },
-          {
             "code": "CS402",
             "name_en": "Distributed Systems",
             "name_ar": "النظم الموزعة",
