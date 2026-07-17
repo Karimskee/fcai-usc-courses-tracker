@@ -571,9 +571,7 @@
             "expected_doctors": [],
             "category": "department",
             "type": "mandatory"
-          }
-        ],
-        "level_4_sem_2": [
+          },
           {
             "code": "CS401",
             "name_en": "Knowledge Based Systems",
@@ -583,9 +581,11 @@
               "CS305"
             ],
             "expected_doctors": [],
-            "category": "department",
-            "type": "mandatory"
-          },
+            "type": "mandatory",
+            "category": "department"
+          }
+        ],
+        "level_4_sem_2": [
           {
             "code": "CS407",
             "name_en": "Human Computer Interaction",
