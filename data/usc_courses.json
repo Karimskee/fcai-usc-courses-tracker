@@ -346,7 +346,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA103"
+              "MA102"
             ],
             "expected_doctors": [
               "Dr. Karam"
@@ -1129,7 +1129,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA103"
+              "MA102"
             ],
             "expected_doctors": [
               "Dr. Karam"
@@ -1838,7 +1838,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA103"
+              "MA102"
             ],
             "expected_doctors": [
               "Dr. Heba"
@@ -2681,7 +2681,7 @@
             "name_ar": "مقدمة في بحوث العمليات ودعم القرار",
             "hours": 3,
             "prereq": [
-              "MA103"
+              "MA102"
             ],
             "expected_doctors": [],
             "category": "faculty",
